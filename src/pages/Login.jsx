@@ -38,14 +38,11 @@ const Login = () => {
           container
           direction="column"
           justifyContent="center"
-          alignItems="center"
+          alignItems="right"
         >
-          <Typography variant="h5" sx={{ color: "white", mt: "10px" }}>
-            "hi, welcome back"
-          </Typography>
           <Typography
             variant="h6"
-            sx={{ color: "gray", mt: "10px", textAlign: "center" }}
+            sx={{ color: "gray", mt: "10px" }}
           >
             {"تسجيل الدّخول"}
           </Typography>
