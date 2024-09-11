@@ -46,6 +46,10 @@ h1 {
   text-align: right;
 }
 
+h2 {
+  color: red;
+}
+
 section {
   height: 100vh;
   color: white;
@@ -206,25 +210,21 @@ section {
 }
 @media (max-width: 1500px) {
   .form-control {
-  width: 150% !important;
+    width: 150% !important;
   }
 }
 @media (max-width: 1300px) {
   .form-control {
-  width: 150% !important;
-
+    width: 150% !important;
   }
 }
 @media (max-width: 1200px) {
   .form-control {
-  width: 100% !important;
-  
-
+    width: 100% !important;
   }
 }
 @media (max-width: 600px) {
   .form-control {
-  width: 100% !important;
-
+    width: 100% !important;
   }
 }
