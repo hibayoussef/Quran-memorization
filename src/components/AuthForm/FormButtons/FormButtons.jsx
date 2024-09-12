@@ -7,7 +7,7 @@ const FormButtons = ({ buttons, loading }) => {
   return (
     <Box sx={styles.container}>
       {buttons.map((button, index) => (
-        <Box key={index}>
+        <Box key={index} sx={{ width: "100%" }}>
           {loading && button.loading ? (
             <ButtonLoader sx={styles.buttonLoader} loading={true} fullWidth>
               {button.text}

@@ -1,20 +1,19 @@
 export const styles = {
   container: {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: "column",
+    gap: "16px",
+    alignItems: "stretch", // Make buttons full width
     mt: 5,
   },
   buttonLoader: {
     color: "#fff",
-    backgroundColor: "origin.main",
-    "&:hover": { backgroundColor: "origin.hover" },
-    width: 130,
+    backgroundColor: "secondary.main",
+    // "&:hover": { backgroundColor: "origin.hover" },
   },
   button: {
     color: "#fff",
-    backgroundColor: "origin.main",
-    "&:hover": { backgroundColor: "origin.hover" },
-    width: 130,
+    backgroundColor: "secondary.main",
+    // "&:hover": { backgroundColor: "origin.hover" },
   },
 };

@@ -7,7 +7,7 @@ export const styles = {
     alignItems: "start",
   },
   title: {
-    color: "#2C3971",
+    color: "headerText.main",
     mt: "10px",
   },
 };

@@ -55,6 +55,9 @@ const colors = {
   headerText: {
     main: "#2C3971",
   },
+  secondary: {
+    main: "#F8B641"
+  }
 };
 
 

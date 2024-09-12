@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 export const BoxStyled = styled(Box)(({ theme }) => ({
   // backgroundColor: theme.palette?.card?.main,
-  backgroundColor: theme.palette?.background?.paper,
+  backgroundColor: "white !important",
   borderRadius: "10px",
   padding: "24px 0 24px 0",
   boxShadow:
