@@ -8,9 +8,9 @@ export const authFormStyles = {
     backdropFilter: "blur(20px)",
   },
   formContainer: {
-    minWidth: "350px",
-    width: "30%",
-    padding: "40px",
+    width: "500px", // Fixed width
+    height: "auto", // Auto height
+    padding: "20px 40px 40px 40px",
     zIndex: 10000,
     backgroundColor: "transparent",
     border: "1px solid rgba(255,255,255,0.2)",

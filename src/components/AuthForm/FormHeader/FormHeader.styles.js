@@ -1,12 +1,13 @@
+
 export const styles = {
   container: {
     container: true,
     direction: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "start",
+    alignItems: "start",
   },
   title: {
-    color: "gray",
+    color: "#2C3971",
     mt: "10px",
   },
 };

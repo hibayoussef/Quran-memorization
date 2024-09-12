@@ -1,5 +1,3 @@
-import { typography } from "./dark-theme-options";
-
 const neutral = {
   100: "#F3F4F6",
   200: "#E5E7EB",
@@ -54,7 +52,67 @@ const colors = {
   card: {
     main: "rgb(255,255,255)",
   },
+  headerText: {
+    main: "#2C3971",
+  },
 };
+
+
+ const typography = {
+   fontFamily: [].join(","),
+
+   button: {
+     fontSize: "14px",
+   },
+
+   h1: {
+     fontSize: "64px",
+     fontWeight: "bold",
+   },
+   h2: {
+     fontSize: "48px",
+     fontWeight: "bold",
+   },
+   h3: {
+     fontSize: "40px",
+     fontWeight: "bold",
+   },
+   h4: {
+     fontSize: 26,
+     fontWeight: "bold",
+   },
+   h5: {
+     fontSize: 23,
+     fontWeight: "bold",
+   },
+   h6: {
+     fontSize: 20,
+   },
+
+   subtitle1: {
+     fontSize: "0.955rem",
+   },
+   subtitle2: {
+     fontSize: 12,
+   },
+
+   body1: {
+     fontSize: "0.875rem",
+     fontWeight: "500",
+   },
+   body2: {
+     fontSize: "14px",
+   },
+   caption: {
+     fontSize: "12px",
+   },
+   inputTitle: {
+     fontSize: "0.875rem",
+     fontWeight: 500,
+     // color: "#078172",
+     color: "#2C3971",
+   },
+ };
 
 export const lightThemeOptions = {
   components: {

@@ -2,50 +2,47 @@ import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 
 export const TextFieldStyled = styled(TextField)(({ theme }) => ({
-  "& .MuiInputBase-input ": {
+  "& .MuiInputBase-input": {
     "&::placeholder": {
-      color: "textColor.50",
-      opacity: "0.4",
+      color: theme.palette.text.secondary, // Update to the correct placeholder color
+      opacity: 0.7, // Adjust opacity for better visibility
     },
-    color: theme.palette.text.main,
+    color: theme.palette.text.primary, // Ensure text color is not white
     borderRadius: "14px !important",
   },
   "& label": {
-    color: "#0195FF",
+    color: theme.palette.primary.main, // Update label color
   },
-  "& label.Mui-focused ": {
-    color: "#0195FF",
+  "& label.Mui-focused": {
+    color: theme.palette.primary.main,
   },
   "& .MuiOutlinedInput-root": {
     "&.Mui-focused fieldset": {
       borderColor: theme.palette.origin.main,
     },
   },
-  "&::hover": {
+  "&:hover .MuiOutlinedInput-notchedOutline": {
     borderColor: theme.palette.origin.main,
   },
   "& .MuiOutlinedInput-notchedOutline": {
     borderRadius: "14px",
     borderColor: theme.palette.text.main,
-    "&:hover": {
-      borderColor: theme.palette.origin.main,
-    },
   },
   "& .MuiFilledInput-root": {
     border: "1px solid #e2e2e1",
     overflow: "hidden",
-    backgroundColor: theme.palette.mode === "light" ? "#fcfcfb" : "#2b2b2b",
+    backgroundColor: "#fcfcfb",
     transition: theme.transitions.create([
       "border-color",
       "background-color",
       "box-shadow",
     ]),
-    "&::hover": {
+    "&:hover": {
       borderColor: theme.palette.origin.main,
     },
     "&.Mui-focused": {
       backgroundColor: "transparent",
-      borderColor: "theme.palette.origin.main",
+      borderColor: theme.palette.origin.main,
     },
   },
 }));

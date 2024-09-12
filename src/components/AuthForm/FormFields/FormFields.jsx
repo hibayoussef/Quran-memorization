@@ -1,9 +1,17 @@
-import React from "react";
-import { Box, InputAdornment, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { TextFieldStyled } from "../../styled/TextField";
 import { styles } from "./FormFields.styles";
 
 const FormFields = ({ fields, register, errors }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <>
       {fields.map((field, index) => (
@@ -12,18 +20,22 @@ const FormFields = ({ fields, register, errors }) => {
             <Typography variant="inputTitle">{field.label}</Typography>
           </Box>
           <TextFieldStyled
-            type={field.type}
+            type={
+              field.type === "password" && showPassword ? "text" : field.type
+            }
             sx={styles.textField}
             placeholder={field.placeholder}
             {...register(field.name)}
-            error={errors[field.name]?.message}
+            error={!!errors[field.name]?.message}
             helperText={errors[field.name]?.message || ""}
             InputProps={
-              field.showPasswordToggle
+              field.type === "password"
                 ? {
                     endAdornment: (
                       <InputAdornment position="end">
-                        {/* Password Visibility Toggle Logic Here */}
+                        <IconButton onClick={handleTogglePasswordVisibility}>
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
                       </InputAdornment>
                     ),
                   }
