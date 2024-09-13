@@ -1,6 +1,7 @@
 import React from "react";
 import AuthForm from "../components/AuthForm/AuthForm";
 import { useLogin } from "./hooks/useLogin";
+import BackgroundImageUrl from "../assets/images/Background.svg";
 
 const Login = () => {
   const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
@@ -35,6 +36,7 @@ const Login = () => {
       fields={loginFields}
       buttons={loginButtons}
       onSubmit={handleSubmit(onSubmit)}
+      backgroundImageUrl={BackgroundImageUrl}
       register={register}
       errors={errors}
       loading={loading}

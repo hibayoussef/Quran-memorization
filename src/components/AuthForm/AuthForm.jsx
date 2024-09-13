@@ -4,8 +4,8 @@ import FormHeader from "./FormHeader/FormHeader";
 import FormFields from "./FormFields/FormFields";
 import FormButtons from "./FormButtons/FormButtons";
 import { BoxStyled } from "../../components/styled/BoxStyled";
+import BackgroundImage from "../BackgroundImage/BackgroundImage";
 import { authFormStyles } from "./AuthForm.styles";
-import BackgroundImage from "../../assets/images/Background.svg";
 import { NavLink } from "react-router-dom";
 const AuthForm = ({
   title,
@@ -15,22 +15,16 @@ const AuthForm = ({
   register,
   errors,
   loading,
+  backgroundImageUrl
 }) => {
   return (
     <Box sx={authFormStyles.root}>
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(${BackgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: 1, // Ensure this is behind the form
-        }}
+      <BackgroundImage
+        imageUrl={backgroundImageUrl}
+        size="cover"
+        position="center"
       />
+
       <BoxStyled sx={authFormStyles.formContainer}>
         <FormHeader title={title} />
         <Box

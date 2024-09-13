@@ -2,6 +2,7 @@ import React from "react";
 import AuthForm from "../components/AuthForm/AuthForm";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import BackgroundImageUrl from "../assets/images/Background.svg";
 
 const ForgotPassword = () => {
   const {
@@ -10,29 +11,27 @@ const ForgotPassword = () => {
     formState: { errors },
     watch,
   } = useForm();
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    // Handle form submission, such as sending data to the backend.
     console.log(data);
   };
 
-  // Watch the newPassword field to compare with confirmPassword
   const newPassword = watch("newPassword");
 
   const fields = [
     {
-      label: "إدخال كلمة المرور الجديدة",
+      label: "كلمة المرور الجّديدة",
       name: "newPassword",
       type: "password",
-      placeholder: "أدخل كلمة المرور الجديدة",
+      placeholder: "أدخل كلمة المرور الجّديدة",
       showPasswordToggle: true,
     },
     {
       label: "تأكيد كلمة المرور",
       name: "confirmPassword",
       type: "password",
-      placeholder: "أدخل كلمة المرور مرة أخرى",
+      placeholder: "أدخل كلمة المرور مرّة أخرى",
       showPasswordToggle: true,
       validate: (value) => value === newPassword || "Passwords do not match!",
     },
@@ -57,6 +56,7 @@ const ForgotPassword = () => {
       fields={fields}
       buttons={buttons}
       onSubmit={handleSubmit(onSubmit)}
+      backgroundImageUrl={BackgroundImageUrl} // Pass dynamic background image URL
       register={register}
       errors={errors}
     />
