@@ -15,7 +15,8 @@ const AuthForm = ({
   register,
   errors,
   loading,
-  backgroundImageUrl
+  backgroundImageUrl,
+  marginTop
 }) => {
   return (
     <Box sx={authFormStyles.root}>
@@ -30,7 +31,7 @@ const AuthForm = ({
         <Box
           component="form"
           onSubmit={onSubmit}
-          sx={{ width: "100%", marginTop: authFormStyles.content.marginTop }}
+          sx={{ width: "100%", marginTop: marginTop }}
         >
           <FormFields fields={fields} register={register} errors={errors} />
           {title !== "تغيير كلمة المرور" && (

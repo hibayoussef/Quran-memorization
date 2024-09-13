@@ -15,8 +15,5 @@ export const authFormStyles = {
     backgroundColor: "transparent",
     border: "1px solid rgba(255,255,255,0.2)",
     backdropFilter: "blur(3px)",
-  },
-  content: {
-    marginTop: "50px",
-  },
+  }
 };

@@ -51,12 +51,13 @@ const CreateAccount = () => {
 
   return (
     <AuthForm
-      title="إنشاء حساب جديد"
+      title="إنشاء حساب"
       fields={createAccountFields}
       buttons={createAccountButtons}
       onSubmit={handleSubmit(onSubmit)}
       backgroundImageUrl={BackgroundImageUrl}
       register={register}
+      marginTop="30px"
       errors={errors}
       loading={loading}
     />

@@ -59,6 +59,7 @@ const ForgotPassword = () => {
       backgroundImageUrl={BackgroundImageUrl} // Pass dynamic background image URL
       register={register}
       errors={errors}
+      marginTop="60px"
     />
   );
 };

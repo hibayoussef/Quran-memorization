@@ -38,6 +38,7 @@ const Login = () => {
       onSubmit={handleSubmit(onSubmit)}
       backgroundImageUrl={BackgroundImageUrl}
       register={register}
+      marginTop="60px"
       errors={errors}
       loading={loading}
     />
