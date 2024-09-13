@@ -1,40 +1,61 @@
 import React from "react";
 import AuthForm from "../components/AuthForm/AuthForm";
-import { useLogin } from "./hooks/useLogin";
+import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
+import BackgroundImageUrl from "../assets/images/Background.svg";
 
-const Login = () => {
-  const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
+const CreateAccount = () => {
+  const { errors, loading, onSubmit, register, handleSubmit } =
+    useCreateAccount();
 
-  const loginFields = [
+  const createAccountFields = [
+    {
+      label: "الاسم الثلاثي",
+      name: "fullName",
+      type: "text",
+      placeholder: "أدخل اسمك الكامل",
+    },
     {
       label: "البريد الإلكتروني",
       name: "email",
       type: "email",
-      placeholder: "enter your email",
+      placeholder: "أدخل بريدك الإلكتروني",
     },
     {
       label: "كلمة المرور",
       name: "password",
       type: "password",
       placeholder: "enter your password",
-      showPasswordToggle: true,
+      showPasswordToggle: true, // Option to show/hide password
+    },
+    {
+      label: "رقم الهاتف",
+      name: "phoneNumber",
+      type: "tel",
+      placeholder: "أدخل رقم هاتفك",
+    },
+    {
+      label: "تاريخ الميلاد",
+      name: "birthDate",
+      type: "date",
+      placeholder: "أدخل تاريخ ميلادك",
     },
   ];
 
-  const loginButtons = [
+  const createAccountButtons = [
     {
-      text: "تسجيل الدّخول",
+      text: "التّالي",
       type: "submit",
-      loading: false,
+      loading: loading,
     },
   ];
 
   return (
     <AuthForm
-      title="تسجيل الدّخول"
-      fields={loginFields}
-      buttons={loginButtons}
+      title="إنشاء حساب جديد"
+      fields={createAccountFields}
+      buttons={createAccountButtons}
       onSubmit={handleSubmit(onSubmit)}
+      backgroundImageUrl={BackgroundImageUrl}
       register={register}
       errors={errors}
       loading={loading}
@@ -42,4 +63,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateAccount;
