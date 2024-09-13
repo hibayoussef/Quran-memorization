@@ -9,6 +9,7 @@ export const TextFieldStyled = styled(TextField)(({ theme }) => ({
     },
     color: theme.palette.text.primary, // Ensure text color is not white
     borderRadius: "14px !important",
+    height:"0.7rem"
   },
   "& label": {
     color: theme.palette.primary.main, // Update label color
