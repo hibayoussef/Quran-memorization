@@ -24,7 +24,7 @@ const CreateAccount = () => {
       label: "كلمة المرور",
       name: "password",
       type: "password",
-      placeholder: "enter your password",
+      placeholder: "أدخل كلمة المرور",
       showPasswordToggle: true, // Option to show/hide password
     },
     {
