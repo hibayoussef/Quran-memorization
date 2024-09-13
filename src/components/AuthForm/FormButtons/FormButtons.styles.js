@@ -9,11 +9,16 @@ export const styles = {
   buttonLoader: {
     color: "#fff",
     backgroundColor: "secondary.main",
-    // "&:hover": { backgroundColor: "origin.hover" },
   },
   button: {
     color: "#fff",
     backgroundColor: "secondary.main",
     // "&:hover": { backgroundColor: "origin.hover" },
+  },
+  backButton: {
+    backgroundColor: "transparent", // Transparent background for "Back" button
+    border: "1px solid", // Border for "Back" button
+    borderColor: "secondary.main", // Secondary border color
+    color: "secondary.main", // Secondary text color
   },
 };

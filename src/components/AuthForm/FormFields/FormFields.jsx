@@ -23,7 +23,10 @@ const FormFields = ({ fields, register, errors }) => {
             type={
               field.type === "password" && showPassword ? "text" : field.type
             }
-            sx={styles.textField}
+            sx={{
+              ...styles.textField,
+              direction: field.type === "email" ? "ltr" : "rtl", // Set text direction for email fields
+            }}
             placeholder={field.placeholder}
             {...register(field.name)}
             error={!!errors[field.name]?.message}

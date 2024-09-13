@@ -6,26 +6,43 @@ import { styles } from "./FormButtons.styles";
 const FormButtons = ({ buttons, loading }) => {
   return (
     <Box sx={styles.container}>
-      {buttons.map((button, index) => (
-        <Box key={index} sx={{ width: "100%" }}>
-          {loading && button.loading ? (
-            <ButtonLoader sx={styles.buttonLoader} loading={true} fullWidth>
-              {button.text}
-            </ButtonLoader>
-          ) : (
-            <Button
-              sx={styles.button}
-              type={button.type || "button"}
-              fullWidth
-              variant="contained"
-              onClick={button.onClick}
-              disabled={button.disabled || loading}
-            >
-              {button.text}
-            </Button>
-          )}
-        </Box>
-      ))}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: buttons.length === 1 ? "center" : "space-between",
+          width: "100%",
+          gap: 2, // Add space between buttons
+        }}
+      >
+        {buttons.map((button, index) => (
+          <Box
+            key={index}
+            sx={{ width: buttons.length === 1 ? "100%" : "48%" }} // Adjust button width
+          >
+            {loading && button.loading ? (
+              <ButtonLoader sx={styles.buttonLoader} loading={true} fullWidth>
+                {button.text}
+              </ButtonLoader>
+            ) : (
+              <Button
+                sx={{
+                  ...styles.button,
+                  ...(button.text === "رجوع"
+                    ? styles.backButton // Apply custom styles for "Back" button
+                    : {}), // Default styles for other buttons
+                }}
+                type={button.type || "button"}
+                fullWidth
+                variant={button.text === "رجوع" ? "outlined" : "contained"} // Use "outlined" for "Back"
+                onClick={button.onClick}
+                disabled={button.disabled || loading}
+              >
+                {button.text}
+              </Button>
+            )}
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
