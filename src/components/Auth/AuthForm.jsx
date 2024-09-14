@@ -1,12 +1,11 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import FormHeader from "./FormHeader/FormHeader";
 import FormFields from "./FormFields/FormFields";
 import FormButtons from "./FormButtons/FormButtons";
 import { BoxStyled } from "../../components/styled/BoxStyled";
 import BackgroundImage from "../BackgroundImage/BackgroundImage";
 import { authFormStyles } from "./AuthForm.styles";
-import { NavLink } from "react-router-dom";
 const AuthForm = ({
   title,
   fields = [],
@@ -16,7 +15,9 @@ const AuthForm = ({
   errors,
   loading,
   backgroundImageUrl,
-  marginTop
+  marginTop,
+  extraSection1,
+  extraSection2
 }) => {
   return (
     <Box sx={authFormStyles.root}>
@@ -34,30 +35,9 @@ const AuthForm = ({
           sx={{ width: "100%", marginTop: marginTop }}
         >
           <FormFields fields={fields} register={register} errors={errors} />
-          {title !== "تغيير كلمة المرور" && (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "left",
-                alignItems: "center",
-                height: "100%",
-              }}
-            >
-              <NavLink to="/reset-password">
-                <Typography
-                  variant="inputTitle"
-                  sx={{
-                    color: "headerText.main",
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                  }}
-                >
-                  {"نسيت كلمة المرور؟"}
-                </Typography>
-              </NavLink>
-            </Box>
-          )}
+          {extraSection1 && extraSection1}
 
+          {extraSection2 && extraSection2}
           <FormButtons buttons={buttons} loading={loading} />
         </Box>
       </BoxStyled>

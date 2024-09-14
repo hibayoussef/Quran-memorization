@@ -1,7 +1,8 @@
 import React from "react";
-import AuthForm from "../components/AuthForm/AuthForm";
+import AuthForm from "../components/Auth/AuthForm";
 import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
 import BackgroundImageUrl from "../assets/images/Background.svg";
+import AlreadyHaveAccount from "../components/Auth/LoginRestLink/AlreadyHaveAccount";
 
 const CreateAccount = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =
@@ -60,6 +61,14 @@ const CreateAccount = () => {
       marginTop="30px"
       errors={errors}
       loading={loading}
+      extraSection2={
+        <AlreadyHaveAccount
+          questionText="هل لديك حساب بالفعل؟"
+          linkText="قم بتسجيل الدّخول الآن"
+          linkUrl="/"
+          showDivider={true}
+        />
+      }
     />
   );
 };

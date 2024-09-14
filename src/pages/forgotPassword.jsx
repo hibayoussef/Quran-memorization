@@ -1,5 +1,5 @@
 import React from "react";
-import AuthForm from "../components/AuthForm/AuthForm";
+import AuthForm from "../components/Auth/AuthForm";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import BackgroundImageUrl from "../assets/images/Background.svg";

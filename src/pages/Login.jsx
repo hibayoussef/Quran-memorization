@@ -1,8 +1,9 @@
 import React from "react";
-import AuthForm from "../components/AuthForm/AuthForm";
+import AuthForm from "../components/Auth/AuthForm";
 import { useLogin } from "./hooks/useLogin";
 import BackgroundImageUrl from "../assets/images/Background.svg";
-
+import ForgotPasswordLink from "../components/Auth/LoginRestLink/ForgotPasswordLink";
+import AlreadyHaveAccount from "../components/Auth/LoginRestLink/AlreadyHaveAccount";
 const Login = () => {
   const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
 
@@ -41,6 +42,15 @@ const Login = () => {
       marginTop="60px"
       errors={errors}
       loading={loading}
+      extraSection1={<ForgotPasswordLink />}
+      extraSection2={
+        <AlreadyHaveAccount
+          questionText="ليس لديك حساب, "
+          linkText="إنشاء حساب"
+          linkUrl="/new-account"
+          showDivider={true}
+        />
+      }
     />
   );
 };
