@@ -2,8 +2,8 @@ import React from "react";
 import AuthForm from "../components/Auth/AuthForm";
 import { useLogin } from "./hooks/useLogin";
 import BackgroundImageUrl from "../assets/images/Background.svg";
-import ForgotPasswordLink from "../components/Auth/LoginRestLink/ForgotPasswordLink";
-import AlreadyHaveAccount from "../components/Auth/LoginRestLink/AlreadyHaveAccount";
+import ForgotPasswordLink from "../components/Auth/RegisterationRestLink/ForgotPasswordLink";
+import AlreadyHaveAccount from "../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
 const Login = () => {
   const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
 

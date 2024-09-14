@@ -2,7 +2,7 @@ import React from "react";
 import AuthForm from "../components/Auth/AuthForm";
 import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
 import BackgroundImageUrl from "../assets/images/Background.svg";
-import AlreadyHaveAccount from "../components/Auth/LoginRestLink/AlreadyHaveAccount";
+import AlreadyHaveAccount from "../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
 
 const CreateAccount = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =
@@ -40,6 +40,15 @@ const CreateAccount = () => {
       type: "date",
       placeholder: "أدخل تاريخ ميلادك",
     },
+    {
+      label: "نوع الحساب",
+      name: "accountType",
+      type: "radio",
+      options: [
+        { label: "طالب", value: "student" },
+        { label: "مدرّس", value: "teacher" },
+      ],
+    }
   ];
 
   const createAccountButtons = [
