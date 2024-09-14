@@ -4,7 +4,7 @@ import ResendCodeTimer from '../RegisterationRestLink/ResendCodeTimer'
 const CodeInput = ({ onSubmitCode, resendCode }) => {
   const [code, setCode] = useState(["", "", "", ""]);
   const [isResendDisabled, setIsResendDisabled] = useState(false);
-  const [seconds, setSeconds] = useState(20);
+  const [setSeconds] = useState(20);
 
   useEffect(() => {
     let timer;
@@ -38,14 +38,14 @@ const CodeInput = ({ onSubmitCode, resendCode }) => {
     }
   };
 
-  const handleResend = () => {
-    resendCode();
-    setIsResendDisabled(true);
-  };
+  // const handleResend = () => {
+  //   resendCode();
+  //   setIsResendDisabled(true);
+  // };
 
   return (
     <Box sx={{ mb: 10}}>
-      <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", mb: 2}}>
         {code.map((value, index) => (
           <TextField
             key={index}

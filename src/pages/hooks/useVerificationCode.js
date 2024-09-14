@@ -1,12 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAuthValidation } from "pages/validation/useAuthValidation";
+import { useAuthValidation } from "../../pages/validation/useAuthValidation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
-import { _AuthApi } from "services/auth/auth.service";
-export const useVerificationCodeForm = () => {
-  const { t } = useTranslation("auth");
+
+export const useVerificationCode = () => {
   const { verifyCodeSchema } = useAuthValidation();
   const { email } = useParams();
   const [code, setCode] = useState("");
@@ -15,23 +13,17 @@ export const useVerificationCodeForm = () => {
   const formOptions = { resolver: yupResolver(verifyCodeSchema) };
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
-  const onSubmit = async (e) => {
-    setLoading(true);
 
-    _AuthApi
-      .verifyCode({ email, code })
-      .then((res) =>
-        navigate(`/reset-password/edit-password/${email}/${code}`, {
-          replace: true,
-        })
-      )
-      .finally(() => setLoading(false));
+  const onSubmit = async (data) => {
+      navigate("/login");
   };
-  const resendCode = async (e) => {
-    _AuthApi.resendCode({ email });
+
+  const resendCode = async () => {
+    console.log("Code resent");
+    // You can implement resend code logic here
   };
+
   return {
-    t,
     code,
     email,
     errors,

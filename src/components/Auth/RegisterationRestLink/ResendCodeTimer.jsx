@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 
 const ResendCodeTimer = ({
@@ -24,7 +24,7 @@ const ResendCodeTimer = ({
 
   const handleResendCode = () => {
     setSecondsRemaining(initialTimerDuration);
-    setIsLinkDisabled(true); // Disable the link once clicked
+      setIsLinkDisabled(true); // Disable the link once clicked
   };
 
   // Function to format the time into MM:SS
@@ -39,7 +39,6 @@ const ResendCodeTimer = ({
 
   return (
     <>
-      {/* {showDivider && <Divider sx={{ width: "100%", my: 3 }} />} */}
       <Box
         sx={{
           display: "flex",

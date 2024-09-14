@@ -1,14 +1,14 @@
 import React from "react";
 import BackgroundImageUrl from "../assets/images/Background.svg";
 import AuthForm from "../components/Auth/AuthForm";
-import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
-import CodeInput from '../components/Auth/FormFields/ResendCodeTimer';
+import CodeInput from "../components/Auth/FormFields/ResendCodeTimer";
+import { useVerificationCode } from "./hooks/useVerificationCode";
 
-const CreateAccount = () => {
+const VerificationCodeForm = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =
-    useCreateAccount();
+    useVerificationCode();
 
-     const handleCodeSubmit = (code) => {
+  const handleCodeSubmit = (code) => {
     console.log("Code submitted:", code);
     // Handle code submission here
   };
@@ -17,7 +17,6 @@ const CreateAccount = () => {
     console.log("Resend code request");
     // Handle resend code here
   };
-
 
   const createAccountButtons = [
     {
@@ -47,4 +46,4 @@ const CreateAccount = () => {
   );
 };
 
-export default CreateAccount;
+export default VerificationCodeForm;
