@@ -1,5 +1,5 @@
-import React from "react";
 import { Box, Button } from "@mui/material";
+import React from "react";
 import ButtonLoader from "../../shared/button/ButtonLoader";
 import { styles } from "./FormButtons.styles";
 

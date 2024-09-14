@@ -1,5 +1,5 @@
-import React from "react";
 import { Grid, Typography } from "@mui/material";
+import React from "react";
 import { styles } from "./FormHeader.styles";
 
 const FormHeader = ({ title }) => {

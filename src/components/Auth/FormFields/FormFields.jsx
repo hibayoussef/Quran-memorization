@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import {
-  Box,
-  IconButton,
-  InputAdornment,
-  Typography,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-} from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import {
+  Box,
+  FormControlLabel,
+  IconButton,
+  InputAdornment,
+  Radio,
+  RadioGroup,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
 import { TextFieldStyled } from "../../styled/TextField";
 import { styles } from "./FormFields.styles";
 
@@ -43,16 +43,14 @@ const FormFields = ({ fields, register, errors }) => {
                           "&.Mui-checked": {
                             color: "secondary.main",
                           },
-                          background: "none", // Remove background
-                          border: "none", // Remove border
+                          background: "none",
+                          border: "none",
                         }}
-                        // sx={{ color: "headerText.main" }}
                       />
-                    } // Radio button color
+                    }
                     label={
                       <Typography sx={{ color: "headerText.main" }}>
                         {" "}
-                        {/* Label color */}
                         {option.label}
                       </Typography>
                     }

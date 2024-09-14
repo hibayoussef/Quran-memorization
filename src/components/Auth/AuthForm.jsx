@@ -1,11 +1,11 @@
-import React from "react";
 import { Box } from "@mui/material";
-import FormHeader from "./FormHeader/FormHeader";
-import FormFields from "./FormFields/FormFields";
-import FormButtons from "./FormButtons/FormButtons";
+import React from "react";
 import { BoxStyled } from "../../components/styled/BoxStyled";
 import BackgroundImage from "../BackgroundImage/BackgroundImage";
 import { authFormStyles } from "./AuthForm.styles";
+import FormButtons from "./FormButtons/FormButtons";
+import FormFields from "./FormFields/FormFields";
+import FormHeader from "./FormHeader/FormHeader";
 const AuthForm = ({
   title,
   fields = [],

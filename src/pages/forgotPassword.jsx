@@ -1,23 +1,13 @@
 import React from "react";
-import AuthForm from "../components/Auth/AuthForm";
-import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import BackgroundImageUrl from "../assets/images/Background.svg";
+import AuthForm from "../components/Auth/AuthForm";
+import { useResetPassword } from "../pages/hooks/useResetPassword";
 
 const ForgotPassword = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    watch,
-  } = useForm();
+  const { register, handleSubmit, errors, loading, onSubmit, watch } =
+    useResetPassword();
   const navigate = useNavigate();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
-  const newPassword = watch("newPassword");
 
   const fields = [
     {
@@ -33,22 +23,23 @@ const ForgotPassword = () => {
       type: "password",
       placeholder: "أدخل كلمة المرور مرّة أخرى",
       showPasswordToggle: true,
-      validate: (value) => value === newPassword || "Passwords do not match!",
+      validate: (value) =>
+        value === watch("newPassword") || "Passwords do not match!",
     },
   ];
 
-    const buttons = [
-      {
-        text: "حفظ",
-        type: "submit",
-        loading: false,
-      },
-      {
-        text: "رجوع",
-        type: "button",
-        onClick: () => navigate(-1), // Navigate back
-      },
-    ];
+  const buttons = [
+    {
+      text: "حفظ",
+      type: "submit",
+      loading: false,
+    },
+    {
+      text: "رجوع",
+      type: "button",
+      onClick: () => navigate(-1), // Navigate back
+    },
+  ];
 
   return (
     <AuthForm
@@ -59,6 +50,7 @@ const ForgotPassword = () => {
       backgroundImageUrl={BackgroundImageUrl} // Pass dynamic background image URL
       register={register}
       errors={errors}
+      loading={loading}
       marginTop="60px"
     />
   );

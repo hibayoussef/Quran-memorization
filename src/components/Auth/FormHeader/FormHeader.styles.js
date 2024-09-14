@@ -8,6 +8,6 @@ export const styles = {
   },
   title: {
     color: "headerText.main",
-    mt: "-8px",
+    mt: "-8px"
   },
 };

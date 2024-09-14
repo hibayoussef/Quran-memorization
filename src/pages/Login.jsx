@@ -1,9 +1,9 @@
 import React from "react";
-import AuthForm from "../components/Auth/AuthForm";
-import { useLogin } from "./hooks/useLogin";
 import BackgroundImageUrl from "../assets/images/Background.svg";
-import ForgotPasswordLink from "../components/Auth/RegisterationRestLink/ForgotPasswordLink";
+import AuthForm from "../components/Auth/AuthForm";
 import AlreadyHaveAccount from "../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
+import ForgotPasswordLink from "../components/Auth/RegisterationRestLink/ForgotPasswordLink";
+import { useLogin } from "./hooks/useLogin";
 const Login = () => {
   const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
 
@@ -12,14 +12,14 @@ const Login = () => {
       label: "البريد الإلكتروني",
       name: "email",
       type: "email",
-      placeholder: "enter your email",
+      placeholder: "أدخل بريدك الإلكتروني",
     },
     {
       label: "كلمة المرور",
       name: "password",
       type: "password",
-      placeholder: "enter your password",
-      showPasswordToggle: true
+      placeholder: "أدخل كلمة المرور",
+      showPasswordToggle: true,
     },
   ];
 
