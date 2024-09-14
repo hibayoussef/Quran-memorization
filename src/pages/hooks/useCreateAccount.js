@@ -1,16 +1,20 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export const useCreateAccount = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    email,
     formState: { errors },
   } = useForm();
   const loading = false;
 
   const onSubmit = (data) => {
     console.log("Form Data: ", data);
-    // Here you would typically send data to the backend API
+    navigate(`/reset-password/check-code/${email}`);
   };
 
   return {

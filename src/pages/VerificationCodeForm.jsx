@@ -2,48 +2,26 @@ import React from "react";
 import BackgroundImageUrl from "../assets/images/Background.svg";
 import AuthForm from "../components/Auth/AuthForm";
 import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
+import CodeInput from '../components/Auth/FormFields/ResendCodeTimer';
 
 const CreateAccount = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =
     useCreateAccount();
 
-  const createAccountFields = [
-    {
-      label: "الاسم الثلاثي",
-      name: "fullName",
-      type: "text",
-      placeholder: "أدخل اسمك الكامل",
-    },
-    {
-      label: "البريد الإلكتروني",
-      name: "email",
-      type: "email",
-      placeholder: "أدخل بريدك الإلكتروني",
-    },
-    {
-      label: "كلمة المرور",
-      name: "password",
-      type: "password",
-      placeholder: "أدخل كلمة المرور",
-      showPasswordToggle: true, // Option to show/hide password
-    },
-    {
-      label: "رقم الهاتف",
-      name: "phoneNumber",
-      type: "tel",
-      placeholder: "أدخل رقم هاتفك",
-    },
-    {
-      label: "تاريخ الميلاد",
-      name: "birthDate",
-      type: "date",
-      placeholder: "أدخل تاريخ ميلادك",
-    },
-  ];
+     const handleCodeSubmit = (code) => {
+    console.log("Code submitted:", code);
+    // Handle code submission here
+  };
+
+  const handleResendCode = () => {
+    console.log("Resend code request");
+    // Handle resend code here
+  };
+
 
   const createAccountButtons = [
     {
-      text: "التّالي",
+      text: "تأكيد",
       type: "submit",
       loading: loading,
     },
@@ -52,14 +30,19 @@ const CreateAccount = () => {
   return (
     <AuthForm
       title="أدخل رمز التّحقّق"
-      fields={createAccountFields}
-      buttons={createAccountButtons}
       onSubmit={handleSubmit(onSubmit)}
       backgroundImageUrl={BackgroundImageUrl}
       register={register}
-      marginTop="30px"
+      buttons={createAccountButtons}
+      marginTop="60px"
       errors={errors}
       loading={loading}
+      extraSection1={
+        <CodeInput
+          onSubmitCode={handleCodeSubmit}
+          resendCode={handleResendCode}
+        />
+      }
     />
   );
 };
