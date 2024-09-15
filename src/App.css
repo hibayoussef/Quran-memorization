@@ -9,7 +9,7 @@ body a {
 body {
   height: 100vh;
   font-family: "Arial";
-  color: white;
+  /* color: white; */
 }
 
 .container {
@@ -43,7 +43,7 @@ h1 {
   font-size: 4rem;
   width: 50vw;
   line-height: 97%;
-  text-align: right;
+  /* text-align: right; */
 }
 
 h2 {

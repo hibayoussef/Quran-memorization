@@ -4,7 +4,7 @@ import AppRouting from "./AppRouting";
 
 function App() {
   return (
-    <Box color="background.main">
+    <Box>
       <AppRouting />
     </Box>
   );
