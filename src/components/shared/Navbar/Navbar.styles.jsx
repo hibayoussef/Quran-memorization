@@ -4,7 +4,11 @@ export const styles = {
     alignItems: "center",
     justifyContent: "center",
     gap: "15px",
-    padding: "10px",
+    // padding: "10px",
+    backgroundColor: "#fff",
+    width: "100%",
+    height: "50px",
+    mb: "15px",
   },
   routing: {
     display: "flex",

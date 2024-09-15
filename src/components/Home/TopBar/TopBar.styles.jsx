@@ -2,7 +2,7 @@
 export const styles = {
   BoxContainer: {
     backgroundColor: "#2C3971",
-    paddingBottom: "5px",
+    padding: "8px 0",
     color: "#fff",
   },
   flexible: {
