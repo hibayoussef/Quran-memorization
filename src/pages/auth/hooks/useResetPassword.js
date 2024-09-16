@@ -2,7 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useAuthValidation } from "../../pages/validation/useAuthValidation";
+import { useAuthValidation } from "../validation/useAuthValidation";
 
 export const useResetPassword = () => {
   const { resetPassSchema } = useAuthValidation();

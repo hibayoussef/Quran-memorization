@@ -1,9 +1,9 @@
 import React from "react";
-import BackgroundImageUrl from "../assets/images/Background.svg";
-import AuthForm from "../components/Auth/AuthForm";
-import AlreadyHaveAccount from "../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
-import ForgotPasswordLink from "../components/Auth/RegisterationRestLink/ForgotPasswordLink";
-import { useLogin } from "./hooks/useLogin";
+import BackgroundImageUrl from "../../../assets/images/Background.svg";
+import AuthForm from "../../../components/Auth/AuthForm";
+import AlreadyHaveAccount from "../../../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
+import ForgotPasswordLink from "../../../components/Auth/RegisterationRestLink/ForgotPasswordLink";
+import { useLogin } from "../hooks/useLogin";
 const Login = () => {
   const { errors, loading, onSubmit, register, handleSubmit } = useLogin();
 

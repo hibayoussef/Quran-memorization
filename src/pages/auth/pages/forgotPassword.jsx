@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import BackgroundImageUrl from "../assets/images/Background.svg";
-import AuthForm from "../components/Auth/AuthForm";
-import { useResetPassword } from "../pages/hooks/useResetPassword";
+import BackgroundImageUrl from "../../../assets/images/Background.svg";
+import AuthForm from "../../../components/Auth/AuthForm";
+import { useResetPassword } from "../hooks/useResetPassword";
 
 const ForgotPassword = () => {
   const { register, handleSubmit, errors, loading, onSubmit, watch } =

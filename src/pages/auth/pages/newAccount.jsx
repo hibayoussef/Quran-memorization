@@ -1,8 +1,8 @@
 import React from "react";
-import BackgroundImageUrl from "../assets/images/Background.svg";
-import AuthForm from "../components/Auth/AuthForm";
-import AlreadyHaveAccount from "../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
-import { useCreateAccount } from "./hooks/useCreateAccount"; // Custom hook for handling form logic
+import BackgroundImageUrl from "../../../assets/images/Background.svg";
+import AuthForm from "../../../components/Auth/AuthForm";
+import AlreadyHaveAccount from "../../../components/Auth/RegisterationRestLink/AlreadyHaveAccount";
+import { useCreateAccount } from "../hooks/useCreateAccount"; // Custom hook for handling form logic
 
 const CreateAccount = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =

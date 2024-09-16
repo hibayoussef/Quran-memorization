@@ -1,3 +1,4 @@
 {
-    "editor.codeActions.triggerOnFocusChange": false
+  "typescript.suggest.paths": true,
+  "javascript.suggest.paths": true
 }

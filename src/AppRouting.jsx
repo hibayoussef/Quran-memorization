@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
+import Login from "./pages/auth/pages/Login";
 import {
-  CreateAccount,
   ResetPassword,
-  VerificationCodeForm
+  VerificationCodeForm,
+  CreateAccount,
+  CoursesRouting,
 } from "../src/routes/route";
 
 const AppRouting = () => {
@@ -17,6 +18,7 @@ const AppRouting = () => {
         path="/reset-password/check-code/:email"
         element={<VerificationCodeForm />}
       />
+      <Route path="/courses/*" element={<CoursesRouting />} />
     </Routes>
   );
 };

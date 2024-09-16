@@ -1,8 +1,8 @@
 import React from "react";
-import BackgroundImageUrl from "../assets/images/Background.svg";
-import AuthForm from "../components/Auth/AuthForm";
-import CodeInput from "../components/Auth/FormFields/ResendCodeTimer";
-import { useVerificationCode } from "./hooks/useVerificationCode";
+import BackgroundImageUrl from "../../../assets/images/Background.svg";
+import AuthForm from "../../../components/Auth/AuthForm";
+import CodeInput from "../../../components/Auth/FormFields/ResendCodeTimer";
+import { useVerificationCode } from "../hooks/useVerificationCode";
 
 const VerificationCodeForm = () => {
   const { errors, loading, onSubmit, register, handleSubmit } =

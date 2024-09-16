@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAuthValidation } from "../../pages/validation/useAuthValidation";
+import { useAuthValidation } from "../validation/useAuthValidation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
