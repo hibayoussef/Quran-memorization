@@ -1,10 +1,24 @@
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+// start in MUI
+import {
+  Box,
+  Container,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Typography,
+} from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+// style css
 import { styles } from "./AddTotalNumber.styles";
+// img
+import question from "../../../assets/images/double.svg";
+// start in component
+import Button from "../../shared/button/ButtonMain";
 
 const AddTotalNumber = () => {
   const items = [
@@ -16,14 +30,60 @@ const AddTotalNumber = () => {
 
   return (
     <Box sx={styles.boxes}>
-      <Container>
+      <Container maxWidth="xl">
         <Grid container spacing={6}>
           {/* column Form add number */}
-          <Grid size={{ xs: 12, md: 6 }}></Grid>
+          <Grid size={{ sm: 12, md: 6 }}>
+            <Box sx={styles.boxFormNumber}>
+              {/* BOX title main and icon */}
+              <Box sx={styles.boxTitleForm}>
+                <Typography sx={styles.titleForm}>
+                  حملة الصلاة على النبي ﷺ
+                </Typography>
+              </Box>
+              <Box>
+                <Container maxWidth="xl">
+                  <Typography sx={styles.number}>
+                    العدد الإجمالي :
+                    <Typography
+                      variant="subtitle"
+                      sx={{ pr: "30px", fontSize: "24px" }}
+                    >
+                      {new Intl.NumberFormat().format(123000000)}
+                    </Typography>
+                  </Typography>
+                  {/* start in form data */}
+                  <form>
+                    <Stack spacing={5} sx={styles.stack}>
+                      <FormControl sx={styles.columnInput}>
+                        <FormLabel sx={styles.label}>
+                          البريد الالكتروني
+                        </FormLabel>
+                        <Input type="email" style={styles.Input} required />
+                      </FormControl>
+                      <FormControl sx={{ ...styles.columnInput }}>
+                        <FormLabel sx={styles.label}>العدد</FormLabel>
+                        <Input type="number" style={styles.Input} required />
+                      </FormControl>
+                      <Button title="اضف العدد" width="100%" radius="8px" />
+                    </Stack>
+                  </form>
+                </Container>
+              </Box>
+            </Box>
+          </Grid>
           {/* column title  */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Typography sx={styles.title}>الصلاة على الحبيب ﷺ</Typography>
-            <List>
+          <Grid size={{ sm: 12, md: 6 }}>
+            <Box sx={styles.boxImg}>
+              <Typography sx={styles.title}>الصلاة على الحبيب ﷺ </Typography>
+              <img src={`${question}`} alt="" style={styles.styleImg} />
+            </Box>
+            <List
+              sx={{
+                listStyleType: "disc",
+                pl: 2,
+              }}
+            >
               {items.map((text, index) => (
                 <React.Fragment key={index}>
                   <ListItem sx={styles.list}>

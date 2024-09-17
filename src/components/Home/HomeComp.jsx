@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero";
 import AboutUs from "./AboutUs/AboutUs";
 import Categories from "./Categories/Categories";
 import AddTotalNumber from "./AddTotalNumber/AddTotalNumber";
+import HadithToday from "./HadithToday/HadithToday";
 // start in material ui
 import { Box } from "@mui/material";
 
@@ -17,6 +18,7 @@ function HomeComp() {
       <AboutUs />
       <Categories />
       <AddTotalNumber />
+      <HadithToday />
     </Box>
   );
 }

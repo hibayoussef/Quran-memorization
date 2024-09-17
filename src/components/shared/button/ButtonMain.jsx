@@ -1,13 +1,13 @@
 import { Button } from "@mui/material";
 
-const ButtonMain = ({ title }) => {
+const ButtonMain = ({ title, width, radius }) => {
   return (
     <Button
       sx={{
         bgcolor: "#F8B641",
-        width: "210px",
+        width: { width },
         height: "60px",
-        borderRadius: "35px",
+        borderRadius: { radius },
         color: "#fff",
         mt: "40px",
         fontSize: "24px",

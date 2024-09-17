@@ -32,7 +32,7 @@ const Hero = () => {
                 القرآن الكريم. يقدم واجهة مستخدم متميزة تسهل
                 <br /> عملية التصفح والتسجيل ومتابعة النتائج بشكل سلس وآمن.
               </Typography>
-              <ButtonMain title="اشترك الأن" />
+              <ButtonMain title="اشترك الأن" width="210px" radius="35px" />
             </Box>
           </Grid>
         </Grid>

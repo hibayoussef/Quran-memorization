@@ -6,14 +6,9 @@ import { baseThemeOptions } from "./base-theme-options";
 import { lightThemeOptions } from "./light-theme-options";
 
 export const createTheme = (config) => {
-;
-  let theme = createMuiTheme(
-    baseThemeOptions,
-    lightThemeOptions,
-    {
-      direction: "rtl",
-    }
-  );
+  let theme = createMuiTheme(baseThemeOptions, lightThemeOptions, {
+    direction: "rtl",
+  });
 
   if (config.responsiveFontSizes) theme = responsiveFontSizes(theme);
 
