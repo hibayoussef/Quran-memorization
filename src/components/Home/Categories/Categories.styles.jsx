@@ -20,7 +20,7 @@ export const styles = {
     fontSize: "40px",
     lineHeight: "76.23px",
     color: "#2C3971",
-    marginTop: "20px",
+    marginTop: "80px",
     ...commonStyles.fontWeightBold,
   },
   boxImg: {

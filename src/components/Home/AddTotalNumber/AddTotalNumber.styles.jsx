@@ -5,13 +5,16 @@ const centerItem = {
 };
 
 export const styles = {
-  boxes: { marginTop: "50px" },
+  boxes: { marginTop: "80px" },
   title: {
     color: "#2C3971",
     fontSize: "40px",
     lineHeight: "76.23px",
   },
   // Form Number
+  gridForm: {
+    ...centerItem,
+  },
   boxFormNumber: {
     width: {
       xs: "100%", // 100% width for extra small screens

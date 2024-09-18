@@ -258,7 +258,7 @@ export const baseThemeOptions = {
     button: {
       fontWeight: 600,
     },
-    fontFamily: '"DroidArabicKufiBold", "Inter", sans-serif',
+    fontFamily: '"DroidArabicKufiBold"',
     body1: {
       fontSize: "1rem",
       fontWeight: 400,

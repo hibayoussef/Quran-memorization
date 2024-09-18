@@ -33,7 +33,7 @@ const AddTotalNumber = () => {
       <Container maxWidth="xl">
         <Grid container spacing={6}>
           {/* column Form add number */}
-          <Grid size={{ sm: 12, md: 6 }}>
+          <Grid size={{ sm: 12, md: 6 }} sx={styles.gridForm}>
             <Box sx={styles.boxFormNumber}>
               {/* BOX title main and icon */}
               <Box sx={styles.boxTitleForm}>

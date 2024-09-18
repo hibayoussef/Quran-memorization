@@ -1,8 +1,9 @@
 export const styles = {
-  container: { marginTop: "50px" },
+  container: { marginTop: "80px" },
   swiperStyle: {
     backgroundColor: "#2C3971",
     borderRadius: "22px",
+    width: "1300px",
   },
   SwiperSlide: {
     display: "flex",

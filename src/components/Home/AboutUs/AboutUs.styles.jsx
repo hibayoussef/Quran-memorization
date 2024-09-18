@@ -6,7 +6,7 @@ const flexCenter = {
 
 export const about = {
   container: {
-    marginTop: "20px",
+    marginTop: "80px",
   },
   containerGrid: {
     ...flexCenter, // Reuse flex styles

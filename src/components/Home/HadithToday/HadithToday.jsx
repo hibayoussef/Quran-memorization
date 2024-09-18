@@ -9,7 +9,7 @@ import { Box, Container, Typography } from "@mui/material";
 // style css
 import { styles } from "./HadithToday.styles";
 
-const Carousel = () => {
+const HadithToday = () => {
   return (
     <Box sx={styles.container}>
       <Container maxWidth="xl">
@@ -39,4 +39,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default HadithToday;
