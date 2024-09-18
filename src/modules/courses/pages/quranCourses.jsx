@@ -10,7 +10,11 @@ const QuranCourses = () => {
 
   return (
     <>
+      {/* Use first app bar configuration */}
       <CustomAppBar {...firstAppBarConfig} />
+      {/* Main content */}
+
+      {/* Use second app bar configuration */}
       <CustomAppBar {...secondAppBarConfig} />
       <Courses title="دورات القرآن" />
     </>
@@ -18,3 +22,4 @@ const QuranCourses = () => {
 };
 
 export default QuranCourses;
+
