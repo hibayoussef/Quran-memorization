@@ -20,7 +20,7 @@ const colors = {
   },
   background: {
     main: "#F8F7FA",
-    paper: "white",
+    paper: "white"
   },
   edit: {
     main: "#212b36",
