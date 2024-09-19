@@ -4,9 +4,21 @@ import { Box } from "@mui/material";
 import FilterTabs from "../components/Tabs/filterTabs";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import CustomAppBar from "../../shared/components/CustomAppBar/CustomAppBar";
+import {
+  firstAppBarConfig,
+  secondAppBarConfig,
+} from "../../shared/components/CustomAppBar/CustomAppBar.config";
+
 const RegisteredCourses = () => {
     return (
       <>
+        {/* Use first app bar configuration */}
+        <CustomAppBar {...firstAppBarConfig} />
+        {/* Main content */}
+
+        {/* Use second app bar configuration */}
+        <CustomAppBar {...secondAppBarConfig} />
         <Courses title="الدّورات المسجّل عليها" />
         <Box style={{ margin: "3rem" }}>
           <Box style={{ marginBottom: "3rem" }}>

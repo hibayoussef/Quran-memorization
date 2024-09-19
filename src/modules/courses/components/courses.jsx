@@ -1,6 +1,6 @@
 import React from "react";
 import CoursesHeader from "./CoursesHeader/header";
-import BackgroundImageUrl from "../../../assets/images/Background.svg";
+import BackgroundImageUrl from "../../../assets/images/Hero.png";
 import { coursesStyles } from "./courses.styles";
 import { Box } from "@mui/material";
 
