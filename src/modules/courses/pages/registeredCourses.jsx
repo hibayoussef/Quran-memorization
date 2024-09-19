@@ -4,11 +4,11 @@ import { Box } from "@mui/material";
 import FilterTabs from "../components/Tabs/filterTabs";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import CustomAppBar from "../../shared/components/CustomAppBar/CustomAppBar";
+import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig,
-} from "../../shared/components/CustomAppBar/CustomAppBar.config";
+} from "../../shared/components/AppBar/CustomAppBar.config";
 
 const RegisteredCourses = () => {
     return (

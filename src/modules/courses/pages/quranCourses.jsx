@@ -1,10 +1,11 @@
 import React from "react";
 import Courses from "../components/courses";
-import CustomAppBar from "../../shared/components/CustomAppBar/CustomAppBar";
+import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig
-} from "../../shared/components/CustomAppBar/CustomAppBar.config";
+} from "../../shared/components/AppBar/CustomAppBar.config";
+import Course from "../components/Card/course";
 
 const QuranCourses = () => {
 
@@ -17,6 +18,10 @@ const QuranCourses = () => {
       {/* Use second app bar configuration */}
       <CustomAppBar {...secondAppBarConfig} />
       <Courses title="دورات القرآن" />
+      <Course />
+      <Course />
+      <Course />
+      {/* <Footer /> */}
     </>
   );
 };

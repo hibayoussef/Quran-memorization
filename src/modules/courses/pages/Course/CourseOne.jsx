@@ -1,11 +1,11 @@
 import React from "react";
 import Courses from "../../components/courses";
-import CustomAppBar from "../../../shared/components/CustomAppBar/CustomAppBar";
+import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig,
 
-} from "../../../shared/components/CustomAppBar/CustomAppBar.config";
+} from "../../../shared/components/AppBar/CustomAppBar.config";
 const CourseOne = () => {
   return (
     <>
