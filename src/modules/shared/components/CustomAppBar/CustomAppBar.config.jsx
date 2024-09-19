@@ -1,20 +1,17 @@
-// /modules/shared/components/CustomAppBar/CustomAppBar.config.jsx
-
 import React from "react";
 import {
   Button,
   Typography,
-  TextField,
   IconButton,
   Badge,
-  Box,
+  Box
 } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
-import { Avatar, Menu, MenuItem } from "@mui/material";
+import { Avatar } from "@mui/material";
 import DynamicSearchField from "../../../../components/shared/search/DynamicSearchField";
+import UserDropdown from "../../../../components/shared/dropDown/DynamicDropDown";
 
 const colors = {
   primary: "#2C3971",
@@ -32,7 +29,7 @@ export const firstAppBarConfig = {
       to="/login"
       variant="text"
       color="inherit"
-      sx={{ color: "white" }}
+      sx={{ color: colors.secondary }}
     >
       تسجيل الدّخول
     </Button>
@@ -55,7 +52,8 @@ export const firstAppBarConfig = {
           mr: 1,
         }}
       >
-        <WhatsAppIcon sx={{ color: "white" }} /> {/* WhatsApp icon white */}
+        <WhatsAppIcon sx={{ color: colors.secondary }} />{" "}
+        {/* WhatsApp icon white */}
       </Box>
       +123 456 7890
     </Typography>
@@ -79,7 +77,15 @@ export const secondAppBarConfig = {
       </IconButton>
       <DynamicSearchField
         placeholder="بحث..."
-        onSearch={(query) => console.log("Searching for:", query)} // Replace with your search logic
+        onSearch={(query) => console.log("Searching for:", query)} // Handle search logic here
+        borderRadius="30px" // Custom border radius
+        borderColor="gray" // Initial border color
+        hoverBorderColor={colors.primary} // Border color on hover
+        focusedBorderColor={colors.primary} // Border color on focus
+        width="300px" // Set a custom width
+        customStyles={{
+          marginLeft: "16px", // Additional styles if needed
+        }}
       />
     </div>
   ),
@@ -88,8 +94,22 @@ export const secondAppBarConfig = {
       <Typography variant="h6" sx={{ color: colors.primary, mr: 1 }}>
         Logo Name
       </Typography>
-      <Avatar />
-      <Typography variant="body1">User Name</Typography>
+    
+      <UserDropdown
+        avatarUrl="https://example.com/avatar.jpg"
+        userName="Ahmad Ahmad"
+        textColor={colors.primary}
+        arrowSize={20} // Control the arrow size dynamically
+        marginLeft={8}
+        menuItems={["Update Profile", "Logout"]}
+        onMenuItemClick={(item) => {
+          if (item === "Logout") {
+            // Handle logout logic
+          } else if (item === "Update Profile") {
+            // Navigate to update profile
+          }
+        }}
+      />
     </div>
   ),
 };
