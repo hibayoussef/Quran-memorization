@@ -3,7 +3,7 @@ import CourseComponent from "./CourseComponent";
 import RegisteredCourses from "./pages/registeredCourses";
 import QuranCourses from './pages/quranCourses';
 import CourseOne from "./pages/Course/CourseOne";
-import N from "../n/n";
+import TeacherCourses from "../TeacherCourse/teacherCourses";
 
 const RoleRouting = () => {
   return (
@@ -12,7 +12,7 @@ const RoleRouting = () => {
         <Route path="/registered-courses" element={<RegisteredCourses />} />
         <Route path="/quran-courses" element={<QuranCourses />} />
         <Route path="/course" element={<CourseOne />} />
-        <Route path="/courses-table" element={<N />} />
+        <Route path="/my-courses" element={<TeacherCourses />} /> {/*teachers*/}
       </Route>
       <Route path="*" element={<p>not found 404</p>} />
     </Routes>

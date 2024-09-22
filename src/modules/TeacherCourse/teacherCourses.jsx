@@ -5,8 +5,20 @@ import {
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
 import { Grid, Container, Box } from "@mui/material";
+import ViewAll from "../shared/components/ViewAll/ViewAll";
+import { useState } from "react";
+import PaginationComponent from "../../components/shared/pagination/pagination";
 
-const N = () => {
+const TeacherCourses = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+
+    // Handle page change
+    const handlePageChange = (event, value) => {
+      setCurrentPage(value);
+      console.log(`Current Page: ${value}`);
+      // You can also fetch new data based on `value`
+  };
+  
   return (
     <>
       {/* Use first app bar configuration */}
@@ -21,6 +33,7 @@ const N = () => {
           maxWidth={false} // This removes the maxWidth limitation and makes it full width
           style={{ marginTop: "3rem", padding: "0 70px" }} // Adjust padding equally on both sides
         >
+          <ViewAll title="الدّورات المسؤول عنها:" showAllText="عرض الكل" />
           {/* Wrap Grid in a Box to ensure even spacing */}
           <Box sx={{ width: "100%", padding: "0 16px" }}>
             {/* Responsive Grid Layout */}
@@ -39,10 +52,17 @@ const N = () => {
               ))}
             </Grid>
           </Box>
+          <PaginationComponent
+            count={20} // Total number of pages
+            page={currentPage} // Controlled page state
+            onChange={handlePageChange} // Handle page change
+          />
+
+          <ViewAll title="جدول الدّورات:" />
         </Container>
       </Box>
     </>
   );
 };
 
-export default N;
+export default TeacherCourses;
