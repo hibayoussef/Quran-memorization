@@ -7,7 +7,7 @@ export const styles = {
     alignItems: "start",
   },
   title: {
-    color: "headerText.main",
-    mt: "-8px"
+    color: "text.secondary",
+    mt: "-8px",
   },
 };

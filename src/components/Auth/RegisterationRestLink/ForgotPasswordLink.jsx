@@ -16,7 +16,7 @@ const ForgotPasswordLink = () => {
         <Typography
           variant="inputTitle"
           sx={{
-            color: "headerText.main",
+            color: "text.secondary",
             textDecoration: "underline",
             cursor: "pointer",
           }}

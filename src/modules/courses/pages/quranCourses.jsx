@@ -6,6 +6,7 @@ import {
   secondAppBarConfig
 } from "../../shared/components/AppBar/CustomAppBar.config";
 import Course from "../components/Card/course";
+import { Box } from "@mui/material";
 
 const QuranCourses = () => {
 
@@ -18,9 +19,6 @@ const QuranCourses = () => {
       {/* Use second app bar configuration */}
       <CustomAppBar {...secondAppBarConfig} />
       <Courses title="دورات القرآن" />
-      <Course />
-      <Course />
-      <Course />
       {/* <Footer /> */}
     </>
   );

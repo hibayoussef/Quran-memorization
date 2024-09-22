@@ -49,7 +49,7 @@ const FormFields = ({ fields, register, errors }) => {
                       />
                     }
                     label={
-                      <Typography sx={{ color: "headerText.main" }}>
+                      <Typography sx={{ color: "text.secondary" }}>
                         {" "}
                         {option.label}
                       </Typography>

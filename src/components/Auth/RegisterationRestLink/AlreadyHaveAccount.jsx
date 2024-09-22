@@ -26,7 +26,7 @@ const AlreadyHaveAccount = ({
         <NavLink to={linkUrl}>
           <Typography
             sx={{
-              color: "headerText.main",
+              color: "text.secondary",
               textDecoration: "underline",
               cursor: "pointer",
               ml: 1,

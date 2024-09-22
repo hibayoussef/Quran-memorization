@@ -7,7 +7,7 @@ import { AppBar, Toolbar, Box } from "@mui/material";
 export const StyledAppBar = styled(AppBar)(
   ({ theme, height, backgroundColor }) => ({
     height: height || "40px", // Default height is 40px
-    backgroundColor: backgroundColor || theme.palette.headerText.main, // Default to headerText color
+    backgroundColor: backgroundColor || theme.palette.text.secondary, // Default to headerText color
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

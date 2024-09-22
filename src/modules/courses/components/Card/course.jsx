@@ -3,59 +3,51 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  Box,
-  LinearProgress,
+  Box
 } from "@mui/material";
+import ProgressBarWithInfo from "../../../../components/shared/ProgressBarWithInfo/ProgressBarWithInfo";
+import GeneralDescription from "../Details/General-description/general";
 
 const Course = () => {
   return (
     <>
-      <Card sx={{ maxWidth: 440 }}>
+      <Card sx={{ maxWidth: 529 }}>
         {/* Image Box with reduced margin */}
-        <Box sx={{ margin: "10px 10px 0px 10px" }}>
+        <Box sx={{ margin: "20px 13px 0px 13px" }}>
           <CardMedia
             component="img"
             image="https://t3.ftcdn.net/jpg/05/68/99/80/360_F_568998040_m42feFA9RajqmuR5DTlWwox44fxE3MOi.jpg"
             alt="course image"
             sx={{
               borderRadius: "12px",
-              objectFit: "cover", // Ensures the image scales well
+              objectFit: "cover",
               width: "100%",
             }}
           />
         </Box>
 
         {/* Card Content */}
-        <CardContent>
+        <CardContent sx={{ padding: "2px 16px 16px 16px" }}>
           {/* Title */}
-          <Typography gutterBottom variant="h5" color="headerText.main">
+          <Typography
+            gutterBottom
+            // variant="h5"
+            color="text.secondary"
+            sx={{ marginTop: "0px", fontSize: "22px" }}
+          >
             وقفات مع الايات
           </Typography>
-
-          {/* Course and Type */}
-          <Box sx={{ display: "flex", flexDirection: "row", gap: "100px" }}>
-            <Typography variant="body2" color="text.secondary">
-              دورة: قرأن
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              نوع الدورة: مكثفة
-            </Typography>
-          </Box>
-
-          {/* Instructor */}
-          <Typography variant="body2" color="text.secondary">
-            مدرس الدورة: الاستاذ أمجد
-          </Typography>
-
-          {/* Progress Line */}
-          <Box sx={{ mt: 2 }}>
-            <LinearProgress variant="determinate" value={40} />
-          </Box>
-
-          {/* Time Remaining */}
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-            6 ساعات و 40 دقيقة
-          </Typography>
+          <GeneralDescription
+            title1="دورة"
+            value1="قرأن"
+            title2="نوع الدّورة"
+            value2="مكثّفة"
+          />
+          <ProgressBarWithInfo
+            value={70}
+            leftText="6 ساعات, 40دقيقة"
+            rightText="70%"
+          />
         </CardContent>
       </Card>
     </>

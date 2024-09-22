@@ -55,7 +55,7 @@ const ResendCodeTimer = ({
             }
           }}
           sx={{
-            color: isLinkDisabled ? "grey" : "headerText.main",
+            color: isLinkDisabled ? "grey" : "text.secondary",
             textDecoration: isLinkDisabled ? "none" : "underline",
             cursor: isLinkDisabled ? "default" : "pointer",
             ml: 1,
