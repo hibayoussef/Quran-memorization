@@ -3,7 +3,7 @@ import CourseComponent from "./CourseComponent";
 import RegisteredCourses from "./pages/registeredCourses";
 import QuranCourses from './pages/quranCourses';
 import CourseOne from "./pages/Course/CourseOne";
-import TeacherCourses from "../TeacherCourse/teacherCourses";
+import TeacherCourses from "../TeacherCourses/teacherCourses";
 import StudentCourses from "../StudentCourses/studentCourses";
 
 const RoleRouting = () => {
