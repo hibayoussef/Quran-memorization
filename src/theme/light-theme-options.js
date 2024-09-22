@@ -30,6 +30,7 @@ const colors = {
     main: "rgb(33, 43, 54)",
     secondary: "#2C3971",
     percent: "#00000080",
+    buttonText: "#FFFFFF"
   },
   primary: {
     main: "rgb(32, 101, 209)",
