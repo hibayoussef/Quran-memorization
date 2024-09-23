@@ -5,8 +5,6 @@ import {
   firstAppBarConfig,
   secondAppBarConfig
 } from "../../shared/components/AppBar/CustomAppBar.config";
-import Course from "../components/Card/course";
-import { Box } from "@mui/material";
 
 const QuranCourses = () => {
 
