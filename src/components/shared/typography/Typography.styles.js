@@ -5,8 +5,8 @@ export const containerBoxStyles = (containerStyles, gap) => ({
   ...containerStyles,
 });
 
-export const labelTypographyStyles = (labelStyles) => ({
-  fontWeight: "bold",
+export const labelTypographyStyles = (labelStyles, fontWeight) => ({
+  fontWeight: fontWeight || labelStyles.fontWeight || "bold", // Use the passed fontWeight, labelStyles fontWeight if present, otherwise use "bold"
   ...labelStyles,
 });
 

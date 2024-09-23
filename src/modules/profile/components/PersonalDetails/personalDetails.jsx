@@ -48,7 +48,8 @@ const PersonalDetails = ({ age, yearsOfExperience, placeOfResidence }) => {
         <StyledGridItem item xs={12} sm={6} lg={3}>
           <TypographyComponent
             label="تقييم الطّالب"
-            value="5/10" // Update this value as needed
+            ratingValue={3}
+            // value="5/10" // Update this value as needed
             labelStyles={{ color: "text.secondary", fontSize: "17px" }}
             valueStyles={{
               color: "card.secondary",

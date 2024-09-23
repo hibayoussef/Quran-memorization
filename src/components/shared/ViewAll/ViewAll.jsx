@@ -6,7 +6,7 @@ import {
   titleStyle,
   showAllTextStyle,
 } from "./ViewAll.styles"; // Import styles
-import TypographyComponent from "../../../../components/shared/typography/Typography";
+import TypographyComponent from "../typography/Typography";
 
 const ViewAll = ({ title = "العنوان:", showAllText }) => {
   return (

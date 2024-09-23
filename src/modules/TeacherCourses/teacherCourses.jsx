@@ -5,7 +5,7 @@ import {
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
 import { Grid, Container, Box, Button } from "@mui/material";
-import ViewAll from "../shared/components/ViewAll/ViewAll";
+import ViewAll from "../../components/shared/ViewAll/ViewAll";
 import { useState } from "react";
 import PaginationComponent from "../../components/shared/pagination/pagination";
 import TableComponent from "../../components/shared/table/Table";

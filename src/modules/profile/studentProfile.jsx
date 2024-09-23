@@ -5,12 +5,12 @@ import {
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
 import { Grid, Container, Box } from "@mui/material";
-import ViewAll from "../shared/components/ViewAll/ViewAll";
+import ViewAll from "../../components/shared/ViewAll/ViewAll";
 import { useState } from "react";
-import PaginationComponent from "../../components/shared/pagination/pagination";
 import Courses from "../courses/components/courses";
 import PersonalDetails from "./components/PersonalDetails/personalDetails";
 import MediaCard from "../../components/shared/mediaCard/MediaCard";
+import ProfileCard from "./components/ProfileCard/profileCard";
 
 const StudentProfile = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -58,6 +58,7 @@ const StudentProfile = () => {
           maxWidth={false} // This removes the maxWidth limitation and makes it full width
           style={{ marginTop: "3rem", marginBottom: "3rem", padding: "0 70px" }} // Adjust padding equally on both sides
         >
+          <ProfileCard />
           <PersonalDetails />
 
           <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
@@ -79,11 +80,7 @@ const StudentProfile = () => {
               ))}
             </Grid>
           </Box>
-          <PaginationComponent
-            count={20} // Total number of pages
-            page={currentPage} // Controlled page state
-            onChange={handlePageChange} // Handle page change
-          />
+         
 
           <ViewAll title="الشّهادات الحاصل عليها:" showAllText="عرض الكل" />
           {/* Display Certificates */}
