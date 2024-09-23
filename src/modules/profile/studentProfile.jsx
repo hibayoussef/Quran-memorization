@@ -12,31 +12,30 @@ import Courses from "../courses/components/courses";
 import PersonalDetails from "./components/PersonalDetails/personalDetails";
 import MediaCard from "../../components/shared/mediaCard/MediaCard";
 
-
 const StudentProfile = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
-// Dummy data for certificates
-const certificateData = [
-  {
-    id: 1,
-    imageUrl:
-      "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg", // Replace with actual image URLs
-    title: "Certificate 1",
-  },
-  {
-    id: 2,
-    imageUrl:
-      "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
-    title: "Certificate 2",
-  },
-  {
-    id: 3,
-    imageUrl:
-      "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
-    title: "Certificate 3",
-  },
-];
+  // Dummy data for certificates
+  const certificateData = [
+    {
+      id: 1,
+      imageUrl:
+        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg", // Replace with actual image URLs
+      title: "Certificate 1",
+    },
+    {
+      id: 2,
+      imageUrl:
+        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
+      title: "Certificate 2",
+    },
+    {
+      id: 3,
+      imageUrl:
+        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
+      title: "Certificate 3",
+    },
+  ];
   // Handle page change
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -57,11 +56,11 @@ const certificateData = [
       <Box>
         <Container
           maxWidth={false} // This removes the maxWidth limitation and makes it full width
-          style={{ marginTop: "3rem", marginBottom: "3rem",  padding: "0 70px" }} // Adjust padding equally on both sides
+          style={{ marginTop: "3rem", marginBottom: "3rem", padding: "0 70px" }} // Adjust padding equally on both sides
         >
           <PersonalDetails />
 
-          <ViewAll title="الدّورات المشترك بها:" showAllText="عرض الكل" />
+          <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
           {/* Wrap Grid in a Box to ensure even spacing */}
           <Box sx={{ width: "100%", padding: "0 16px" }}>
             {/* Responsive Grid Layout */}
@@ -91,17 +90,13 @@ const certificateData = [
           <Box sx={{ width: "100%", padding: "0 16px" }}>
             <Grid container spacing={5}>
               {certificateData.map((certificate) => (
-                <Grid
-                  item
-                  xs={12} // Full width on extra small screens
-                  sm={6} // 2 items per row on small screens
-                  md={4} // 3 items per row on medium screens
-                  lg={4} // 4 items per row on large screens
-                  key={certificate.id}
-                >
+                <Grid item xs={12} sm={6} md={4} lg={4} key={certificate.id}>
+                  {/* Pass props to MediaCard to ensure it remains dynamic and reusable */}
                   <MediaCard
                     imageUrl={certificate.imageUrl}
                     title={certificate.title}
+                    maxWidth={529} // Set maxWidth to match the style
+                    imageHeight="auto" // Let the image height adapt dynamically
                   />
                 </Grid>
               ))}

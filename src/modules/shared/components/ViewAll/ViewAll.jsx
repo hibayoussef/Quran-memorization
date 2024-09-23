@@ -6,6 +6,7 @@ import {
   titleStyle,
   showAllTextStyle,
 } from "./ViewAll.styles"; // Import styles
+import TypographyComponent from "../../../../components/shared/typography/Typography";
 
 const ViewAll = ({ title = "العنوان:", showAllText }) => {
   return (
@@ -13,9 +14,11 @@ const ViewAll = ({ title = "العنوان:", showAllText }) => {
       <Grid container alignItems="center" justifyContent="space-between">
         {/* Right-aligned title */}
         <Grid item>
-          <Typography variant="h5" sx={titleStyle}>
-            {title}
-          </Typography>
+          <TypographyComponent
+            label={title}
+            labelStyles={titleStyle}
+            hideColon={false}
+          />
         </Grid>
         {showAllText && (
           <Grid item>

@@ -3,10 +3,12 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  Box
+  Box, 
+  Grid 
 } from "@mui/material";
 import ProgressBarWithInfo from "../../../../components/shared/ProgressBarWithInfo/ProgressBarWithInfo";
-import GeneralDescription from "../Details/General-description/general";
+import TypographyComponent from "../../../../components/shared/typography/Typography";
+import { StyledGridItem } from "../../../profile/components/PersonalDetails/personal.styles";
 
 const Course = () => {
   return (
@@ -37,12 +39,54 @@ const Course = () => {
           >
             وقفات مع الايات
           </Typography>
-          <GeneralDescription
-            title1="دورة"
-            value1="قرأن"
-            title2="نوع الدّورة"
-            value2="مكثّفة"
-          />
+
+          <Grid container spacing={2}>
+            <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+              {" "}
+              <TypographyComponent
+                label="دورة"
+                value="قرأن"
+                labelStyles={{ color: "text.secondary", fontSize: "14px" }}
+                valueStyles={{
+                  color: "card.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+              />
+            </StyledGridItem>
+
+            <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+              {" "}
+              <TypographyComponent
+                label="نوع الدّورة"
+                value="مكثّفة"
+                labelStyles={{ color: "text.secondary", fontSize: "14px" }}
+                valueStyles={{
+                  color: "card.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+              />
+            </StyledGridItem>
+
+            <StyledGridItem item  lg={12}>
+              {" "}
+              <TypographyComponent
+                label="مدرّس الدّورة"
+                value="الأستاذ أحمد أحمد"
+                labelStyles={{ color: "text.secondary", fontSize: "14px" }}
+                valueStyles={{
+                  color: "card.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+              />
+            </StyledGridItem>
+          </Grid>
+
           <ProgressBarWithInfo
             value={70}
             leftText="6 ساعات, 40دقيقة"
