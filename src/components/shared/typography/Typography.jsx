@@ -13,7 +13,7 @@ const TypographyComponent = ({
   labelStyles = {},
   valueStyles = {},
   containerStyles = {},
-  gap = 1,
+  gap = 2,
   hideColon = false,
   ratingValue,
   ratings = [], // مصفوفة من التقييمات
@@ -47,7 +47,7 @@ const TypographyComponent = ({
                 display: "flex",
                 justifyContent: "space-between", // لضمان أن التقييم يظهر في النهاية
                 alignItems: "center",
-                gap: 1,
+                gap: 6,
                 width: "100%", // اجعل الحاوية كاملة العرض
               }}
             >
