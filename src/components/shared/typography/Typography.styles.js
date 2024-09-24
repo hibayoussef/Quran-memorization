@@ -1,25 +1,27 @@
+// ملف الأنماط لمكون TypographyComponent
+
 export const containerBoxStyles = (containerStyles, gap) => ({
   display: "flex",
-  alignItems: "flex-start",
+  alignItems: "flex-start", // تعديل التوسيط لمحاذاة التقييمات إلى الأعلى
   gap: gap,
-  flexWrap: "nowrap", // تأكد من أن العناصر تظل في نفس السطر
-  overflow: "hidden", // منع تجاوز المحتوى خارج الحاوية
+  flexWrap: "nowrap", // يسمح بالانتقال إلى السطر التالي عند صغر الشاشة
   ...containerStyles,
 });
 
 export const labelTypographyStyles = (labelStyles, fontWeight) => ({
-  fontWeight: fontWeight || labelStyles.fontWeight || "bold", // استخدم fontWeight إذا تم تمريره أو القيمة الافتراضية
-  whiteSpace: "nowrap", // منع التفاف النص الخاص بالتسمية
-  direction: "rtl", // تأكد من ظهور النص باللغة العربية بشكل صحيح
+  fontWeight: fontWeight || labelStyles.fontWeight || "bold",
+  whiteSpace: "nowrap", // منع التفاف النص
+  fontSize: "16px",
+  direction: "rtl", // ضبط اتجاه النص العربي
   ...labelStyles,
-  display: "flex",
-  alignItems: "flex-start",
+  
 });
 
 export const valueTypographyStyles = (valueStyles) => ({
-  whiteSpace: "pre-wrap", // السماح بالتفاف النص في القيمة
-  overflow: "hidden",
-  textAlign: "start", // ضبط النص من اليسار إلى اليمين للقيمة
-  direction: "rtl", // تأكد من اتجاه النص العربي
   ...valueStyles,
+});
+
+export const ratingStyles = () => ({
+  fontSize: "20px", // حجم التقييم الافتراضي
+  marginLeft: "5px", // إضافة مسافة بين التقييم والنص
 });
