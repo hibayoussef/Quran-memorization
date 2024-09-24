@@ -6,6 +6,7 @@ import CourseOne from "./pages/Course/CourseOne";
 import TeacherCourses from "../TeacherCourses/teacherCourses";
 import StudentCourses from "../StudentCourses/studentCourses";
 import StudentProfile from "../profile/studentProfile";
+import TeacherProfile from "../profile/teacherProfile";
 
 const RoleRouting = () => {
   return (
@@ -18,6 +19,7 @@ const RoleRouting = () => {
         <Route path="/student-courses" element={<StudentCourses />} />{" "}
         {/*student*/}
         <Route path="/student-profile" element={<StudentProfile />} />{" "}
+        <Route path="/teacher-profile" element={<TeacherProfile />} />{" "}
         {/*student*/}
       </Route>
       <Route path="*" element={<p>not found 404</p>} />
