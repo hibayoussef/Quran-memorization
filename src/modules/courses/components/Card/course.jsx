@@ -1,14 +1,14 @@
 import {
+  Box,
   Card,
-  CardMedia,
   CardContent,
-  Typography,
-  Box, 
-  Grid 
+  CardMedia,
+  Grid,
+  Typography
 } from "@mui/material";
-import ProgressBarWithInfo from "../../../../components/shared/ProgressBarWithInfo/ProgressBarWithInfo";
 import TypographyComponent from "../../../../components/shared/typography/Typography";
 import { StyledGridItem } from "../../../profile/components/PersonalDetails/personal.styles";
+import ProgressBarComponent from "../../../../components/shared/progressBar/ProgressBar";
 
 const Course = () => {
   return (
@@ -87,7 +87,7 @@ const Course = () => {
             </StyledGridItem>
           </Grid>
 
-          <ProgressBarWithInfo
+          <ProgressBarComponent
             value={70}
             leftText="6 ساعات, 40دقيقة"
             rightText="70%"

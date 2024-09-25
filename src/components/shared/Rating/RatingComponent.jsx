@@ -9,11 +9,10 @@ const RatingComponent = ({
   containerCustomStyles = {},
   labelCustomStyles = {},
   ratingCustomStyles = {},
-  labelWidth = "100px", // تحديد عرض ثابت للنص
+  labelWidth = "100px",
 }) => {
   return (
     <Box sx={containerStyles(containerCustomStyles)}>
-      {/* ضبط الحاوية لتظهر التقييم والنص في نفس المحاذاة */}
       <Box
         sx={{
           display: "flex",
@@ -22,7 +21,6 @@ const RatingComponent = ({
           width: "100%",
         }}
       >
-        {/* تحديد عرض ثابت للنص لضمان أن جميع التسميات تبدأ بنفس المكان */}
         <Typography
           sx={{
             ...labelStyles(labelCustomStyles),

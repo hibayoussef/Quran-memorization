@@ -5,7 +5,7 @@ import TableCell from "@mui/material/TableCell";
 export const StyledButton = styled(Button)({
   backgroundColor: "#F8B641",
   "&:hover": {
-    backgroundColor: "#e5a234", // Slightly darker shade on hover
+    backgroundColor: "#e5a234"
   },
 });
 

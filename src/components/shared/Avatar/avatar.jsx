@@ -1,5 +1,5 @@
 // AvatarComponent.js
-import { StyledAvatar } from "./avatar.styles"; // adjust the path if necessary
+import { StyledAvatar } from "./avatar.styles"; 
 
 const AvatarComponent = ({ alt, src, width, height }) => {
   return (

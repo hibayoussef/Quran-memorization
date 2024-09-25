@@ -1,15 +1,14 @@
 import React from "react";
+import Courses from "../courses/components/courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
-  firstAppBarConfig,
-  secondAppBarConfig,
+    firstAppBarConfig,
+    secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
-import Courses from "../courses/components/courses";
+import FirstDateSection from "./pages/firstDateSection";
 import HalfLayout from "./pages/halfLayout";
-import FirstSection from "./pages/firstSection";
-// Hearing sessions
-const Sessions = ({ imageUrl, children }) => {
 
+const SessionsDate = ({ imageUrl, children }) => {
   return (
     <>
       {/* Use first app bar configuration */}
@@ -18,16 +17,14 @@ const Sessions = ({ imageUrl, children }) => {
 
       {/* Use second app bar configuration */}
       <CustomAppBar {...secondAppBarConfig} />
-      <Courses title="دورات القرآن/ وقفات مع الآيات / جلسات التسميع" />
+      <Courses title="دورات القرآن/ وقفات مع الآيات / موعد جلسات التسميع" />
 
       {/* ********************************************************************** */}
       <HalfLayout imageUrl={imageUrl}>
-        <FirstSection />
+        <FirstDateSection />
       </HalfLayout>
-      
     </>
   );
 };
 
-export default Sessions;
-
+export default SessionsDate;

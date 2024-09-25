@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import AvatarComponent from "../../../../components/shared/Avatar/avatar";
+import AvatarComponent from "../../../../components/shared/avatar/avatar";
 import TypographyComponent from "../../../../components/shared/typography/Typography";
 import {
   profileCardContainerStyles,

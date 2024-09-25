@@ -6,9 +6,9 @@ import {
   textContainerStyle,
   leftTextStyle,
   rightTextStyle,
-} from "./ProgressBarWithInfo.styles";
+} from "./ProgressBar.styles";
 
-const ProgressBarWithInfo = ({ value, leftText, rightText }) => {
+const ProgressBarComponent = ({ value, leftText, rightText }) => {
   return (
     <Box sx={containerStyle}>
       {/* Progress Bar */}
@@ -30,4 +30,4 @@ const ProgressBarWithInfo = ({ value, leftText, rightText }) => {
   );
 };
 
-export default ProgressBarWithInfo;
+export default ProgressBarComponent;

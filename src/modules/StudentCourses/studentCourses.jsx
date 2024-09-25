@@ -1,72 +1,13 @@
+import { Box, Container, Grid } from "@mui/material";
+import { useState } from "react";
+import PaginationComponent from "../../components/shared/pagination/pagination";
+import ViewAll from "../../components/shared/viewAll/ViewAll";
 import Course from "../courses/components/Card/course";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
-import { Grid, Container, Box, Button } from "@mui/material";
-import { useState } from "react";
-import PaginationComponent from "../../components/shared/pagination/pagination";
-import ViewAll from "../../components/shared/ViewAll/ViewAll";
-
-// Define the columns
-const columns = [
-  { id: "name", label: "اسم الدّورة", minWidth: 110 },
-  {
-    id: "population",
-    label: "تاريخ الجّلسة",
-    minWidth: 110,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "size",
-    label: "موعد الجلسة",
-    minWidth: 110,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-
-  // Add an extra column for the button without a label
-  {
-    id: "startSession",
-    label: "", // No label
-    minWidth: 110,
-    align: "center",
-    render: () => (
-      <Button
-        sx={{ backgroundColor: "secondary.main", color: "text.buttonText" }}
-        variant="contained"
-      >
-        أبدأ الجلسة
-      </Button>
-    ),
-  },
-];
-
-// Define the rows
-const createData = (name, code, population, size) => {
-  const density = population / size;
-  return { name, code, population, size, density };
-};
-
-const rows = [
-  createData("وقفات مع القرأن", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
-];
 
 const StudentCourses = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -75,7 +16,6 @@ const StudentCourses = () => {
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
     console.log(`Current Page: ${value}`);
-    // You can also fetch new data based on `value`
   };
 
   return (

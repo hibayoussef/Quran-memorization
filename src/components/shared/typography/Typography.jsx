@@ -16,10 +16,10 @@ const TypographyComponent = ({
   gap = 2,
   hideColon = false,
   ratingValue,
-  ratings = [], // مصفوفة من التقييمات
+  ratings = [], 
   maxRating = 5,
   fontWeight,
-  labelWidth = "120px", // إضافة خاصية labelWidth لضبط عرض التسميات
+  labelWidth = "120px"
 }) => {
   if (!label && !value && ratingValue === undefined && ratings.length === 0)
     return null;
@@ -37,7 +37,6 @@ const TypographyComponent = ({
         </Typography>
       )}
 
-      {/* عرض التقييمات إن وجدت */}
       {ratings.length > 0 ? (
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           {ratings.map((rating, index) => (
@@ -45,17 +44,15 @@ const TypographyComponent = ({
               key={index}
               sx={{
                 display: "flex",
-                justifyContent: "space-between", // لضمان أن التقييم يظهر في النهاية
+                justifyContent: "space-between",
                 alignItems: "center",
                 gap: 6,
-                width: "100%", // اجعل الحاوية كاملة العرض
+                width: "100%", 
               }}
             >
-              {/* الجزء الخاص بالتسمية مع تحديد عرض ثابت */}
               <Typography sx={{ minWidth: labelWidth, textAlign: "right", color: "text.secondary" }}>
                 {rating.label}
               </Typography>
-              {/* الجزء الخاص بالتقييم */}
               <Rating
                 value={rating.value}
                 max={maxRating}
@@ -73,7 +70,6 @@ const TypographyComponent = ({
           sx={ratingStyles()}
         />
       ) : (
-        // عرض القيمة النصية إن وجدت
         value && (
           <Typography sx={valueTypographyStyles(valueStyles)}>
             {value}

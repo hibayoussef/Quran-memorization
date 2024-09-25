@@ -1,8 +1,10 @@
+// DynamicSearchField.js
 import React, { useState } from "react";
 import { TextField, InputAdornment, useMediaQuery } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { searchFieldStyles } from "./Search.styles";
 
-const DynamicSearchField = ({
+const SearchComponent = ({
   placeholder = "بحث...",
   onSearch,
   fullWidthOnSmallScreens = true,
@@ -30,22 +32,15 @@ const DynamicSearchField = ({
       variant="outlined"
       size="small"
       fullWidth={isSmallScreen && fullWidthOnSmallScreens}
-      sx={{
-        "& .MuiOutlinedInput-root": {
-          borderRadius: borderRadius, // Custom border radius from props
-          "& fieldset": {
-            borderColor: borderColor, // Default border color from props
-          },
-          "&:hover fieldset": {
-            borderColor: hoverBorderColor, // Border color on hover
-          },
-          "&.Mui-focused fieldset": {
-            borderColor: focusedBorderColor, // Border color when focused
-          },
-        },
-        width: isSmallScreen ? "100%" : width, // Responsive width control
-        ...customStyles, // Allow additional styles to be passed
-      }}
+      sx={searchFieldStyles(
+        borderRadius,
+        borderColor,
+        hoverBorderColor,
+        focusedBorderColor,
+        isSmallScreen,
+        width,
+        customStyles
+      )}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
@@ -57,4 +52,4 @@ const DynamicSearchField = ({
   );
 };
 
-export default DynamicSearchField;
+export default SearchComponent;

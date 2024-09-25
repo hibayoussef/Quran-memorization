@@ -1,16 +1,14 @@
+import { Grid } from "@mui/material";
 import React from "react";
-import { Box, Grid } from "@mui/material";
-import imageUrl from '../../../assets/images/E5las.png'
+import imageUrl from '../../../assets/images/E5las.png';
+import BackgroundImage from "../../../components/BackgroundImage/BackgroundImage";
 const HalfLayout = ({  children }) => {
   return (
-    <Grid container sx={{ height: "100vh" }}>
-      {/* القسم الأول لصورة */}
-
-      {/* القسم الثاني لمكون "First" */}
+    <Grid container sx={{ height: "100vh", padding: "1rem" }}>
       <Grid
         item
         xs={12}
-        sm={6}
+        md={6}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         {children}
@@ -18,18 +16,19 @@ const HalfLayout = ({  children }) => {
       <Grid
         item
         xs={12}
-        sm={6}
+        md={6}
         sx={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "red",
+          alignItems: "flex-start",
+          marginTop: "3rem",
         }}
       >
-        <img
-          src={imageUrl}
-          alt={imageUrl}
-          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+        <BackgroundImage
+          imageUrl={imageUrl}
+          height="80%"
+          width="85%"
+          borderRadius="16px"
         />
       </Grid>
     </Grid>

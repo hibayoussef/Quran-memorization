@@ -1,17 +1,16 @@
-import React from "react";
-import {
-  Button,
-  Typography,
-  IconButton,
-  Badge,
-  Box
-} from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import {
+  Badge,
+  Box,
+  Button,
+  IconButton,
+  Typography
+} from "@mui/material";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar } from "@mui/material";
-import DynamicSearchField from "../../../../components/shared/search/DynamicSearchField";
-import UserDropdown from "../../../../components/shared/dropDown/DynamicDropDown";
+import UserDropdown from "../../../../components/shared/dropDown/DropDown";
+import SearchComponent from "../../../../components/shared/search/Search";
 
 const colors = {
   primary: "#2C3971",
@@ -75,7 +74,7 @@ export const secondAppBarConfig = {
           <NotificationsIcon sx={{ color: colors.primary }} />
         </Badge>
       </IconButton>
-      <DynamicSearchField
+      <SearchComponent
         placeholder="بحث..."
         onSearch={(query) => console.log("Searching for:", query)} // Handle search logic here
         borderRadius="30px" // Custom border radius

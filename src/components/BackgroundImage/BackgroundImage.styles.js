@@ -6,5 +6,7 @@ export const backgroundImageStyles = {
     width: "100%",
     height: "100%",
     zIndex: 1, // Ensure the background is behind other content
+    backgroundRepeat: "no-repeat",
+    display: "flex", 
   },
 };

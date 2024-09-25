@@ -6,15 +6,15 @@ import {
   StyledTypography,
   StyledIconButton,
   StyledArrowDropDownIcon,
-} from "./DynamicDropDown.styles"; // Import the styled components
+} from "./DropDown.styles"; 
 
-const DynamicDropdown = ({
+const DropdownComponent = ({
   avatarUrl,
   userName,
   menuItems = [],
   onMenuItemClick = () => {},
-  textColor = "black", // Default color
-  arrowSize = 24, // Default arrow size (you can adjust it)
+  textColor = "black", 
+  arrowSize = 24,
   marginLeft,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -64,4 +64,4 @@ const DynamicDropdown = ({
   );
 };
 
-export default DynamicDropdown;
+export default DropdownComponent;

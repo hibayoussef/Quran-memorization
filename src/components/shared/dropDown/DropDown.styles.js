@@ -1,14 +1,12 @@
 // DynamicStyles.js
-import { styled } from "@mui/system";
+import ArrowDropDownIcon from "@mui/icons-material/ExpandMore";
 import {
   Avatar,
-  IconButton,
-  Typography,
   Box,
-  Menu,
-  MenuItem,
+  IconButton,
+  Typography
 } from "@mui/material";
-import ArrowDropDownIcon from "@mui/icons-material/ExpandMore";
+import { styled } from "@mui/system";
 
 // Styled components
 export const StyledBox = styled(Box)(({ marginLeft }) => ({

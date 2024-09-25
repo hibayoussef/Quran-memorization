@@ -1,48 +1,24 @@
+import { Box, Container, Grid } from "@mui/material";
+import ViewAll from "../../components/shared/viewAll/ViewAll";
 import Course from "../courses/components/Card/course";
+import Courses from "../courses/components/courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
-import { Grid, Container, Box } from "@mui/material";
-import ViewAll from "../../components/shared/ViewAll/ViewAll";
-import { useState } from "react";
-import Courses from "../courses/components/courses";
 import PersonalDetailsTeacher from "./components/PersonalDetailsTeacher/personalDetailsTeacher";
-import MediaCard from "../../components/shared/mediaCard/MediaCard";
 import ProfileCard from "./components/ProfileCard/profileCard";
 
 const TeacherProfile = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
-  // Dummy data for certificates
-  const certificateData = [
-    {
-      id: 1,
-      imageUrl:
-        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg", // Replace with actual image URLs
-      title: "Certificate 1",
-    },
-    {
-      id: 2,
-      imageUrl:
-        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
-      title: "Certificate 2",
-    },
-    {
-      id: 3,
-      imageUrl:
-        "https://khamsat.hsoubcdn.com/images/services/3709485/6f948141e9060d1d9291f8afdcd81844.jpg",
-      title: "Certificate 3",
-    },
-  ];
   // Handle page change
-  const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-    console.log(`Current Page: ${value}`);
-    // You can also fetch new data based on `value`
-  };
-
+  // const handlePageChange = (event, value) => {
+  //   setCurrentPage(value);
+  //   console.log(`Current Page: ${value}`);
+  //   // You can also fetch new data based on `value`
+  // };
   
   return (
     <>

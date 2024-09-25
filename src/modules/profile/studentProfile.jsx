@@ -1,20 +1,17 @@
+import { Box, Container, Grid } from "@mui/material";
+import MediaCard from "../../components/shared/mediaCard/MediaCard";
+import ViewAll from "../../components/shared/viewAll/ViewAll";
 import Course from "../courses/components/Card/course";
+import Courses from "../courses/components/courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
-import { Grid, Container, Box } from "@mui/material";
-import ViewAll from "../../components/shared/ViewAll/ViewAll";
-import { useState } from "react";
-import Courses from "../courses/components/courses";
 import PersonalDetails from "./components/PersonalDetails/personalDetails";
-import MediaCard from "../../components/shared/mediaCard/MediaCard";
 import ProfileCard from "./components/ProfileCard/profileCard";
 
 const StudentProfile = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
   // Dummy data for certificates
   const certificateData = [
     {
@@ -36,13 +33,7 @@ const StudentProfile = () => {
       title: "Certificate 3",
     },
   ];
-  // Handle page change
-  const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-    console.log(`Current Page: ${value}`);
-    // You can also fetch new data based on `value`
-  };
-
+  
   return (
     <>
       {/* Use first app bar configuration */}

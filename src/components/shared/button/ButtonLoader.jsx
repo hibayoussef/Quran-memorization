@@ -1,10 +1,12 @@
-import {
-  Box,
-  Button,
-  CircularProgress,
-  Typography,
-} from "@mui/material";
+// ButtonLoader.js
 import React from "react";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
+import PropTypes from "prop-types";
+import {
+  buttonStyles,
+  loaderContainerStyles,
+  textStyles,
+} from "./ButtonLoader.styles";
 
 const ButtonLoader = (props) => {
   const { loading, disableOnLoading, ...rest } = props;
@@ -13,31 +15,21 @@ const ButtonLoader = (props) => {
     <Button
       {...rest}
       disabled={disableOnLoading === true && loading}
-      sx={{
-        width: 110,
-        backgroundColor: "origin.main",
-        "&:hover": {
-          backgroundColor: "origin.main",
-        },
-      }}
+      sx={buttonStyles}
     >
-      {props.loading && (
-        <Box
-          sx={{
-            position: "absolute",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+      {loading && (
+        <Box sx={loaderContainerStyles}>
           <CircularProgress sx={{ color: "white" }} size="25px" />
         </Box>
       )}
-      <Typography sx={{ visibility: props.loading ? "hidden" : "visible" }}>
-        {props.children}
-      </Typography>
+      <Typography sx={textStyles(loading)}>{props.children}</Typography>
     </Button>
   );
+};
+
+ButtonLoader.propTypes = {
+  loading: PropTypes.bool,
+  disableOnLoading: PropTypes.bool,
 };
 
 export default ButtonLoader;

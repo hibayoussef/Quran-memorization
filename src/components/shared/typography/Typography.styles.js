@@ -22,6 +22,6 @@ export const valueTypographyStyles = (valueStyles) => ({
 });
 
 export const ratingStyles = () => ({
-  fontSize: "20px", // حجم التقييم الافتراضي
-  marginLeft: "5px", // إضافة مسافة بين التقييم والنص
+  fontSize: "20px",
+  marginLeft: "5px"
 });

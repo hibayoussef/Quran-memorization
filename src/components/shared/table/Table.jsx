@@ -82,8 +82,8 @@ const TableComponent = ({
         labelDisplayedRows={({ from, to, count }) =>
           `${from}-${to} من ${count}`
         }
-        labelNextButton="التالي"
-        labelPreviousButton="السابق"
+        labelNextButton="التّالي"
+        labelPreviousButton="السّابق"
       />
     </Paper>
   );
