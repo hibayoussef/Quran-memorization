@@ -14,3 +14,14 @@ export const VerificationCodeForm = React.lazy(() =>
 // =========== Courses ============
 export const CoursesRouting
   = loadable(() => import("../modules/courses/CourseRouting"));
+
+//=========== Dashboard ============
+export const AccountsStudentsRouting = loadable(() =>
+  import("../modules/accountsManagement/students/AccountsStudentsRouting")
+);
+export const AccountsTeachersRouting = loadable(() =>
+  import("../modules/accountsManagement/teachers/AccountsTeachersRouting")
+);
+export const AccountsUsersRouting = loadable(() =>
+  import("../modules/accountsManagement/users/AccountsUsersRouting")
+);

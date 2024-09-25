@@ -6,6 +6,7 @@ export const authFormStyles = {
     alignItems: "center",
     flexDirection: "column",
     backdropFilter: "blur(20px)",
+    
   },
   formContainer: {
     minWidth: "350px",

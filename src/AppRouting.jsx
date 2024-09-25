@@ -7,6 +7,8 @@ import {
   CreateAccount,
   CoursesRouting,
 } from "../src/routes/route";
+import Loader from "./components/shared/Loader";
+import DashboardSidebarRouting from "./modules/Dashboard/DashboardRouting";
 
 const AppRouting = () => {
   return (
@@ -19,6 +21,19 @@ const AppRouting = () => {
         element={<VerificationCodeForm />}
       />
       <Route path="/courses/*" element={<CoursesRouting />} />
+      <Route
+        path="Dashboard/*"
+        element={
+          // <ShouldBeLogged>
+            <React.Suspense fallback={<Loader />}>
+              {/* <QueryClientProvider client={queryClient}> */}
+                <DashboardSidebarRouting />
+                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+              {/* </QueryClientProvider> */}
+            </React.Suspense>
+          // </ShouldBeLogged>
+        }
+      />
     </Routes>
   );
 };

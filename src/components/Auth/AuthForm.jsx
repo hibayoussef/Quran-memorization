@@ -17,7 +17,7 @@ const AuthForm = ({
   backgroundImageUrl,
   marginTop,
   extraSection1,
-  extraSection2
+  extraSection2,
 }) => {
   return (
     <Box sx={authFormStyles.root}>
