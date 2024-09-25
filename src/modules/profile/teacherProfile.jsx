@@ -1,7 +1,7 @@
 import { Box, Container, Grid } from "@mui/material";
 import ViewAll from "../../components/shared/viewAll/ViewAll";
-import Course from "../courses/components/Card/course";
-import Courses from "../courses/components/courses";
+import Course from "../courses/components/card/Course";
+import Courses from "../courses/components/Courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,

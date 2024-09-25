@@ -2,7 +2,7 @@ import { Box, Container, Grid } from "@mui/material";
 import { useState } from "react";
 import PaginationComponent from "../../components/shared/pagination/pagination";
 import ViewAll from "../../components/shared/viewAll/ViewAll";
-import Course from "../courses/components/Card/course";
+import Course from "../courses/components/card/Course";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,

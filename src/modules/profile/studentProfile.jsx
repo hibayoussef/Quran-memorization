@@ -1,8 +1,8 @@
 import { Box, Container, Grid } from "@mui/material";
 import MediaCard from "../../components/shared/mediaCard/MediaCard";
 import ViewAll from "../../components/shared/viewAll/ViewAll";
-import Course from "../courses/components/Card/course";
-import Courses from "../courses/components/courses";
+import Course from "../courses/components/card/Course";
+import Courses from "../courses/components/Courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
@@ -33,7 +33,7 @@ const StudentProfile = () => {
       title: "Certificate 3",
     },
   ];
-  
+
   return (
     <>
       {/* Use first app bar configuration */}

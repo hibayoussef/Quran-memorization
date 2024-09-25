@@ -4,7 +4,7 @@ import {
   firstAppBarConfig,
   secondAppBarConfig,
 } from "../shared/components/AppBar/CustomAppBar.config";
-import Courses from "../courses/components/courses";
+import Courses from "../courses/components/Courses";
 import HalfLayout from "./pages/halfLayout";
 import FirstSection from "./pages/firstSection";
 // Hearing sessions

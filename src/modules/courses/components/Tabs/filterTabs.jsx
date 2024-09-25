@@ -1,7 +1,7 @@
 // Tabs.jsx
+import { Box } from "@mui/material";
 import React, { useState } from "react";
-import { Box, Typography } from "@mui/material";
-import { StyledTabs, StyledTab } from "./filterTabs.styles";
+import { StyledTab, StyledTabs } from "./FilterTabs.styles";
 
 const FilterTabs = () => {
   const [value, setValue] = useState(0);

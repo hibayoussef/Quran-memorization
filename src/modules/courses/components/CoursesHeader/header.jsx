@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
-import { headerStyles } from "./header.styles";
+import { headerStyles } from "./Header.styles";
 
 const CoursesHeader = ({
   imageUrl,

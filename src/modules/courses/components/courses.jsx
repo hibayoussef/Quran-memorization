@@ -1,7 +1,7 @@
 import React from "react";
-import CoursesHeader from "./CoursesHeader/header";
+import CoursesHeader from "./coursesHeader/Header";
 import BackgroundImageUrl from "../../../assets/images/Hero.png";
-import { coursesStyles } from "./courses.styles";
+import { coursesStyles } from "./Courses.styles";
 import { Box } from "@mui/material";
 
 const Courses = ({title}) => {

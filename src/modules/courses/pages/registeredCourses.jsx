@@ -1,7 +1,7 @@
-import Courses from "../components/courses";
-import Course from "../components/Card/course";
+import Courses from "../components/Courses";
+import Course from "../components/card/Course";
 import { Box } from "@mui/material";
-import FilterTabs from "../components/Tabs/filterTabs";
+import FilterTabs from "../components/tabs/FilterTabs";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";

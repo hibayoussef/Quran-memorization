@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import CourseComponent from "./CourseComponent";
-import RegisteredCourses from "./pages/registeredCourses";
-import QuranCourses from './pages/quranCourses';
-import CourseOne from "./pages/Course/CourseOne";
-import TeacherCourses from "../TeacherCourses/teacherCourses";
-import StudentCourses from "../StudentCourses/studentCourses";
+import RegisteredCourses from "./pages/RegisteredCourses";
+import QuranCourses from './pages/QuranCourses';
+import CourseOne from "./pages/course/CourseOne";
+import TeacherCourses from "../teacherCourses/teacherCourses";
+import StudentCourses from "../studentCourses/studentCourses";
 import StudentProfile from "../profile/studentProfile";
 import TeacherProfile from "../profile/teacherProfile";
 import Sessions from "../sessions/sessions";

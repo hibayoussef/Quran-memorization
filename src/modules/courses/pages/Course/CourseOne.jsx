@@ -1,5 +1,5 @@
 import React from "react";
-import Courses from "../../components/courses";
+import Courses from "../../components/Courses";
 import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
