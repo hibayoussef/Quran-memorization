@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { BoxStyled } from "../../components/styled/BoxStyled";
-import BackgroundImage from "../BackgroundImage/BackgroundImage";
 import { authFormStyles } from "./AuthForm.styles";
 import FormButtons from "./FormButtons/FormButtons";
 import FormFields from "./FormFields/FormFields";
 import FormHeader from "./FormHeader/FormHeader";
+import BackgroundImageTry from "../BackgroundImageTry/BackgroundImageTry";
 const AuthForm = ({
   title,
   fields = [],
@@ -20,8 +20,8 @@ const AuthForm = ({
   extraSection2,
 }) => {
   return (
-    <Box sx={authFormStyles.root}>
-      <BackgroundImage
+    <Box sx={{...authFormStyles.root, position: "relative"}}>
+      <BackgroundImageTry
         imageUrl={backgroundImageUrl}
         size="cover"
         position="center"
