@@ -9,6 +9,7 @@ import {
 } from "../shared/components/AppBar/CustomAppBar.config";
 import PersonalDetailsTeacher from "./components/PersonalDetailsTeacher/personalDetailsTeacher";
 import ProfileCard from "./components/ProfileCard/profileCard";
+import ContentWrapper from "../../components/styled/ContentWrapper";
 
 const TeacherProfile = () => {
   // const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +20,7 @@ const TeacherProfile = () => {
   //   console.log(`Current Page: ${value}`);
   //   // You can also fetch new data based on `value`
   // };
-  
+
   return (
     <>
       {/* Use first app bar configuration */}
@@ -40,7 +41,7 @@ const TeacherProfile = () => {
 
           <ViewAll title="الدّورات المشترك بها:" showAllText="عرض الكل" />
           {/* Wrap Grid in a Box to ensure even spacing */}
-          <Box sx={{ width: "100%", padding: "0 16px" }}>
+          <ContentWrapper>
             {/* Responsive Grid Layout */}
             <Grid container spacing={5}>
               {Array.from({ length: 3 }).map((_, index) => (
@@ -56,7 +57,7 @@ const TeacherProfile = () => {
                 </Grid>
               ))}
             </Grid>
-          </Box>
+          </ContentWrapper>
         </Container>
       </Box>
     </>

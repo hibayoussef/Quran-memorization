@@ -10,6 +10,7 @@ import {
 } from "../shared/components/AppBar/CustomAppBar.config";
 import PersonalDetails from "./components/PersonalDetails/personalDetails";
 import ProfileCard from "./components/ProfileCard/profileCard";
+import ContentWrapper from "../../components/styled/ContentWrapper";
 
 const StudentProfile = () => {
   // Dummy data for certificates
@@ -54,7 +55,7 @@ const StudentProfile = () => {
 
           <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
           {/* Wrap Grid in a Box to ensure even spacing */}
-          <Box sx={{ width: "100%", padding: "0 16px" }}>
+          <ContentWrapper>
             {/* Responsive Grid Layout */}
             <Grid container spacing={5}>
               {Array.from({ length: 3 }).map((_, index) => (
@@ -70,8 +71,7 @@ const StudentProfile = () => {
                 </Grid>
               ))}
             </Grid>
-          </Box>
-         
+          </ContentWrapper>
 
           <ViewAll title="الشّهادات الحاصل عليها:" showAllText="عرض الكل" />
           {/* Display Certificates */}
