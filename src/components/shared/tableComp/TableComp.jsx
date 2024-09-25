@@ -13,11 +13,8 @@ import {
   MenuItem,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
-const TableComp = ({ columns, data, onActionClick }) => {
-  // State to handle the menu open and close actions
+const TableComp = ({ columns, data, actions, onActionClick }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedRowId, setSelectedRowId] = useState(null);
 
@@ -64,14 +61,20 @@ const TableComp = ({ columns, data, onActionClick }) => {
                   open={Boolean(anchorEl) && selectedRowId === row.id}
                   onClose={handleMenuClose}
                 >
-                  <MenuItem onClick={() => onActionClick("edit", row)}>
-                    <EditIcon sx={{ marginRight: "5px" }} />
-                    Edit
-                  </MenuItem>
-                  <MenuItem onClick={() => onActionClick("delete", row)}>
-                    <DeleteIcon sx={{ marginRight: "5px" }} />
-                    Delete
-                  </MenuItem>
+                  {actions.map((action) => (
+                    <MenuItem
+                      key={action.label}
+                      onClick={() => {
+                        onActionClick(action.value, row);
+                        handleMenuClose();
+                      }}
+                    >
+                      {React.cloneElement(action.icon, {
+                        sx: { marginRight: "5px" },
+                      })}
+                      {action.label}
+                    </MenuItem>
+                  ))}
                 </Menu>
               </TableCell>
             </TableRow>
