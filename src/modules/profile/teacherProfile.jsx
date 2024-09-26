@@ -25,12 +25,12 @@ const TeacherProfile = () => {
   return (
     <>
       {/* Use first app bar configuration */}
-      {/* <CustomAppBar {...firstAppBarConfig} /> */}
+      <CustomAppBar {...firstAppBarConfig} />
       {/* Main content */}
 
       {/* Use second app bar configuration */}
-      {/* <CustomAppBar {...secondAppBarConfig} />
-      <Courses title="الملف الشّخصي" /> */}
+        <CustomAppBar {...secondAppBarConfig} />
+      {/* <Courses title="الملف الشّخصي" /> */}
 
       <PageWrapper>
         <ContentWrapper>
