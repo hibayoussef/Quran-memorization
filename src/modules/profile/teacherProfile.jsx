@@ -33,13 +33,10 @@ const TeacherProfile = () => {
       <Courses title="الملف الشّخصي" /> */}
 
       <PageWrapper>
-        <ProfileCard />
-        <PersonalDetailsTeacher />
-
-        <ViewAll title="الدّورات المشترك بها:" showAllText="عرض الكل" />
-        {/* Wrap Grid in a Box to ensure even spacing */}
         <ContentWrapper>
-          {/* Responsive Grid Layout */}
+          <ProfileCard />
+          <PersonalDetailsTeacher />
+          <ViewAll title="الدّورات المشترك بها:" showAllText="عرض الكل" />
           <Grid container spacing={5}>
             {Array.from({ length: 3 }).map((_, index) => (
               <Grid

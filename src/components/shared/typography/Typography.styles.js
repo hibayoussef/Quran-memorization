@@ -2,19 +2,23 @@
 
 export const containerBoxStyles = (containerStyles, gap) => ({
   display: "flex",
-  alignItems: "flex-start", // تعديل التوسيط لمحاذاة التقييمات إلى الأعلى
+  alignItems: "flex-start",
   gap: gap,
-  flexWrap: "nowrap", // يسمح بالانتقال إلى السطر التالي عند صغر الشاشة
+  flexWrap: {
+    sm: "nowrap",
+    xs: "wrap",
+  }, 
+
+  width: "100%", 
   ...containerStyles,
 });
 
 export const labelTypographyStyles = (labelStyles, fontWeight) => ({
   fontWeight: fontWeight || labelStyles.fontWeight || "bold",
-  whiteSpace: "nowrap", // منع التفاف النص
+  whiteSpace: "nowrap", 
   fontSize: "16px",
-  direction: "rtl", // ضبط اتجاه النص العربي
+  direction: "rtl", 
   ...labelStyles,
-  
 });
 
 export const valueTypographyStyles = (valueStyles) => ({
@@ -23,5 +27,5 @@ export const valueTypographyStyles = (valueStyles) => ({
 
 export const ratingStyles = () => ({
   fontSize: "20px",
-  marginLeft: "5px"
+  marginLeft: "5px",
 });

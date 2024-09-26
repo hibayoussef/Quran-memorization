@@ -66,7 +66,10 @@ const PersonalDetailsTeacher = ({
             labelStyles={{ color: "text.secondary", fontSize: "17px" }}
             valueStyles={{
               color: "card.secondary",
-              fontSize: "18px",
+              fontSize: {
+                sm: "18px", 
+                xs: "14px"
+              },
               fontWeight: 400,
             }}
             hideColon={false}
