@@ -16,12 +16,8 @@ const ProfileCard = () => {
       <AvatarComponent
         alt="Profile image"
         src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-        height={avatarStyles.sm.height}
-        width={avatarStyles.sm.width}
-        sx={{
-          height: { sm: avatarStyles.sm.height, xs: avatarStyles.xs.height },
-          width: { sm: avatarStyles.sm.width, xs: avatarStyles.xs.width },
-        }}
+        height={{ sm: avatarStyles.sm.height, xs: avatarStyles.xs.height }}
+        width={{ sm: avatarStyles.sm.width, xs: avatarStyles.xs.width }}
       />
       <Box sx={textContainerStyles}>
         <TypographyComponent

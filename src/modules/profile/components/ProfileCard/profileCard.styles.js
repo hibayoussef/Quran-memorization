@@ -22,7 +22,7 @@ export const mainLabelStyles = {
   color: "text.secondary",
   fontSize: {
     sm: "30px",
-    xs: "16px",
+    xs: "20px",
   },
 };
 
