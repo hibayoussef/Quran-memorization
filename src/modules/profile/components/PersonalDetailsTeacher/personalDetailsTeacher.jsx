@@ -13,6 +13,7 @@ const PersonalDetailsTeacher = ({
     { label: "التقييد بالدوام", value: 5 },
     { label: "التقييد بوقت الدوام", value: 2 },
   ];
+  
   return (
     <StyledBox>
       <Grid container spacing={2}>

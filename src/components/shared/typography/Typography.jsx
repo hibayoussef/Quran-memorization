@@ -46,7 +46,10 @@ const TypographyComponent = ({
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                gap: 6,
+                gap: {
+                  sm: 6, 
+                  xs: 1
+                },
                 width: "100%", 
               }}
             >
