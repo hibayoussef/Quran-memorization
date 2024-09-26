@@ -3,11 +3,9 @@ import ViewAll from "../../components/shared/viewAll/ViewAll";
 import ContentWrapper from "../../components/styled/ContentWrapper";
 import PageWrapper from "../../components/styled/PageWrapper";
 import Course from "../courses/components/card/Course";
+import Courses from "../courses/components/Courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
-import {
-  firstAppBarConfig,
-  secondAppBarConfig,
-} from "../shared/components/AppBar/CustomAppBar.config";
+import { secondAppBarConfig } from "../shared/components/AppBar/CustomAppBar.config";
 import PersonalDetailsTeacher from "./components/PersonalDetailsTeacher/personalDetailsTeacher";
 import ProfileCard from "./components/ProfileCard/profileCard";
 
@@ -24,12 +22,12 @@ const TeacherProfile = () => {
   return (
     <>
       {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
+      {/* <CustomAppBar {...firstAppBarConfig} /> */}
       {/* Main content */}
 
       {/* Use second app bar configuration */}
-        <CustomAppBar {...secondAppBarConfig} />
-      {/* <Courses title="الملف الشّخصي" /> */}
+      <CustomAppBar {...secondAppBarConfig} />
+      <Courses title="الملف الشّخصي" />
 
       <PageWrapper>
         <ContentWrapper>
