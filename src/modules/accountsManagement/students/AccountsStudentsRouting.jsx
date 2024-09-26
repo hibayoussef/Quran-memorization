@@ -8,7 +8,6 @@ const AccountsStudentsRouting = () => {
       <Route element={<AccountsStudentsComponent />}>
         <Route path="/" element={<AccountsStudentsIndex />} />
       </Route>
-
       <Route path="*" element={<p>not found 404</p>} />
     </Routes>
   );
