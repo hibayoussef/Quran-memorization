@@ -1,7 +1,8 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import ViewAll from "../../components/shared/viewAll/ViewAll";
+import ContentWrapper from "../../components/styled/ContentWrapper";
+import PageWrapper from "../../components/styled/PageWrapper";
 import Course from "../courses/components/card/Course";
-import Courses from "../courses/components/Courses";
 import CustomAppBar from "../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
@@ -9,8 +10,6 @@ import {
 } from "../shared/components/AppBar/CustomAppBar.config";
 import PersonalDetailsTeacher from "./components/PersonalDetailsTeacher/personalDetailsTeacher";
 import ProfileCard from "./components/ProfileCard/profileCard";
-import ContentWrapper from "../../components/styled/ContentWrapper";
-import PageWrapper from "../../components/styled/PageWrapper";
 
 const TeacherProfile = () => {
   // const [currentPage, setCurrentPage] = useState(1);
