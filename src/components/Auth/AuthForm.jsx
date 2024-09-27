@@ -6,6 +6,8 @@ import FormButtons from "./FormButtons/FormButtons";
 import FormFields from "./FormFields/FormFields";
 import FormHeader from "./FormHeader/FormHeader";
 import BackgroundImageTry from "../BackgroundImageTry/BackgroundImageTry";
+import Basmalah from '../../assets/images/basmalah.png';
+  
 const AuthForm = ({
   title,
   fields = [],
@@ -20,12 +22,34 @@ const AuthForm = ({
   extraSection2,
 }) => {
   return (
-    <Box sx={{...authFormStyles.root, position: "relative"}}>
+    <Box sx={{ ...authFormStyles.root, position: "relative" }}>
       <BackgroundImageTry
         imageUrl={backgroundImageUrl}
         size="cover"
         position="center"
       />
+
+      {/* Display the "بسم الله الرحمن الرحيم" image above the form */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: "2rem",
+          marginTop: "1rem",
+          zIndex: 10001, // Ensure it's above the background image but below other content
+        }}
+      >
+        <img
+          src={Basmalah} // Adjust this path according to your file location
+          alt="بسم الله الرحمن الرحيم"
+          style={{
+            maxWidth: "500px", // Adjust the max-width as needed
+            width: "100%",
+            // height: "auto",
+          }}
+        />
+      </Box>
 
       <BoxStyled sx={authFormStyles.formContainer}>
         <FormHeader title={title} />
@@ -36,7 +60,6 @@ const AuthForm = ({
         >
           <FormFields fields={fields} register={register} errors={errors} />
           {extraSection1 && extraSection1}
-
           {extraSection2 && extraSection2}
           <FormButtons buttons={buttons} loading={loading} />
         </Box>
