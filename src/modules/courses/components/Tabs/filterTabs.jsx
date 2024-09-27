@@ -1,29 +1,28 @@
-// Tabs.jsx
+// FilterTabs.jsx
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import { StyledTab, StyledTabs } from "./FilterTabs.styles";
 
-const FilterTabs = () => {
+const FilterTabs = ({ tabsData }) => {
   const [value, setValue] = useState(0);
+  // const theme = useTheme();
+  // const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box>
-      <StyledTabs value={value} onChange={handleChange}>
-        <StyledTab label="جميع الدورات" />
-        <StyledTab label="دورات القرآن" />
-        <StyledTab label="دورات الحديث" />
+    <Box sx={{ marginBottom: "1rem", width: "100%" }}>
+      <StyledTabs
+        value={value}
+        onChange={handleChange}
+        // centered={!isSmallScreen} // Center tabs only on larger screens
+      >
+        {tabsData.map((tab, index) => (
+          <StyledTab key={index} label={tab.label} />
+        ))}
       </StyledTabs>
-
-      {/* Content based on selected tab */}
-      {/* <Box sx={{ p: 2 }}>
-        {value === 0 && <Typography>Content for جميع الدورات</Typography>}
-        {value === 1 && <Typography>Content for دورات القرآن</Typography>}
-        {value === 2 && <Typography>Content for دورات الحديث</Typography>}
-      </Box> */}
     </Box>
   );
 };

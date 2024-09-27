@@ -9,16 +9,9 @@ const DashboardComponent = () => {
   const [selectedItem, setSelectedItem] = useState("Home");
 
   return (
-    <Container maxWidth="lg">
-      <Grid container spacing={2}>
-        {/* <Grid item xs={12} sm={4} md={3} style={{ backgroundColor: "red" }}>
-          <Sidebar onSelectItem={setSelectedItem} />
-        </Grid> */}
-        <Grid item xs={12} sm={8} md={9}>
+    <>
          <Outlet />
-        </Grid>
-      </Grid>
-    </Container>
+    </>
   );
 };
 

@@ -5,6 +5,6 @@ export const coursesStyles = {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    backdropFilter: "blur(20px)"
+    backdropFilter: "blur(20px)", 
   }
 };

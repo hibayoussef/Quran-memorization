@@ -3,10 +3,8 @@ import { styled } from "@mui/material/styles";
 import { Tabs, Tab } from "@mui/material";
 
 export const StyledTabs = styled(Tabs)(({ theme }) => ({
-  // Optionally, you can style the tabs container here if needed
-  // If you want to change the position or the style of the tab indicator, you can do it here
   "& .MuiTabs-indicator": {
-    backgroundColor: "#fff", // Color for the tab indicator
+    backgroundColor: "#fff",
   },
 }));
 
@@ -20,8 +18,15 @@ export const StyledTab = styled(Tab)(({ theme, selected }) => ({
   color: selected ? "#fff" : theme.palette.secondary.main,
   border: `1px solid ${theme.palette.secondary.main}`,
   "&.Mui-selected": {
-    backgroundColor: theme.palette.secondary.main, // Background color for selected tab
-    color: "#fff", // Text color for selected tab
-    // borderBottom: `2px solid ${theme.palette.secondary.main}`, // Red bottom border for selected tab
+    backgroundColor: theme.palette.secondary.main,
+    color: "#fff",
+  },
+
+  // Add styles for smaller screens
+  [theme.breakpoints.down("sm")]: {
+    minWidth: 80, // Adjust the minimum width for small screens
+    height: 30, // Adjust the height for small screens
+    margin: "0 2px", // Reduce margin
+    fontSize: "0.75rem", // Reduce font size
   },
 }));

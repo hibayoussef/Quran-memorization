@@ -1,12 +1,17 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
+import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
+import { firstAppBarConfig, secondAppBarConfig } from "../../../shared/components/AppBar/CustomAppBar.config";
+import PageWrapper from "../../../../components/styled/PageWrapper";
+import ContentWrapper from "../../../../components/styled/ContentWrapper";
 import TableComp from "../../../../components/shared/tableComp/TableComp";
+
 
 const AccountsStudentsIndex = () => {
   
 const columns = [
-  { id: "name", label: "Name" },
-  { id: "age", label: "Age" },
-  { id: "email", label: "Email", align: "left" },
+  { id: "name", label: "اسم الطّالب" },
+  { id: "age", label: "البريد الإلكتروني" },
+  { id: "email", label: "مكان الإقامة", align: "left" },
 ];
 
 const data = [
@@ -27,12 +32,23 @@ const handleActionClick = (action, row) => {
 };
   return (
     <>
-      <TableComp
-        columns={columns}
-        data={data}
-        actions={actions} // Pass dynamic actions here
-        onActionClick={handleActionClick}
-      />
+      {/* Use first app bar configuration */}
+      <CustomAppBar {...firstAppBarConfig} />
+      {/* Main content */}
+
+      {/* Use second app bar configuration */}
+      <CustomAppBar {...secondAppBarConfig} />
+
+      <PageWrapper>
+        <ContentWrapper>
+          <TableComp
+            columns={columns}
+            data={data}
+            actions={actions} // Pass dynamic actions here
+            onActionClick={handleActionClick}
+          />
+        </ContentWrapper>
+      </PageWrapper>
     </>
   );
 };

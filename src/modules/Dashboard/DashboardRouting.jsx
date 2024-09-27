@@ -3,8 +3,16 @@ import {
   AccountsStudentsRouting,
   AccountsTeachersRouting,
   AccountsUsersRouting,
+  AllCoursesRouting,
+  AllLevelsRouting,
+  PlacementRequestsLevelsRouting,
+  RegisterationRequestCoursesRouting,
+  StudentsReviewsRouting,
+  TeacherReviewsRouting,
+  TeachingRequestsRouting,
 } from "../../routes/route";
-import DashboardComponent from "./DashboardComponent.jsx";
+import DashboardComponent from "./DashboardComponent";
+import AllNotificationsRouting from "../notificationsManagement/AllNotificationsRouting";
 
 const DashboardSidebarRouting = () => {
   return (
@@ -22,32 +30,36 @@ const DashboardSidebarRouting = () => {
           />
           <Route path="/accounts/users/*" element={<AccountsUsersRouting />} />
           {/* manage courses */}
-          {/* <Route path="/courses/all/*" element={<AdsHomeRouting />} />
+          <Route path="/courses/all/*" element={<AllCoursesRouting />} />
           <Route
             path="/courses/registration-requests/*"
-            element={<AdsLobbyRouting />}
-          /> */}
+            element={<RegisterationRequestCoursesRouting />}
+          />
           {/* manage Levels */}
-          {/* <Route path="/levels/all/*" element={<AdsHomeRouting />} />
+          <Route path="/levels/all/*" element={<AllLevelsRouting />} />
           <Route
             path="/levels/placement-requests/*"
-            element={<AdsHallRouting />}
-          /> */}
+            element={<PlacementRequestsLevelsRouting />}
+          />
           {/* manage evaluations */}
-          {/* <Route path="/evaluations/all/*" element={<AdsHomeRouting />} />
           <Route
             path="/evaluations/student-reviews/*"
-            element={<AdsHallRouting />}
+            element={<StudentsReviewsRouting />}
           />
           <Route
             path="/evaluations/teacher-reviews/*"
-            element={<AdsHallRouting />}
-          /> */}
+            element={<TeacherReviewsRouting />}
+          />
           {/* Teaching requests */}
-          {/* <Route
+          <Route
             path="/teaching/teaching-requests/all/*"
-            element={<AcademicLevelRouting />}
-          /> */}
+            element={<TeachingRequestsRouting />}
+          />
+          {/* Notifications */}
+          <Route
+            path="/notifications/all/*"
+            element={<AllNotificationsRouting />}
+          />
           {/* site management */}
           {/* <Route
             path="/settings/site-management/*"

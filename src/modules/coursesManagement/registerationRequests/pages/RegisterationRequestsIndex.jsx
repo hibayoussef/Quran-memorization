@@ -1,35 +1,43 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
 import TableComp from "../../../../components/shared/tableComp/TableComp";
 import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
-import { firstAppBarConfig, secondAppBarConfig } from "../../../shared/components/AppBar/CustomAppBar.config";
+import {
+  firstAppBarConfig,
+  secondAppBarConfig,
+} from "../../../shared/components/AppBar/CustomAppBar.config";
 import PageWrapper from "../../../../components/styled/PageWrapper";
 import ContentWrapper from "../../../../components/styled/ContentWrapper";
 
-const AccountsUsersIndex = () => {
+const RegisterationRequestsIndex = () => {
   const columns = [
-    { id: "name", label: "اسم المستخدم" },
-    { id: "age", label: "البريد الإلكتروني" },
-    { id: "email", label: "مكان الإقامة", align: "left" },
+    { id: "name", label: "اسم الطّالب" },
+    { id: "type", label: "تاريخ الطّلب" },
+    { id: "date", label: "اسم الدّورة", align: "left" },
+    { id: "teacher", label: "نوع الدّورة", align: "left" },
+    { id: "teacher", label: "حالة الطّلب", align: "left" },
   ];
 
   const data = [
     {
       id: 1,
       name: "John Doe",
-      age: 30,
-      email: "john.doe@example.com"
+      type: 30,
+      date: "11/5/2024",
+      teacher: "john.doe@example.com",
     },
     {
       id: 2,
       name: "Jane Smith",
       age: 25,
-      email: "jane.smith@example.com"
+      date: "11/5/2024",
+      email: "jane.smith@example.com",
     },
     {
       id: 3,
       name: "Alex Johnson",
       age: 35,
-      email: "alex.johnson@example.com"
+      date: "11/5/2024",
+      email: "alex.johnson@example.com",
     },
   ];
 
@@ -66,4 +74,4 @@ const AccountsUsersIndex = () => {
   );
 };
 
-export default AccountsUsersIndex;
+export default RegisterationRequestsIndex;
