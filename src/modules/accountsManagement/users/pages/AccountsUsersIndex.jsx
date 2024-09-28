@@ -1,9 +1,5 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
 import TableComp from "../../../../components/shared/tableComp/TableComp";
-import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
-import { firstAppBarConfig, secondAppBarConfig } from "../../../shared/components/AppBar/CustomAppBar.config";
-import PageWrapper from "../../../../components/styled/PageWrapper";
-import ContentWrapper from "../../../../components/styled/ContentWrapper";
 
 const AccountsUsersIndex = () => {
   const columns = [
@@ -17,19 +13,19 @@ const AccountsUsersIndex = () => {
       id: 1,
       name: "John Doe",
       age: 30,
-      email: "john.doe@example.com"
+      email: "john.doe@example.com",
     },
     {
       id: 2,
       name: "Jane Smith",
       age: 25,
-      email: "jane.smith@example.com"
+      email: "jane.smith@example.com",
     },
     {
       id: 3,
       name: "Alex Johnson",
       age: 35,
-      email: "alex.johnson@example.com"
+      email: "alex.johnson@example.com",
     },
   ];
 
@@ -45,23 +41,12 @@ const AccountsUsersIndex = () => {
   };
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
-      <PageWrapper>
-        <ContentWrapper>
-          <TableComp
-            columns={columns}
-            data={data}
-            actions={actions} // Pass dynamic actions here
-            onActionClick={handleActionClick}
-          />
-        </ContentWrapper>
-      </PageWrapper>
+            <TableComp
+              columns={columns}
+              data={data}
+              actions={actions} // Pass dynamic actions here
+              onActionClick={handleActionClick}
+            />
     </>
   );
 };

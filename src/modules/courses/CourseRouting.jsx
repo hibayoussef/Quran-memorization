@@ -10,12 +10,13 @@ import TeacherProfile from "../profile/teacherProfile";
 import Sessions from "../sessions/sessions";
 import SessionsDate from "../sessions/sessionsDate";
 
-const RoleRouting = () => {
+const CoursesRouting = () => {
   return (
     <Routes>
       <Route element={<CourseComponent />}>
         <Route path="/registered-courses" element={<RegisteredCourses />} />
         <Route path="/quran-courses" element={<QuranCourses />} />
+        
         <Route path="/course" element={<CourseOne />} />
         <Route path="/my-courses" element={<TeacherCourses />} /> {/*teachers*/}
         <Route path="/student-courses" element={<StudentCourses />} />{" "}
@@ -30,4 +31,4 @@ const RoleRouting = () => {
   );
 };
 
-export default RoleRouting;
+export default CoursesRouting;

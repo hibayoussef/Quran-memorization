@@ -22,6 +22,7 @@ const StudentCourses = () => {
 
   return (
     <>
+    
       {/* Use first app bar configuration */}
       <CustomAppBar {...firstAppBarConfig} />
       {/* Main content */}

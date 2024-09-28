@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import { Box, Container, Grid } from "@mui/material";
-import Sidebar from "./components/sidebar/Sidebar";
-import Content from "./components/content/Content";
-import "./MainPage.css";
+import React from "react";
 import { Outlet } from "react-router-dom";
+import MainLayout from "../../layout/MainLayout";
+import "./MainPage.css";
 
 const DashboardComponent = () => {
-  const [selectedItem, setSelectedItem] = useState("Home");
-
   return (
     <>
-         <Outlet />
+      <MainLayout>
+        <Outlet />
+      </MainLayout>
     </>
   );
 };

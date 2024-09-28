@@ -1,19 +1,11 @@
 import { Grid, Typography } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import ContentWrapper from "../../../components/styled/ContentWrapper";
-import PageWrapper from "../../../components/styled/PageWrapper";
-import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";
-import {
-  firstAppBarConfig,
-  secondAppBarConfig,
-} from "../../shared/components/AppBar/CustomAppBar.config";
-import Courses from "../components/Courses";
+import MainLayout from "../../../layout/MainLayout";
 import Course from "../components/card/Course";
 import FilterTabs from "../components/tabs/FilterTabs";
 
 const RegisteredCourses = () => {
-
   const tabsData = [
     {
       label: "جميع الدورات",
@@ -31,35 +23,24 @@ const RegisteredCourses = () => {
 
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
+      <MainLayout title="الدّورات المسجّل عليها">
+        <FilterTabs tabsData={tabsData} />
 
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
-      <Courses title="الدّورات المسجّل عليها" />
-
-      <PageWrapper>
-        <ContentWrapper>
-          <FilterTabs tabsData={tabsData} />
-
-          {/* Responsive Grid Layout */}
-          <Grid container spacing={{ md: 5, xs: 2 }}>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Grid
-                item
-                xs={12} // Full width on extra small screens (mobile)
-                sm={6} // 2 items per row on small screens (tablets)
-                md={4} // 3 items per row on medium screens (desktop)
-                lg={4} // 4 items per row on large screens
-                key={index}
-              >
-                <Course />
-              </Grid>
-            ))}
-          </Grid>
-        </ContentWrapper>
+        {/* Responsive Grid Layout */}
+        <Grid container spacing={{ md: 5, xs: 2 }}>
+          {Array.from({ length: 3 }).map((_, index) => (
+            <Grid
+              item
+              xs={12} // Full width on extra small screens (mobile)
+              sm={6} // 2 items per row on small screens (tablets)
+              md={4} // 3 items per row on medium screens (desktop)
+              lg={4} // 4 items per row on large screens
+              key={index}
+            >
+              <Course />
+            </Grid>
+          ))}
+        </Grid>
         <Stack
           spacing={2}
           sx={{
@@ -71,7 +52,7 @@ const RegisteredCourses = () => {
         >
           <Pagination count={10} variant="outlined" shape="rounded" />
         </Stack>
-      </PageWrapper>
+      </MainLayout>
     </>
   );
 };

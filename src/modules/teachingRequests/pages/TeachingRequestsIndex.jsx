@@ -1,9 +1,5 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
-import PageWrapper from "../../../components/styled/PageWrapper";
-import ContentWrapper from "../../../components/styled/ContentWrapper";
 import TableComp from "../../../components/shared/tableComp/TableComp";
-import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";
-import { firstAppBarConfig, secondAppBarConfig } from "../../shared/components/AppBar/CustomAppBar.config";
 
 const TeachingRequestsIndex = () => {
   const columns = [
@@ -48,23 +44,12 @@ const TeachingRequestsIndex = () => {
   };
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
-      <PageWrapper>
-        <ContentWrapper>
           <TableComp
             columns={columns}
             data={data}
             actions={actions} // Pass dynamic actions here
             onActionClick={handleActionClick}
           />
-        </ContentWrapper>
-      </PageWrapper>
     </>
   );
 };

@@ -1,10 +1,4 @@
-
-
 import { Delete, Edit, Visibility } from "@mui/icons-material";
-import { firstAppBarConfig, secondAppBarConfig } from "../../../shared/components/AppBar/CustomAppBar.config";
-import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
-import PageWrapper from "../../../../components/styled/PageWrapper";
-import ContentWrapper from "../../../../components/styled/ContentWrapper";
 import TableComp from "../../../../components/shared/tableComp/TableComp";
 
 const AccountsTeachersIndex = () => {
@@ -51,23 +45,12 @@ const AccountsTeachersIndex = () => {
   };
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
-      <PageWrapper>
-        <ContentWrapper>
-          <TableComp
-            columns={columns}
-            data={data}
-            actions={actions} // Pass dynamic actions here
-            onActionClick={handleActionClick}
-          />
-        </ContentWrapper>
-      </PageWrapper>
+            <TableComp
+              columns={columns}
+              data={data}
+              actions={actions} // Pass dynamic actions here
+              onActionClick={handleActionClick}
+            />
     </>
   );
 };

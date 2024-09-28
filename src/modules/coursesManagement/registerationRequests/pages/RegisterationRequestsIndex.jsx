@@ -1,12 +1,7 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
 import TableComp from "../../../../components/shared/tableComp/TableComp";
-import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
-import {
-  firstAppBarConfig,
-  secondAppBarConfig,
-} from "../../../shared/components/AppBar/CustomAppBar.config";
-import PageWrapper from "../../../../components/styled/PageWrapper";
 import ContentWrapper from "../../../../components/styled/ContentWrapper";
+import PageWrapper from "../../../../components/styled/PageWrapper";
 
 const RegisterationRequestsIndex = () => {
   const columns = [
@@ -53,13 +48,6 @@ const RegisterationRequestsIndex = () => {
   };
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
       <PageWrapper>
         <ContentWrapper>
           <TableComp

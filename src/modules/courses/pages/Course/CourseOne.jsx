@@ -1,21 +1,9 @@
 import React from "react";
-import Courses from "../../components/Courses";
-import CustomAppBar from "../../../shared/components/AppBar/CustomAppBar";
-import {
-  firstAppBarConfig,
-  secondAppBarConfig,
-
-} from "../../../shared/components/AppBar/CustomAppBar.config";
+import MainLayout from "../../../../layout/MainLayout";
 const CourseOne = () => {
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-      <Courses title="الدّورات المسجّل عليها/دورات القرآن" />
+      <MainLayout title="الدّورات المسجّل عليها/دورات القرآن"></MainLayout>
     </>
   );
 };

@@ -3,24 +3,16 @@ import Courses from "../components/Courses";
 import CustomAppBar from "../../shared/components/AppBar/CustomAppBar";
 import {
   firstAppBarConfig,
-  secondAppBarConfig
+  secondAppBarConfig,
 } from "../../shared/components/AppBar/CustomAppBar.config";
+import MainLayout from "../../../layout/MainLayout";
 
 const QuranCourses = () => {
-
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-      <Courses title="دورات القرآن" />
-      {/* <Footer /> */}
+      <MainLayout title="دورات القرآن"></MainLayout>
     </>
   );
 };
 
 export default QuranCourses;
-
