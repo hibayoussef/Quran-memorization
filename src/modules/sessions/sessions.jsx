@@ -7,24 +7,17 @@ import {
 import Courses from "../courses/components/Courses";
 import HalfLayout from "./pages/halfLayout";
 import FirstSection from "./pages/firstSection";
+import MainLayout from "../../layout/MainLayout";
 // Hearing sessions
 const Sessions = ({ imageUrl, children }) => {
 
   return (
     <>
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-      <Courses title="دورات القرآن/ وقفات مع الآيات / جلسات التسميع" />
-
-      {/* ********************************************************************** */}
-      <HalfLayout imageUrl={imageUrl}>
-        <FirstSection />
-      </HalfLayout>
-      
+      <MainLayout title="دورات القرآن/ وقفات مع الآيات / جلسات التسميع">
+        <HalfLayout imageUrl={imageUrl}>
+          <FirstSection />
+        </HalfLayout>
+      </MainLayout>
     </>
   );
 };

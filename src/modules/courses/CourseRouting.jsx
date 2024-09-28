@@ -23,6 +23,7 @@ const CoursesRouting = () => {
         {/*student*/}
         <Route path="/student-profile" element={<StudentProfile />} />{" "}
         <Route path="/teacher-profile" element={<TeacherProfile />} />{" "}
+        
         <Route path="/hearing" element={<Sessions />} /> {/*student*/}
         <Route path="/hearing-date" element={<SessionsDate />} /> {/*student*/}
       </Route>
