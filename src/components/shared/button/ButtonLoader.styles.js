@@ -1,9 +1,9 @@
 // ButtonLoader.styles.js
 export const buttonStyles = {
   width: 110,
-  backgroundColor: "origin.main",
+  backgroundColor: "secondary.main",
   "&:hover": {
-    backgroundColor: "origin.main",
+    backgroundColor: "secondary.main",
   },
 };
 

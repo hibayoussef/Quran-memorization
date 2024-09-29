@@ -1,4 +1,3 @@
-// ButtonLoader.js
 import React from "react";
 import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import PropTypes from "prop-types";
@@ -15,7 +14,12 @@ const ButtonLoader = (props) => {
     <Button
       {...rest}
       disabled={disableOnLoading === true && loading}
-      sx={buttonStyles}
+      sx={{
+        ...buttonStyles,
+        width: "100%",
+        transition: "width 0.3s ease",
+      }}
+      fullWidth 
     >
       {loading && (
         <Box sx={loaderContainerStyles}>

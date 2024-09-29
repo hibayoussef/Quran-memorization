@@ -10,6 +10,7 @@ import {
 } from "../shared/components/AppBar/CustomAppBar.config";
 import PageWrapper from "../../components/styled/PageWrapper";
 import ContentWrapper from "../../components/styled/ContentWrapper";
+import MainLayout from "../../layout/MainLayout";
 
 const StudentCourses = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,15 +23,7 @@ const StudentCourses = () => {
 
   return (
     <>
-    
-      {/* Use first app bar configuration */}
-      <CustomAppBar {...firstAppBarConfig} />
-      {/* Main content */}
-
-      {/* Use second app bar configuration */}
-      <CustomAppBar {...secondAppBarConfig} />
-
-      <PageWrapper>
+      <MainLayout>
         <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
         {/* Wrap Grid in a Box to ensure even spacing */}
         <ContentWrapper>
@@ -108,7 +101,7 @@ const StudentCourses = () => {
           page={currentPage} // Controlled page state
           onChange={handlePageChange} // Handle page change
         />
-      </PageWrapper>
+      </MainLayout>
     </>
   );
 };

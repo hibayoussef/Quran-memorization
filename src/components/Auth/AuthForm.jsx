@@ -28,7 +28,6 @@ const AuthForm = ({
         size="cover"
         position="center"
       />
-
       {/* Display the "بسم الله الرحمن الرحيم" image above the form */}
       <Box
         sx={{
@@ -42,7 +41,7 @@ const AuthForm = ({
       >
         <img
           src={Basmalah} // Adjust this path according to your file location
-          alt="بسم الله الرحمن الرحيم"
+          alt="بسم اللّه الرّحمن الرّحيم"
           style={{
             maxWidth: "500px", // Adjust the max-width as needed
             width: "100%",

@@ -20,7 +20,11 @@ const FormButtons = ({ buttons, loading }) => {
             sx={{ width: buttons.length === 1 ? "100%" : "48%" }} // Adjust button width
           >
             {loading && button.loading ? (
-              <ButtonLoader sx={styles.buttonLoader} loading={true} fullWidth>
+              <ButtonLoader
+                sx={styles.buttonLoader}
+                fullWidth
+                loading={true}
+              >
                 {button.text}
               </ButtonLoader>
             ) : (
