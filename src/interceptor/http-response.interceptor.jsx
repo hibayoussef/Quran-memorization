@@ -1,7 +1,7 @@
 import { _axios as Axios } from "../interceptor/http-config";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { _AuthApi } from "services/auth/auth.service";
+import { _AuthApi } from "../services/auth/auth.service";
 export const HttpResponseInterceptor = (navigate) => {
   Axios.interceptors.response.use(
     function (response) {

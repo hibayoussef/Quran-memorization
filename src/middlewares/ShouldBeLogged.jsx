@@ -1,17 +1,18 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { _AuthApi } from "services/auth/auth.service";
+import { _AuthApi } from "../services/auth/auth.service";
 
-const ShouldBeLogged = ({ children }) => {
-  let location = useLocation();
+const ShouldBeLogged = ({ children, allowedRoles }) => {
+  const location = useLocation();
+  const token = _AuthApi.getToken();
+  const role = _AuthApi.getRole();
 
-  if (!_AuthApi.getToken()) {
-    // if (false) {
-    // Redirect them to the /login page, but save the current location they were
-    // trying to go to when they were redirected. This allows us to send them
-    // along to that page after they login, which is a nicer user experience
-    // than dropping them off on the home page.
-    return <Navigate to="/" state={location.pathname} replace />;
-    // return <Navigate to="/home" />;
+  if (!token) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
+
+  if (allowedRoles && !allowedRoles.includes(role)) {
+    // إعادة توجيه المستخدم إلى صفحة غير مصرح له (مثلاً صفحة الخطأ 403) أو الصفحة الرئيسية
+    return <Navigate to="/unauthorized" replace />;
   }
 
   return children;

@@ -2,10 +2,9 @@
 import React from "react";
 import CustomAppBar from "../modules/shared/components/AppBar/CustomAppBar";
 import { firstAppBarConfig, secondAppBarConfig } from "../modules/shared/components/AppBar/CustomAppBar.config";
-import Courses from "../modules/courses/components/Courses";
 import PageWrapper from "../components/styled/PageWrapper";
 import ContentWrapper from "../components/styled/ContentWrapper";
-
+import Courses from "../modules/students/components/Courses"
 
 const MainLayout = ({ title, headerComponent, children }) => {
   return (

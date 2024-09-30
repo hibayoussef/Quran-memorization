@@ -3,8 +3,8 @@ import { _axios } from "../../interceptor/http-config";
 export const _AuthApi = {
   login: async (data) => {
     return _axios.post("/auth/login", data).then((res) => {
-      _AuthApi.storeToken(res.data.data.token);
-      _AuthApi.storeRole(res.data.data.roles?.map((item) => item));
+      _AuthApi.storeToken(res?.data?.data?.token);
+      _AuthApi.storeRole(res?.data?.data?.role);
     });
   },
 
@@ -18,6 +18,8 @@ export const _AuthApi = {
   getToken: () => localStorage.getItem("token"),
   getRole: () => localStorage.getItem("role"),
 
+  isAuthenticated: () => !!localStorage.getItem("token"),
+  
   destroyToken: () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");

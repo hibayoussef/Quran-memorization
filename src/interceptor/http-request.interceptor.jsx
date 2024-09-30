@@ -1,4 +1,4 @@
-import { _AuthApi } from "services/auth/auth.service";
+import { _AuthApi } from "../services/auth/auth.service";
 import { _axios as Axios } from "./http-config";
 
 export const HttpRequestInterceptor = () => {
@@ -9,11 +9,6 @@ export const HttpRequestInterceptor = () => {
       if (request.headers) {
         request.headers.Authorization = token ? `Bearer ${token}` : "";
         request.headers.Accept = "application/json";
-        request.headers.lang = ["en", "ar"].includes(
-          localStorage.getItem("i18nextLng")
-        )
-          ? localStorage.getItem("i18nextLng")
-          : "en";
       }
 
       return request;
