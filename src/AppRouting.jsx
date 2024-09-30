@@ -43,7 +43,7 @@ const AppRouting = () => {
       />
 
       {/* Admin */}
-      <Route
+      {/* <Route
         path="dashboard/*"
         element={
           <ShouldBeLogged allowedRoles={["admin"]}>
@@ -55,22 +55,22 @@ const AppRouting = () => {
             </React.Suspense>
           </ShouldBeLogged>
         }
-      />
+      /> */}
 
       {/* Teachers */}
-      <Route
+      {/* <Route
         path="teacher/*"
         element={
-          // <ShouldBeLogged allowedRoles={["teacher"]}>
+          <ShouldBeLogged allowedRoles={["teacher"]}>
             <React.Suspense fallback={<Loader />}>
               <QueryClientProvider client={queryClient}>
                 <TeachersRouting />
                 <ReactQueryDevtools initialIsOpen={false} />
               </QueryClientProvider>
             </React.Suspense>
-          // </ShouldBeLogged>
+          </ShouldBeLogged>
         }
-      />
+      /> */}
 
       {/* Students */}
       <Route
