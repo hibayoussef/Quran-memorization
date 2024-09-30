@@ -14,6 +14,7 @@ import {
 } from "../../routes/route";
 import DashboardComponent from "./DashboardComponent";
 import ShouldBeLogged from "../../middlewares/ShouldBeLogged";
+import AuthRedirect from "../../middlewares/AuthRedirect";
 
 const DashboardRouting = () => {
   return (
@@ -24,94 +25,95 @@ const DashboardRouting = () => {
           <Route
             path="/accounts/students/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AccountsStudentsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
+
           <Route
             path="/accounts/teachers/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AccountsTeachersRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           <Route
             path="/accounts/users/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AccountsUsersRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           {/* manage courses */}
           <Route
             path="/courses/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AllCoursesRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           <Route
             path="/courses/registration-requests/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <RegisterationRequestCoursesRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           {/* manage Levels */}
           <Route
             path="/levels/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AllLevelsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           <Route
             path="/levels/placement-requests/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <PlacementRequestsLevelsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           {/* manage evaluations */}
           <Route
             path="/evaluations/student-reviews/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <StudentsReviewsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           <Route
             path="/evaluations/teacher-reviews/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <TeacherReviewsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           {/* Teaching requests */}
           <Route
             path="/teaching/teaching-requests/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <TeachingRequestsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
           {/* Notifications */}
           <Route
             path="/notifications/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["admin"]}>
+              <AuthRedirect shouldBeLogged={true} allowedRoles={["admin"]}>
                 <AllNotificationsRouting />
-              </ShouldBeLogged>
+              </AuthRedirect>
             }
           />
         </Route>

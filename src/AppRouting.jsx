@@ -10,10 +10,11 @@ import {
 import Loader from "./components/shared/Loader";
 import ShouldBeLogged from "./middlewares/ShouldBeLogged";
 import ShouldNotBeLogged from "./middlewares/ShouldNotBeLogged";
-import DashboardRouting from "./modules/admin/DashboardRouting";
+// import DashboardRouting from "./modules/admin/DashboardRouting";
 import Login from "./pages/auth/pages/Login";
 import StudentsRouting from "./modules/students/StudentsRouting";
-import TeachersRouting from "./modules/teachers/TeachersRouting";
+import AuthRedirect from "./middlewares/AuthRedirect";
+// import TeachersRouting from "./modules/teachers/TeachersRouting";
 
 const AppRouting = () => {
   const queryClient = new QueryClient({
@@ -30,9 +31,9 @@ const AppRouting = () => {
       <Route
         path="/"
         element={
-          <ShouldNotBeLogged>
+          <AuthRedirect shouldBeLogged={false}>
             <Login />
-          </ShouldNotBeLogged>
+          </AuthRedirect>
         }
       />
       <Route path="/new-account" element={<CreateAccount />} />
@@ -73,17 +74,18 @@ const AppRouting = () => {
       /> */}
 
       {/* Students */}
+      {/* Students */}
       <Route
         path="student/*"
         element={
-          <ShouldBeLogged allowedRoles={["student"]}>
+          <AuthRedirect shouldBeLogged={true} allowedRoles={["student"]}>
             <React.Suspense fallback={<Loader />}>
               <QueryClientProvider client={queryClient}>
                 <StudentsRouting />
                 <ReactQueryDevtools initialIsOpen={false} />
               </QueryClientProvider>
             </React.Suspense>
-          </ShouldBeLogged>
+          </AuthRedirect>
         }
       />
     </Routes>

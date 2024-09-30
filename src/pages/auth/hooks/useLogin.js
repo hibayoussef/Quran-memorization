@@ -5,10 +5,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { _AuthApi } from "../../../services/auth/auth.service";
 
-
 export const useLogin = () => {
   const { loginSchema } = useAuthValidation();
-
   const navigate = useNavigate();
   const formOptions = { resolver: yupResolver(loginSchema) };
   const { register, handleSubmit, formState } = useForm(formOptions);
@@ -16,20 +14,31 @@ export const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-   const handleTogglePasswordVisibility = () => {
-     setShowPassword((prevShowPassword) => !prevShowPassword);
-   };
-   const onSubmit = (input) => {
-     setLoading(true);
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
-     _AuthApi
-       .login({ ...input })
-       .then((res) => {
-         navigate("/dashboard");
-         setLoading(true);
-       })
-       .finally(() => setLoading(false));
-   };
+  const onSubmit = async (input) => {
+    setLoading(true);
+    try {
+      await _AuthApi.login({ ...input });
+      const role = _AuthApi.getRole();
+
+      // توجيه المستخدم بناءً على الدور
+      const routes = {
+        admin: "/admin/dashboard",
+        teacher: "/teacher/dashboard",
+        student: "/student/courses/all", // التوجيه إلى صفحة الطلاب
+      };
+
+      navigate(routes[role] || "/"); // إذا لم يكن الدور موجودًا، انتقل إلى الصفحة الرئيسية
+    } catch (error) {
+      console.error("Login error:", error);
+      // يمكنك إضافة معالجة الأخطاء هنا، مثل إظهار رسالة للمستخدم
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return {
     errors,

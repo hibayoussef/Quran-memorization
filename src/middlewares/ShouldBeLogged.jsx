@@ -19,3 +19,5 @@ const ShouldBeLogged = ({ children, allowedRoles }) => {
 };
 
 export default ShouldBeLogged;
+
+
