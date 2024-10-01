@@ -8,13 +8,9 @@ import {
   VerificationCodeForm
 } from "../src/routes/route";
 import Loader from "./components/shared/Loader";
-import ShouldBeLogged from "./middlewares/ShouldBeLogged";
-import ShouldNotBeLogged from "./middlewares/ShouldNotBeLogged";
-// import DashboardRouting from "./modules/admin/DashboardRouting";
-import Login from "./pages/auth/pages/Login";
-import StudentsRouting from "./modules/students/StudentsRouting";
 import AuthRedirect from "./middlewares/AuthRedirect";
-// import TeachersRouting from "./modules/teachers/TeachersRouting";
+import StudentsRouting from "./modules/students/StudentsRouting";
+import Login from "./pages/auth/pages/Login";
 
 const AppRouting = () => {
   const queryClient = new QueryClient({

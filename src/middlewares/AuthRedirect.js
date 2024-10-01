@@ -6,17 +6,14 @@ const AuthRedirect = ({ children, shouldBeLogged, allowedRoles }) => {
   const role = token ? _AuthApi.getRole() : null;
 
   if (shouldBeLogged) {
-    // تحقق من وجود توكن
     if (!token) {
-      return <Navigate to="/" />; // إذا لم يكن هناك توكن، توجيه إلى صفحة تسجيل الدخول
+      return <Navigate to="/" />; 
     }
 
-    // تحقق من الأدوار المسموح بها
     if (allowedRoles && !allowedRoles.includes(role)) {
-      return <Navigate to="/unauthorized" />; // توجيه إلى صفحة غير مصرح له
+      return <Navigate to="/unauthorized" />; 
     }
   } else {
-    // تحقق من وجود توكن في حالة عدم تسجيل الدخول
     if (token) {
       switch (role) {
         case "admin":
@@ -31,7 +28,7 @@ const AuthRedirect = ({ children, shouldBeLogged, allowedRoles }) => {
     }
   }
 
-  return children; // إذا كانت الشروط مستوفاة، يتم عرض العناصر الفرعية
+  return children; 
 };
 
 export default AuthRedirect;
