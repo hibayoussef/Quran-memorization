@@ -6,6 +6,8 @@ import MainLayout from "../../../../../../layout/MainLayout";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
 import { useCourses } from "../../../../../../services/courses/useCourses";
 import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
+import DynamicCourseCard from "../../../../components/card/DynamicCourseCard";
+import { Navigate } from "react-router-dom";
 
 const AllIndex = () => {
   // استخدام hook الخاص بجلب البيانات
@@ -53,6 +55,16 @@ const AllIndex = () => {
   const handleQuranPageChange = (event, value) => setQuranPage(value);
   const handleHadithPageChange = (event, value) => setHadithPage(value);
 
+  const buttons = [
+    {
+      text: "انضم إلى الدّورة",
+      type: "button",
+      noBackground: false, // Solid button with background
+      customStyles: { backgroundColor: "primary.main" },
+      onClick: () => Navigate(-1), // Navigate back
+    },
+  ];
+
   return (
     <MainLayout>
       {/* الدورات المسجّل عليها */}
@@ -61,7 +73,7 @@ const AllIndex = () => {
         <Grid container spacing={5}>
           {allData?.data?.courses?.map((course, index) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <Course data={course} />
+              <DynamicCourseCard course={course} type="registered" />;
             </Grid>
           ))}
         </Grid>
@@ -78,7 +90,7 @@ const AllIndex = () => {
         <Grid container spacing={5}>
           {quranData?.data?.courses?.map((course, index) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <Course course={course} />
+              <DynamicCourseCard course={course} type="quran" buttons={buttons} />;
             </Grid>
           ))}
         </Grid>
@@ -95,7 +107,7 @@ const AllIndex = () => {
         <Grid container spacing={5}>
           {hadithData?.data?.courses?.map((course, index) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <Course course={course} />
+              <DynamicCourseCard course={course} type="hadith" buttons={buttons} />;
             </Grid>
           ))}
         </Grid>

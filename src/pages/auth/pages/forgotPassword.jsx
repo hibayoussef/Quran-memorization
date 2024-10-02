@@ -33,12 +33,15 @@ const ForgotPassword = () => {
       text: "حفظ",
       type: "submit",
       loading: false,
+      noBackground: false, // Solid button with background
+      customStyles: { backgroundColor: "primary.main" },
     },
     {
       text: "رجوع",
       type: "button",
+      noBackground: true, 
       onClick: () => navigate(-1), // Navigate back
-    },
+    }
   ];
 
   return (

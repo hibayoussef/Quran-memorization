@@ -13,7 +13,6 @@ export const useCreateAccount = () => {
   const loading = false;
 
   const onSubmit = (data) => {
-    console.log("Form Data: ", data);
     navigate(`/reset-password/check-code/${email}`);
   };
 

@@ -96,7 +96,6 @@ const AllIndex = () => {
   // Handle page change
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
-    console.log(`Current Page: ${value}`);
     // You can also fetch new data based on `value`
   };
 
