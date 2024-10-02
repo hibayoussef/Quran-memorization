@@ -1,9 +1,9 @@
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
-import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 import MainLayout from "../../../../../layout/MainLayout";
 import Course from "../../../../students/components/card/Course";
-import PersonalDetailsTeacher from "../../../../students/components/PersonalDetailsTeacher/personalDetailsTeacher";
-import ProfileCard from "../../../../students/components/ProfileCard/profileCard";
+import PersonalDetailsTeacher from '../../../../students/components/PersonalDetailsTeacher/personalDetailsTeacher';
+import ProfileCard from '../../../../students/components/ProfileCard/profileCard';
+import ViewAll from "../../../../../components/shared/ViewAll/ViewAll";
 
 const ProfileIndex = () => {
   const handleEdit = () => {

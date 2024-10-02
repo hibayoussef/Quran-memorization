@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import AvatarComponent from "../../../../components/shared/avatar/avatar";
+import AvatarComponent from "../../../../components/shared/Avatar/avatar";
 import TypographyComponent from "../../../../components/shared/typography/Typography";
 import EditModal from "../EditModal/EditModal"; // Import the reusable modal
 import {

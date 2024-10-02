@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
 import { useState, useEffect } from "react";
 import PaginationComponent from "../../../../../../components/shared/pagination/pagination";
-import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 import Course from "../../../../components/card/Course";
 import MainLayout from "../../../../../../layout/MainLayout";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
 import { useCourses } from "../../../../../../services/courses/useCourses";
+import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
 
 const AllIndex = () => {
   // استخدام hook الخاص بجلب البيانات

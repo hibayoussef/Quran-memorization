@@ -1,13 +1,12 @@
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import MediaCard from "../../../../../components/shared/mediaCard/MediaCard";
-import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 import MainLayout from "../../../../../layout/MainLayout";
 import Course from "../../../components/card/Course";
-import PersonalDetails from "../../../components/PersonalDetails/personalDetails";
+import ViewAll from "../../../../../components/shared/ViewAll/ViewAll";
 import ProfileCard from "../../../components/ProfileCard/profileCard";
+import PersonalDetailsTeacher from "../../../components/PersonalDetailsTeacher/personalDetailsTeacher";
 
 const ProfileIndex = () => {
-  // Dummy data for certificates
   const certificateData = [
     {
       id: 1,
@@ -62,7 +61,7 @@ const ProfileIndex = () => {
             </Box>
           }
         />
-        <PersonalDetails />
+        <PersonalDetailsTeacher />
 
         <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
         {/* Wrap Grid in a Box to ensure even spacing */}

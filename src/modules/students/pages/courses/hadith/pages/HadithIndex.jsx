@@ -3,8 +3,8 @@ import { useState } from "react";
 import MainLayout from "../../../../../../layout/MainLayout";
 import Course from "../../../../components/card/Course";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
-import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 import PaginationComponent from "../../../../../../components/shared/pagination/pagination";
+import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
 
 const HadithIndex = () => {
   const [currentPage, setCurrentPage] = useState(1);
