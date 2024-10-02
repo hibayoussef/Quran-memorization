@@ -1,17 +1,15 @@
 import { _axios } from "../../interceptor/http-config";
 import { HttpRequestInterceptor } from "../../interceptor/http-request.interceptor";
 
-// All Courses / Quran - Hadith
-export const _CoursesApi = {
+// Student Registered Courses
+export const _RegisteredCoursesApi = {
   index: async ({ page, query, filters }) => {
-    const { type_id, level_id, category_id } = filters;
+    const { category_id } = filters;
 
     return _axios
       .get(
-        `/courses?page=${page}&per_page=10${
-          query !== "" ? `&search=${query}` : ""
-        }${type_id !== null ? `&type_id=${type_id}` : ""}${
-          level_id !== null ? `&level_id=${level_id}` : ""
+        `/student/courses?page=${page}&per_page=10${
+          query && query !== "" ? `&search=${query}` : ""
         }${category_id !== null ? `&category_id=${category_id}` : ""}`,
         {
           headers: {

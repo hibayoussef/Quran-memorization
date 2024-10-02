@@ -50,20 +50,6 @@ const AllIndex = () => {
     refetchHadithCourses();
   }, [hadithPage, setHadithFilters, refetchHadithCourses]);
 
-  // Handle page change for each section
-  const handleAllPageChange = (event, value) => setAllPage(value);
-  const handleQuranPageChange = (event, value) => setQuranPage(value);
-  const handleHadithPageChange = (event, value) => setHadithPage(value);
-
-  const buttons = [
-    {
-      text: "انضم إلى الدّورة",
-      type: "button",
-      noBackground: false, // Solid button with background
-      customStyles: { backgroundColor: "primary.main" },
-      onClick: () => Navigate(-1), // Navigate back
-    },
-  ];
 
   return (
     <MainLayout>
@@ -78,11 +64,6 @@ const AllIndex = () => {
           ))}
         </Grid>
       </ContentWrapper>
-      <PaginationComponent
-        count={20}
-        page={allPage}
-        onChange={handleAllPageChange}
-      />
 
       {/* دورات القرآن */}
       <ViewAll title="دورات القرآن:" showAllText="عرض الكل" />
@@ -90,7 +71,7 @@ const AllIndex = () => {
         <Grid container spacing={5}>
           {quranData?.data?.courses?.map((course, index) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <DynamicCourseCard course={course} type="quran" buttons={buttons} />;
+              <DynamicCourseCard course={course} type="quran" />;
             </Grid>
           ))}
         </Grid>
@@ -107,7 +88,7 @@ const AllIndex = () => {
         <Grid container spacing={5}>
           {hadithData?.data?.courses?.map((course, index) => (
             <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <DynamicCourseCard course={course} type="hadith" buttons={buttons} />;
+              <DynamicCourseCard course={course} type="hadith" />;
             </Grid>
           ))}
         </Grid>
