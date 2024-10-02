@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, Typography, Rating } from "@mui/material";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import {
   containerBoxStyles,
   labelTypographyStyles,
@@ -16,17 +18,18 @@ const TypographyComponent = ({
   gap = 2,
   hideColon = false,
   ratingValue,
-  ratings = [], 
+  ratings = [],
   maxRating = 5,
   fontWeight,
-  labelWidth = "120px"
+  labelWidth = "120px",
+  isDate = false,
+  isTime = false,
 }) => {
   if (!label && !value && ratingValue === undefined && ratings.length === 0)
     return null;
 
   return (
     <Box sx={containerBoxStyles(containerStyles, gap)}>
-      {/* جزء التسمية */}
       {label && (
         <Typography sx={labelTypographyStyles(labelStyles, fontWeight)}>
           {label}
@@ -47,13 +50,19 @@ const TypographyComponent = ({
                 justifyContent: "space-between",
                 alignItems: "center",
                 gap: {
-                  sm: 6, 
-                  xs: 1
+                  sm: 6,
+                  xs: 1,
                 },
-                width: "100%", 
+                width: "100%",
               }}
             >
-              <Typography sx={{ minWidth: labelWidth, textAlign: "right", color: "text.secondary" }}>
+              <Typography
+                sx={{
+                  minWidth: labelWidth,
+                  textAlign: "right",
+                  color: "text.secondary",
+                }}
+              >
                 {rating.label}
               </Typography>
               <Rating
@@ -74,9 +83,19 @@ const TypographyComponent = ({
         />
       ) : (
         value && (
-          <Typography sx={valueTypographyStyles(valueStyles)}>
-            {value}
-          </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            {isDate && (
+              <CalendarTodayIcon
+                sx={{ fontSize: 16, color: "text.secondary" }}
+              />
+            )}
+            {isTime && (
+              <AccessTimeIcon sx={{ fontSize: 16, color: "text.secondary" }} />
+            )}
+            <Typography sx={valueTypographyStyles(valueStyles)}>
+              {value}
+            </Typography>
+          </Box>
         )
       )}
     </Box>

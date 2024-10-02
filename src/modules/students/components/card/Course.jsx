@@ -9,8 +9,10 @@ import {
 import TypographyComponent from "../../../../components/shared/typography/Typography";
 import { StyledGridItem } from "../../components/PersonalDetails/personal.styles";
 import ProgressBarComponent from "../../../../components/shared/progressBar/ProgressBar";
+import { formatDate } from "../../../../utils/formatDate";
 
-const Course = () => {
+const Course = ({ course }) => {
+  console.log('coursessss: ', {course})
   return (
     <>
       <Card sx={{ maxWidth: 529 }}>
@@ -30,6 +32,36 @@ const Course = () => {
 
         {/* Card Content */}
         <CardContent sx={{ padding: "2px 16px 16px 16px" }}>
+          <Grid container spacing={2}>
+            <StyledGridItem item xs={12} sm={12} md={6} lg={8}>
+              {" "}
+              <TypographyComponent
+                value={course?.duration}
+                valueStyles={{
+                  color: "text.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+                isTime={true}
+              />
+            </StyledGridItem>
+
+            <StyledGridItem item xs={12} sm={12} md={6} lg={4}>
+              {" "}
+              <TypographyComponent
+                value={formatDate(course?.startDate)}
+                valueStyles={{
+                  color: "text.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+                isDate={true}
+              />
+            </StyledGridItem>
+          </Grid>
+
           {/* Title */}
           <Typography
             gutterBottom
@@ -37,11 +69,23 @@ const Course = () => {
             color="text.secondary"
             sx={{ marginTop: "0px", fontSize: "22px" }}
           >
-            وقفات مع الايات
+            {course?.title}
           </Typography>
 
           <Grid container spacing={2}>
             <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+              {" "}
+              <TypographyComponent
+                value={course?.description}
+                valueStyles={{
+                  color: "card.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+              />
+            </StyledGridItem>
+            {/* <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
               {" "}
               <TypographyComponent
                 label="دورة"
@@ -54,8 +98,8 @@ const Course = () => {
                 }}
                 hideColon={false}
               />
-            </StyledGridItem>
-
+            </StyledGridItem> */}
+            {/* 
             <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
               {" "}
               <TypographyComponent
@@ -84,7 +128,7 @@ const Course = () => {
                 }}
                 hideColon={false}
               />
-            </StyledGridItem>
+            </StyledGridItem> */}
           </Grid>
 
           <ProgressBarComponent

@@ -1,4 +1,3 @@
-// ReusablePagination.js
 import React from "react";
 import { Pagination, Stack } from "@mui/material";
 import { paginationStyles } from "./pagination.styles";
@@ -13,7 +12,7 @@ const PaginationComponent = ({
   borderRadius = "8px", // Control borderRadius, default to 8px
 }) => {
   return (
-    <Stack spacing={2} alignItems="end" padding="1rem 1rem">
+    <Stack spacing={2} alignItems="end" padding="1rem">
       <Pagination
         count={count}
         page={page}

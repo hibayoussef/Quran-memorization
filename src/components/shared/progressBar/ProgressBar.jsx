@@ -19,13 +19,13 @@ const ProgressBarComponent = ({ value, leftText, rightText }) => {
       />
 
       {/* Text Information below Progress Bar */}
-      <Box sx={textContainerStyle}>
+      {/* <Box sx={textContainerStyle}> */}
         {/* Left text (e.g., "6 hours, 40 min") */}
-        <Typography sx={leftTextStyle}>{leftText}</Typography>
+        {/* <Typography sx={leftTextStyle}>{leftText}</Typography> */}
 
         {/* Right text (e.g., "70%") */}
-        <Typography sx={rightTextStyle}>{rightText}</Typography>
-      </Box>
+        {/* <Typography sx={rightTextStyle}>{rightText}</Typography> */}
+      {/* </Box> */}
     </Box>
   );
 };

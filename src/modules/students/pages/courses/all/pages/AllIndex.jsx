@@ -1,102 +1,111 @@
 import { Grid } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PaginationComponent from "../../../../../../components/shared/pagination/pagination";
 import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 import Course from "../../../../components/card/Course";
 import MainLayout from "../../../../../../layout/MainLayout";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
+import { useCourses } from "../../../../../../services/courses/useCourses";
 
 const AllIndex = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  // استخدام hook الخاص بجلب البيانات
+  const {
+    data: allData,
+    isLoading: allLoading,
+    page: allPage,
+    setPage: setAllPage,
+    refetch: refetchAllCourses,
+    setFilters: setAllFilters,
+  } = useCourses();
 
-  // Handle page change
-  const handlePageChange = (event, value) => {
-    setCurrentPage(value);
-    console.log(`Current Page: ${value}`);
-  };
+  const {
+    data: quranData,
+    isLoading: quranLoading,
+    page: quranPage,
+    setPage: setQuranPage,
+    refetch: refetchQuranCourses,
+    setFilters: setQuranFilters,
+  } = useCourses();
+
+  const {
+    data: hadithData,
+    isLoading: hadithLoading,
+    page: hadithPage,
+    setPage: setHadithPage,
+    refetch: refetchHadithCourses,
+    setFilters: setHadithFilters,
+  } = useCourses();
+
+  // إعداد التصفية لدورات القرآن عند التحميل
+  useEffect(() => {
+    setQuranFilters({ category_id: 1 });
+    refetchQuranCourses();
+  }, [quranPage, setQuranFilters, refetchQuranCourses]);
+
+  // إعداد التصفية لدورات الحديث عند التحميل
+  useEffect(() => {
+    setHadithFilters({ category_id: 2 });
+    refetchHadithCourses();
+  }, [hadithPage, setHadithFilters, refetchHadithCourses]);
+
+  // Handle page change for each section
+  const handleAllPageChange = (event, value) => setAllPage(value);
+  const handleQuranPageChange = (event, value) => setQuranPage(value);
+  const handleHadithPageChange = (event, value) => setHadithPage(value);
 
   return (
-    <>
-      <MainLayout>
-        <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
-        {/* Wrap Grid in a Box to ensure even spacing */}
-        <ContentWrapper>
-          {/* Responsive Grid Layout */}
-          <Grid container spacing={5}>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Grid
-                item
-                xs={12} // Full width on extra small screens (mobile)
-                sm={6} // 2 items per row on small screens (tablets)
-                md={4} // 3 items per row on medium screens (desktop)
-                lg={4} // 4 items per row on large screens
-                key={index}
-              >
-                <Course />
-              </Grid>
-            ))}
-          </Grid>
-        </ContentWrapper>
-        <PaginationComponent
-          count={20} // Total number of pages
-          page={currentPage} // Controlled page state
-          onChange={handlePageChange} // Handle page change
-        />
+    <MainLayout>
+      {/* الدورات المسجّل عليها */}
+      <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
+      <ContentWrapper>
+        <Grid container spacing={5}>
+          {allData?.data?.courses?.map((course, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+              <Course data={course} />
+            </Grid>
+          ))}
+        </Grid>
+      </ContentWrapper>
+      <PaginationComponent
+        count={20}
+        page={allPage}
+        onChange={handleAllPageChange}
+      />
 
-        {/* Part 2 */}
+      {/* دورات القرآن */}
+      <ViewAll title="دورات القرآن:" showAllText="عرض الكل" />
+      <ContentWrapper>
+        <Grid container spacing={5}>
+          {quranData?.data?.courses?.map((course, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+              <Course course={course} />
+            </Grid>
+          ))}
+        </Grid>
+      </ContentWrapper>
+      {/* <PaginationComponent
+        count={20}
+        page={quranPage}
+        onChange={handleQuranPageChange}
+      /> */}
 
-        <ViewAll title="دورات القرأن:" showAllText="عرض الكل" />
-        {/* Wrap Grid in a Box to ensure even spacing */}
-        <ContentWrapper>
-          {/* Responsive Grid Layout */}
-          <Grid container spacing={5}>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Grid
-                item
-                xs={12} // Full width on extra small screens (mobile)
-                sm={6} // 2 items per row on small screens (tablets)
-                md={4} // 3 items per row on medium screens (desktop)
-                lg={4} // 4 items per row on large screens
-                key={index}
-              >
-                <Course />
-              </Grid>
-            ))}
-          </Grid>
-        </ContentWrapper>
-        <PaginationComponent
-          count={20} // Total number of pages
-          page={currentPage} // Controlled page state
-          onChange={handlePageChange} // Handle page change
-        />
-
-        {/* Part 3 */}
-        <ViewAll title="دورات الحديث:" showAllText="عرض الكل" />
-        {/* Wrap Grid in a Box to ensure even spacing */}
-        <ContentWrapper>
-          {/* Responsive Grid Layout */}
-          <Grid container spacing={5}>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <Grid
-                item
-                xs={12} // Full width on extra small screens (mobile)
-                sm={6} // 2 items per row on small screens (tablets)
-                md={4} // 3 items per row on medium screens (desktop)
-                lg={4} // 4 items per row on large screens
-                key={index}
-              >
-                <Course />
-              </Grid>
-            ))}
-          </Grid>
-        </ContentWrapper>
-        <PaginationComponent
-          count={20} // Total number of pages
-          page={currentPage} // Controlled page state
-          onChange={handlePageChange} // Handle page change
-        />
-      </MainLayout>
-    </>
+      {/* دورات الحديث */}
+      <ViewAll title="دورات الحديث:" showAllText="عرض الكل" />
+      <ContentWrapper>
+        <Grid container spacing={5}>
+          {hadithData?.data?.courses?.map((course, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+              <Course course={course} />
+            </Grid>
+          ))}
+        </Grid>
+      </ContentWrapper>
+      {/* <PaginationComponent
+        count={20}
+        page={hadithPage}
+        onChange={handleHadithPageChange}
+      /> */}
+    </MainLayout>
   );
 };
 
