@@ -8,6 +8,7 @@ const PageWrapper = ({ children }) => {
       <Container
         maxWidth={false} // This removes the maxWidth limitation and makes it full width
         sx={{
+          marginTop: "3rem",
           marginBottom: "3rem",
           padding: {
             lg: "0 70px",
