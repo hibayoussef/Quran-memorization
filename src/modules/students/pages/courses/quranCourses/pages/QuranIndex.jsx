@@ -4,57 +4,100 @@ import { Grid, Typography } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import FilterTabs from "../../../../components/tabs/FilterTabs";
-import Course from "../../../../components/card/Course";
 import DynamicCourseCard from "../../../../components/card/DynamicCourseCard";
 import { useCourses } from "../../../../../../services/courses/useCourses";
+import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
+import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
 
 const QuranIndex = () => {
   const tabsData = [
     {
       label: "جميع الدّورات",
-      content: <Typography>Content for جميع الدورات</Typography>,
+      type_id: null, // لا يوجد تصنيف محدد
     },
     {
       label: "دورات عاديّة",
-      content: <Typography>Content for دورات القرآن</Typography>,
+      type_id: 1, // تصنيف الدورات العادية
     },
     {
       label: "دورات مكثّفة",
-      content: <Typography>Content for دورات الحديث</Typography>,
+      type_id: 2, // تصنيف الدورات المكثفة
     },
   ];
+
   const {
-    data: quranData, // البيانات القادمة من الـ API
-    isLoading: quranLoading, // حالة التحميل
-    page: quranPage, // الصفحة الحالية
-    setPage: setQuranPage, // تغيير الصفحة
-    refetch: refetchQuranCourses, // إعادة جلب البيانات
-    setFilters: setQuranFilters, // تغيير الفلاتر
+    data: quranData,
+    isLoading: quranLoading,
+    setFilters: setQuranFilters,
+    refetch: refetchQuranCourses,
   } = useCourses();
 
-  // إعداد الفلتر لجلب دورات القرآن فقط عند بداية تحميل الصفحة
+  // إعداد الفلتر لجلب دورات القرآن عند بداية تحميل الصفحة
   useEffect(() => {
-    setQuranFilters({ category_id: 1 }); // تعيين فلتر فئة دورات القرآن
+    setQuranFilters({ category_id: 1, type_id: null }); // تعيين فلتر فئة دورات القرآن
     refetchQuranCourses(); // إعادة جلب البيانات بعد تعيين الفلتر
-  }, [quranPage, setQuranFilters, refetchQuranCourses]);
-
+  }, [setQuranFilters, refetchQuranCourses]);
 
   return (
     <>
       <MainLayout title="دورات القرآن">
-        <FilterTabs tabsData={tabsData} />
-
-        <Grid container spacing={{ md: 5, xs: 2 }}>
-        {quranLoading ? (
-            <p>Loading...</p> 
-          ) : (
-            quranData?.data?.courses?.map((course, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-                <DynamicCourseCard course={course} type="quran" />
-              </Grid>
-            ))
-          )}
-        </Grid>
+        <FilterTabs
+          tabsData={tabsData.map((tab) => ({
+            label: tab.label,
+            onClick: () => {
+              setQuranFilters({ category_id: 1, type_id: tab.type_id });
+              refetchQuranCourses(); // إعادة جلب البيانات عند تغيير التاب
+            },
+          }))}
+        />
+        {/* المستوى الأول */}
+        <ViewAll title="المستوى الأوّل" showAllText="عرض الكل" />
+        <ContentWrapper>
+          <Grid container spacing={{ md: 5, xs: 2 }}>
+            {quranLoading ? (
+              <p>Loading...</p>
+            ) : (
+              quranData?.data?.courses?.filter(course => course.level_id === 1).map((course, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+                  <DynamicCourseCard course={course} type="quran" />
+                </Grid>
+              ))
+            )}
+          </Grid>
+        </ContentWrapper>
+        
+        {/* المستوى الثاني */}
+        <ViewAll title="المستوى الثّاني" showAllText="عرض الكل" />
+        <ContentWrapper>
+          <Grid container spacing={{ md: 5, xs: 2 }}>
+            {quranLoading ? (
+              <p>Loading...</p>
+            ) : (
+              quranData?.data?.courses?.filter(course => course.level_id === 2).map((course, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+                  <DynamicCourseCard course={course} type="quran" />
+                </Grid>
+              ))
+            )}
+          </Grid>
+        </ContentWrapper>
+        
+        {/* المستوى الثالث */}
+        <ViewAll title="المستوى الثّالث" showAllText="عرض الكل" />
+        <ContentWrapper>
+          <Grid container spacing={{ md: 5, xs: 2 }}>
+            {quranLoading ? (
+              <p>Loading...</p>
+            ) : (
+              quranData?.data?.courses?.filter(course => course.level_id === 3).map((course, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+                  <DynamicCourseCard course={course} type="quran" />
+                </Grid>
+              ))
+            )}
+          </Grid>
+        </ContentWrapper>
+        
         <Stack
           spacing={2}
           sx={{

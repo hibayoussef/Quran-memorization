@@ -1,7 +1,6 @@
 // styles.js
 export const viewAllContainer = {
   padding: "1rem 1rem",
-  marginBottom: "1rem",
 };
 
 export const titleStyle = {
