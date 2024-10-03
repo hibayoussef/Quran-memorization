@@ -1,103 +1,54 @@
 import { Grid } from "@mui/material";
-import { useState, useEffect } from "react";
-import PaginationComponent from "../../../../../../components/shared/pagination/pagination";
-import Course from "../../../../components/card/Course";
-import MainLayout from "../../../../../../layout/MainLayout";
-import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
-import { useCourses } from "../../../../../../services/courses/useCourses";
+import { useEffect } from "react";
 import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
+import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
+import MainLayout from "../../../../../../layout/MainLayout";
+import { useCourses } from "../../../../../../services/courses/useCourses";
 import DynamicCourseCard from "../../../../components/card/DynamicCourseCard";
-import { Navigate } from "react-router-dom";
 
 const AllIndex = () => {
-  // استخدام hook الخاص بجلب البيانات
+  // استخدام hook الخاص بجلب بيانات دورات القرآن
   const {
-    data: allData,
-    isLoading: allLoading,
-    page: allPage,
-    setPage: setAllPage,
-    refetch: refetchAllCourses,
-    setFilters: setAllFilters,
+    data: quranData, // البيانات القادمة من الـ API
+    isLoading: quranLoading, // حالة التحميل
+    page: quranPage, // الصفحة الحالية
+    setPage: setQuranPage, // تغيير الصفحة
+    refetch: refetchQuranCourses, // إعادة جلب البيانات
+    setFilters: setQuranFilters, // تغيير الفلاتر
   } = useCourses();
 
-  const {
-    data: quranData,
-    isLoading: quranLoading,
-    page: quranPage,
-    setPage: setQuranPage,
-    refetch: refetchQuranCourses,
-    setFilters: setQuranFilters,
-  } = useCourses();
-
-  const {
-    data: hadithData,
-    isLoading: hadithLoading,
-    page: hadithPage,
-    setPage: setHadithPage,
-    refetch: refetchHadithCourses,
-    setFilters: setHadithFilters,
-  } = useCourses();
-
-  // إعداد التصفية لدورات القرآن عند التحميل
+  // إعداد الفلتر لجلب دورات القرآن فقط عند بداية تحميل الصفحة
   useEffect(() => {
-    setQuranFilters({ category_id: 1 });
-    refetchQuranCourses();
+    setQuranFilters({ category_id: 1 }); // تعيين فلتر فئة دورات القرآن
+    refetchQuranCourses(); // إعادة جلب البيانات بعد تعيين الفلتر
   }, [quranPage, setQuranFilters, refetchQuranCourses]);
 
-  // إعداد التصفية لدورات الحديث عند التحميل
-  useEffect(() => {
-    setHadithFilters({ category_id: 2 });
-    refetchHadithCourses();
-  }, [hadithPage, setHadithFilters, refetchHadithCourses]);
-
-
+  // عرض البيانات في الواجهة
   return (
     <MainLayout>
-      {/* الدورات المسجّل عليها */}
-      <ViewAll title="الدّورات المسجّل عليها:" showAllText="عرض الكل" />
-      <ContentWrapper>
-        <Grid container spacing={5}>
-          {allData?.data?.courses?.map((course, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <DynamicCourseCard course={course} type="registered" />;
-            </Grid>
-          ))}
-        </Grid>
-      </ContentWrapper>
+      {/* عنوان القسم */}
+      <ViewAll
+        title="دورات القرآن:"
+        showAllText="عرض الكل"
+        redirectTo="/student/courses/quran" // Pass the redirection path
+      />
 
-      {/* دورات القرآن */}
-      <ViewAll title="دورات القرآن:" showAllText="عرض الكل" />
+      {/* محتوى الدورات */}
       <ContentWrapper>
         <Grid container spacing={5}>
-          {quranData?.data?.courses?.map((course, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <DynamicCourseCard course={course} type="quran" />;
-            </Grid>
-          ))}
+          {/* عرض دورات القرآن في بطاقات */}
+          {quranLoading ? (
+            <p>Loading...</p> // عرض رسالة التحميل إذا كانت البيانات قيد الجلب
+          ) : (
+            quranData?.data?.courses?.map((course, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+                {/* عرض بيانات الدورة باستخدام مكون DynamicCourseCard */}
+                <DynamicCourseCard course={course} type="quran" />
+              </Grid>
+            ))
+          )}
         </Grid>
       </ContentWrapper>
-      {/* <PaginationComponent
-        count={20}
-        page={quranPage}
-        onChange={handleQuranPageChange}
-      /> */}
-
-      {/* دورات الحديث */}
-      <ViewAll title="دورات الحديث:" showAllText="عرض الكل" />
-      <ContentWrapper>
-        <Grid container spacing={5}>
-          {hadithData?.data?.courses?.map((course, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
-              <DynamicCourseCard course={course} type="hadith" />;
-            </Grid>
-          ))}
-        </Grid>
-      </ContentWrapper>
-      {/* <PaginationComponent
-        count={20}
-        page={hadithPage}
-        onChange={handleHadithPageChange}
-      /> */}
     </MainLayout>
   );
 };
