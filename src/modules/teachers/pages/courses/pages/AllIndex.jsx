@@ -36,6 +36,7 @@ const AllIndex = () => {
     setPage, // To change the page
     refetch, // To refetch the data
   } = useResponsibleCourses();
+  console.log("datar: ", data);
 
   // Handle page change
   const handlePageChange = (event, value) => {
@@ -60,18 +61,23 @@ const AllIndex = () => {
           {isLoading ? (
             <p>جاري التحميل...</p>
           ) : (
-            data?.courses?.map((course, index) => (
-              <Grid
-                item
-                xs={12} // Full width on extra small screens (mobile)
-                sm={6} // 2 items per row on small screens (tablets)
-                md={4} // 3 items per row on medium screens (desktop)
-                lg={4} // 4 items per row on large screens
-                key={index}
-              >
-                <DynamicCourseCard course={course} type="responsible" />
-              </Grid>
-            ))
+            data?.courses?.slice(0, 3).map(
+              (
+                course,
+                index // Display only first 3 courses
+              ) => (
+                <Grid
+                  item
+                  xs={12} // Full width on extra small screens (mobile)
+                  sm={6} // 2 items per row on small screens (tablets)
+                  md={4} // 3 items per row on medium screens (desktop)
+                  lg={4} // 4 items per row on large screens
+                  key={index}
+                >
+                  <DynamicCourseCard course={course} type="responsible" />
+                </Grid>
+              )
+            )
           )}
         </Grid>
 
@@ -85,8 +91,6 @@ const AllIndex = () => {
             onActionClick={handleActionClick}
           />
         </div>
-
-      
       </MainLayout>
     </>
   );

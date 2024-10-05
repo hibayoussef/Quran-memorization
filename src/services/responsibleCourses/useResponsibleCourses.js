@@ -18,7 +18,7 @@ export const useResponsibleCourses = () => {
             query, 
             filters
            })
-           .then((res) => res), {
+            .then((res) => res), {
             keepPreviousData: true, 
             staleTime: 5000
            }
