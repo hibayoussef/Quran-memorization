@@ -15,7 +15,7 @@ import ButtonComponent from "../../../../components/shared/button/buttonComponen
 import { Navigate } from "react-router-dom";
 
 const DynamicCourseCard = ({ course, type, buttons }) => {
-  const isQuranCourse = type === 'quran'; // لتحديد نوع الدورة
+  const isQuranCourse = type === "quran"; // لتحديد نوع الدورة
 
   return (
     <Card sx={{ maxWidth: 529 }}>
@@ -36,38 +36,35 @@ const DynamicCourseCard = ({ course, type, buttons }) => {
       {/* Card Content */}
 
       <CardContent sx={{ padding: "2px 16px 16px 16px" }}>
-        {
-          type !== "registered" && (
-            <Grid container spacing={2}>
-              <StyledGridItem item xs={12} sm={12} md={6} lg={8}>
-                <TypographyComponent
-                  value={course?.duration}
-                  valueStyles={{
-                    color: "text.secondary",
-                    fontSize: "14px",
-                    fontWeight: 400,
-                  }}
-                  hideColon={false}
-                  isTime={true}
-                />
-              </StyledGridItem>
+        {type === "quran" && (
+          <Grid container spacing={2}>
+            <StyledGridItem item xs={12} sm={12} md={6} lg={8}>
+              <TypographyComponent
+                value={course?.duration}
+                valueStyles={{
+                  color: "text.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+                isTime={true}
+              />
+            </StyledGridItem>
 
-              <StyledGridItem item xs={12} sm={12} md={6} lg={4}>
-                <TypographyComponent
-                  value={formatDate(course?.startDate)}
-                  valueStyles={{
-                    color: "text.secondary",
-                    fontSize: "14px",
-                    fontWeight: 400,
-                  }}
-                  hideColon={false}
-                  isDate={true}
-                />
-              </StyledGridItem>
-            </Grid>
-
-          )
-        }
+            <StyledGridItem item xs={12} sm={12} md={6} lg={4}>
+              <TypographyComponent
+                value={formatDate(course?.startDate)}
+                valueStyles={{
+                  color: "text.secondary",
+                  fontSize: "14px",
+                  fontWeight: 400,
+                }}
+                hideColon={false}
+                isDate={true}
+              />
+            </StyledGridItem>
+          </Grid>
+        )}
 
         {/* Title */}
         <Typography
@@ -78,67 +75,88 @@ const DynamicCourseCard = ({ course, type, buttons }) => {
           {course?.title}
         </Typography>
 
-
         <Grid container spacing={2}>
-          {
-            type !== "registered" ? (
-              <>
-                <StyledGridItem item xs={12} sm={12} md={6} lg={12}>
-                  <TypographyComponent
-                    value={course?.description}
-                    valueStyles={{
-                      color: "card.secondary",
-                      fontSize: "14px",
-                      fontWeight: 400,
-                    }}
-                    hideColon={false}
-                  />
-                </StyledGridItem>
+          {type === "quran" ? (
+            <>
+              <StyledGridItem item xs={12} sm={12} md={6} lg={12}>
+                <TypographyComponent
+                  value={course?.description}
+                  valueStyles={{
+                    color: "card.secondary",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                  hideColon={false}
+                />
+              </StyledGridItem>
 
-                <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
-                  <ButtonComponent
-                    text={"انضم إلى الدّورة"}
-                    onClick={() => Navigate(-1)}
-                    fullWidth={true}
-                    variant={"outlined"}
-                    noBackground={true}
-                    backgroundColor="primary.main"
-                  />
-                </StyledGridItem>
+              <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+                <ButtonComponent
+                  text={"انضم إلى الدّورة"}
+                  onClick={() => Navigate(-1)}
+                  fullWidth={true}
+                  variant={"outlined"}
+                  noBackground={true}
+                  backgroundColor="primary.main"
+                />
+              </StyledGridItem>
+            </>
+          ) : (
+            <>
+              <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+                {" "}
+                <TypographyComponent
+                  label="دورة"
+                  value="قرأن"
+                  labelStyles={{
+                    color: "text.secondary",
+                    fontSize: "14px",
+                  }}
+                  valueStyles={{
+                    color: "card.secondary",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                  hideColon={false}
+                />
+              </StyledGridItem>
 
-              </>
-            ) : (
-              <>
-                <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
-                  {" "}
-                  <TypographyComponent
-                    label="دورة"
-                    value="قرأن"
-                    labelStyles={{ color: "text.secondary", fontSize: "14px" }}
-                    valueStyles={{
-                      color: "card.secondary",
-                      fontSize: "14px",
-                      fontWeight: 400,
-                    }}
-                    hideColon={false}
-                  />
-                </StyledGridItem>
+              <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
+                {" "}
+                <TypographyComponent
+                  label="نوع الدّورة"
+                  value="مكثّفة"
+                  labelStyles={{ color: "text.secondary", fontSize: "14px" }}
+                  valueStyles={{
+                    color: "card.secondary",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                  }}
+                  hideColon={false}
+                />
+              </StyledGridItem>
 
-                <StyledGridItem item xs={12} sm={12} md={6} lg={6}>
-                  {" "}
-                  <TypographyComponent
-                    label="نوع الدّورة"
-                    value="مكثّفة"
-                    labelStyles={{ color: "text.secondary", fontSize: "14px" }}
-                    valueStyles={{
-                      color: "card.secondary",
-                      fontSize: "14px",
-                      fontWeight: 400,
-                    }}
-                    hideColon={false}
-                  />
-                </StyledGridItem>
-
+              {type === "responsible" ? (
+                <>
+                  <StyledGridItem item lg={12}>
+                    {" "}
+                    <TypographyComponent
+                      label="عدد الطّلاب"
+                      value={course.students_count}
+                      labelStyles={{
+                        color: "text.secondary",
+                        fontSize: "14px",
+                      }}
+                      valueStyles={{
+                        color: "card.secondary",
+                        fontSize: "14px",
+                        fontWeight: 400,
+                      }}
+                      hideColon={false}
+                    />
+                  </StyledGridItem>
+                </>
+              ) : (
                 <StyledGridItem item lg={12}>
                   {" "}
                   <TypographyComponent
@@ -153,24 +171,19 @@ const DynamicCourseCard = ({ course, type, buttons }) => {
                     hideColon={false}
                   />
                 </StyledGridItem>
-
-              </>
-            )
-          }
-
-        </Grid>
-        {
-          type === "registered" && (
-            <>
-              <ProgressBarComponent
-                value={70}
-                leftText="6 ساعات, 40 دقيقة"
-                rightText="70%"
-              />
+              )}
             </>
-          )
-        }
-
+          )}
+        </Grid>
+        {type !== "quran" && (
+          <>
+            <ProgressBarComponent
+              value={70}
+              leftText="6 ساعات, 40 دقيقة"
+              rightText="70%"
+            />
+          </>
+        )}
       </CardContent>
     </Card>
   );

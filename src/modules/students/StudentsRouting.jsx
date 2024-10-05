@@ -18,42 +18,42 @@ const StudentsRouting = () => {
           <Route
             path="/profile/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <StudentProfileRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
           />
           {/* Students Courses */}
           <Route
             path="/courses/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <AllRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
           />
           <Route
             path="/courses/registered/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <RegisteredRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
           />
           <Route
             path="/courses/quran/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <QuranRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
           />
           <Route
             path="/courses/hadith/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <HadithRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
           />
         </Route>

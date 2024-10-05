@@ -5,12 +5,13 @@ import { Route, Routes } from "react-router-dom";
 import {
   CreateAccount,
   ResetPassword,
-  VerificationCodeForm
+  VerificationCodeForm,
 } from "../src/routes/route";
 import Loader from "./components/shared/Loader";
 import AuthRedirect from "./middlewares/AuthRedirect";
 import StudentsRouting from "./modules/students/StudentsRouting";
 import Login from "./pages/auth/pages/Login";
+import TeachersRouting from "./modules/teachers/TeachersRouting";
 
 const AppRouting = () => {
   const queryClient = new QueryClient({
@@ -27,9 +28,9 @@ const AppRouting = () => {
       <Route
         path="/"
         element={
-          <AuthRedirect shouldBeLogged={false}>
-            <Login />
-          </AuthRedirect>
+          // <AuthRedirect shouldBeLogged={false}>
+          <Login />
+          // </AuthRedirect>
         }
       />
       <Route path="/new-account" element={<CreateAccount />} />
@@ -55,33 +56,32 @@ const AppRouting = () => {
       /> */}
 
       {/* Teachers */}
-      {/* <Route
+      <Route
         path="teacher/*"
         element={
-          <ShouldBeLogged allowedRoles={["teacher"]}>
-            <React.Suspense fallback={<Loader />}>
-              <QueryClientProvider client={queryClient}>
-                <TeachersRouting />
-                <ReactQueryDevtools initialIsOpen={false} />
-              </QueryClientProvider>
-            </React.Suspense>
-          </ShouldBeLogged>
+          // <ShouldBeLogged allowedRoles={["teacher"]}>
+          <React.Suspense fallback={<Loader />}>
+            <QueryClientProvider client={queryClient}>
+              <TeachersRouting />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </React.Suspense>
+          // </ShouldBeLogged>
         }
-      /> */}
+      />
 
-      {/* Students */}
       {/* Students */}
       <Route
         path="student/*"
         element={
-          <AuthRedirect shouldBeLogged={true} allowedRoles={["student"]}>
+          // <AuthRedirect shouldBeLogged={true} allowedRoles={["student"]}>
             <React.Suspense fallback={<Loader />}>
               <QueryClientProvider client={queryClient}>
                 <StudentsRouting />
                 <ReactQueryDevtools initialIsOpen={false} />
               </QueryClientProvider>
             </React.Suspense>
-          </AuthRedirect>
+          // </AuthRedirect>
         }
       />
     </Routes>

@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { useEffect } from "react";
-import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
+import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
 import MainLayout from "../../../../../../layout/MainLayout";
 import { useCourses } from "../../../../../../services/courses/useCourses";

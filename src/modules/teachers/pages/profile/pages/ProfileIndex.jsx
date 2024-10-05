@@ -3,7 +3,7 @@ import MainLayout from "../../../../../layout/MainLayout";
 import Course from "../../../../students/components/card/Course";
 import PersonalDetailsTeacher from '../../../../students/components/PersonalDetailsTeacher/personalDetailsTeacher';
 import ProfileCard from '../../../../students/components/ProfileCard/profileCard';
-import ViewAll from "../../../../../components/shared/ViewAll/ViewAll";
+import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 
 const ProfileIndex = () => {
   const handleEdit = () => {

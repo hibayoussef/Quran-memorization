@@ -4,7 +4,7 @@ import MainLayout from "../../../../../../layout/MainLayout";
 import Course from "../../../../components/card/Course";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
 import PaginationComponent from "../../../../../../components/shared/pagination/pagination";
-import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
+import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 
 const HadithIndex = () => {
   const [currentPage, setCurrentPage] = useState(1);

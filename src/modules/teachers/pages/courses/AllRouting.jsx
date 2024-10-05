@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import AllComponent from "./allComponent";
-import AllIndex from "./pages/allIndex";
-
+import AllComponent from "./AllComponent";
+import AllIndex from "./pages/AllIndex";
 
 const AllRouting = () => {
   return (

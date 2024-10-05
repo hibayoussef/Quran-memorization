@@ -6,8 +6,8 @@ import Stack from "@mui/material/Stack";
 import FilterTabs from "../../../../components/tabs/FilterTabs";
 import DynamicCourseCard from "../../../../components/card/DynamicCourseCard";
 import { useCourses } from "../../../../../../services/courses/useCourses";
-import ViewAll from "../../../../../../components/shared/ViewAll/ViewAll";
 import ContentWrapper from "../../../../../../components/styled/ContentWrapper";
+import ViewAll from "../../../../../../components/shared/viewAll/ViewAll";
 
 const QuranIndex = () => {
   const tabsData = [

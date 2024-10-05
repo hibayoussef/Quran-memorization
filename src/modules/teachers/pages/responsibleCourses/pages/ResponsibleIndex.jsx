@@ -4,14 +4,14 @@ import { useState } from "react";
 import PaginationComponent from "../../../../../components/shared/pagination/pagination";
 import TableComp from "../../../../../components/shared/tableComp/TableComp";
 import MainLayout from "../../../../../layout/MainLayout";
+import DynamicCourseCard from "../../../../students/components/card/DynamicCourseCard";
 import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 import { useResponsibleCourses } from "../../../../../services/responsibleCourses/useResponsibleCourses";
-import DynamicCourseCard from "../../../../students/components/card/DynamicCourseCard";
 
 const columns = [
-  { id: "title", label: "اسم الدّورة" },
-  { id: "start_date", label: "تاريخ الجّلسة" },
-  { id: "start_time", label: "موعد الجّلسة", align: "left" },
+  { id: "name", label: "Name" },
+  { id: "age", label: "Age" },
+  { id: "email", label: "Email", align: "left" },
 ];
 
 // Define dynamic actions
@@ -22,40 +22,30 @@ const actions = [
 ];
 
 const handleActionClick = (action, row) => {
-  alert(`Action: ${action} for course: ${row.name}`);
+  alert(`Action: ${action} for row: ${row.name}`);
 };
 
-const AllIndex = () => {
+const ResponsibleIndex = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Fetch courses data from the API
+  // استخدام البيانات القادمة من الـ API
   const {
-    data, // Courses data
-    isLoading, // Loading state
-    page, // Current page
-    setPage, // To change the page
-    refetch, // To refetch the data
+    data, // بيانات الكورسات
+    isLoading, // حالة التحميل
+    setPage, // لتغيير الصفحة
+    refetch, // لإعادة جلب البيانات
   } = useResponsibleCourses();
 
   // Handle page change
   const handlePageChange = (event, value) => {
-    setPage(value);
-    setCurrentPage(value);
-    refetch(); // Refetch the data based on the new page
-    console.log(`Current Page: ${value}`);
+    setPage(value); // تغيير الصفحة
+    setCurrentPage(value); // تحديث حالة الصفحة الحالية
+    refetch(); // إعادة جلب البيانات بناءً على الصفحة الجديدة
   };
 
   return (
     <>
-      <MainLayout
-        headerComponent={
-          <ViewAll
-            title="الدّورات المسؤول عنها:"
-            showAllText="عرض الكل"
-            redirectTo="/teacher/courses/responsible"
-          />
-        }
-      >
+      <MainLayout title="الدّورات المسؤول عنها">
         <Grid container spacing={{ md: 5, xs: 2 }}>
           {isLoading ? (
             <p>جاري التحميل...</p>
@@ -75,21 +65,15 @@ const AllIndex = () => {
           )}
         </Grid>
 
-        <ViewAll title="جدول الدّورات:" />
-
-        <div style={{ padding: "1rem" }}>
-          <TableComp
-            columns={columns}
-            data={data?.courses || []} // Use real data from the API
-            actions={actions} // Pass dynamic actions here
-            onActionClick={handleActionClick}
-          />
-        </div>
-
-      
+        {/* Pagination component */}
+        <PaginationComponent
+          currentPage={data?.current_page || currentPage} // استخدام الصفحة الحالية من البيانات
+          totalPages={data?.last_page || 1} // استخدام عدد الصفحات من البيانات
+          onPageChange={handlePageChange} // تحديث الصفحة عند التغيير
+        />
       </MainLayout>
     </>
   );
 };
 
-export default AllIndex;
+export default ResponsibleIndex;

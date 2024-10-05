@@ -12,6 +12,7 @@ import ProgressBarComponent from "../../../../components/shared/progressBar/Prog
 import { formatDate } from "../../../../utils/formatDate";
 
 const Course = ({ course }) => {
+  console.log('bbb: ', course)
   return (
     <>
       <Card sx={{ maxWidth: 529 }}>

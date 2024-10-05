@@ -1,37 +1,58 @@
 import { Route, Routes } from "react-router-dom";
 import ShouldBeLogged from "../../middlewares/ShouldBeLogged";
 import {
-  //   AllRouting,
+  AllResponsibleRouting,
+  // AllRouting,
   //   HadithRouting,
   //   QuranRouting,
   //   RegisteredRouting,
   TeacherProfileRouting,
 } from "../../routes/route";
 import TeacherComponent from "./TeachersComponent";
+import AllRouting from "./pages/courses/AllRouting";
 
 const TeachersRouting = () => {
   return (
     <Routes>
       {
         <Route element={<TeacherComponent />}>
+          <Route
+            path="/courses/all/*"
+            element={
+              // <ShouldBeLogged allowedRoles={["student"]}>
+              <AllRouting />
+              // </ShouldBeLogged>
+            }
+          />
+
+          <Route
+            path="/courses/responsible/*"
+            element={
+              // <ShouldBeLogged allowedRoles={["student"]}>
+              <AllResponsibleRouting />
+              // </ShouldBeLogged>
+            }
+          />
+
           {/* Student Profile */}
           <Route
             path="/profile/*"
             element={
-              <ShouldBeLogged allowedRoles={["teacher"]}>
-                <TeacherProfileRouting />
-              </ShouldBeLogged>
+              // <ShouldBeLogged allowedRoles={["teacher"]}>
+              <TeacherProfileRouting />
+              // </ShouldBeLogged>
             }
           />
-          {/* Students Courses */}
           {/* <Route
             path="/courses/all/*"
             element={
-              <ShouldBeLogged allowedRoles={["student"]}>
+              // <ShouldBeLogged allowedRoles={["student"]}>
                 <AllRouting />
-              </ShouldBeLogged>
+              // </ShouldBeLogged>
             }
-          />
+          /> */}
+          {/* Students Courses */}
+          {/*
           <Route
             path="/courses/registered/*"
             element={

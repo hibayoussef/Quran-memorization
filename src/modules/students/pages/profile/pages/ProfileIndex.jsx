@@ -2,9 +2,9 @@ import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import MediaCard from "../../../../../components/shared/mediaCard/MediaCard";
 import MainLayout from "../../../../../layout/MainLayout";
 import Course from "../../../components/card/Course";
-import ViewAll from "../../../../../components/shared/ViewAll/ViewAll";
 import ProfileCard from "../../../components/ProfileCard/profileCard";
 import PersonalDetailsTeacher from "../../../components/PersonalDetailsTeacher/personalDetailsTeacher";
+import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 
 const ProfileIndex = () => {
   const certificateData = [
