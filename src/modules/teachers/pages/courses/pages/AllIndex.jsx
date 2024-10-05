@@ -1,5 +1,5 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
-import { Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import PaginationComponent from "../../../../../components/shared/pagination/pagination";
 import TableComp from "../../../../../components/shared/tableComp/TableComp";
@@ -7,6 +7,7 @@ import MainLayout from "../../../../../layout/MainLayout";
 import ViewAll from "../../../../../components/shared/viewAll/ViewAll";
 import { useResponsibleCourses } from "../../../../../services/responsibleCourses/useResponsibleCourses";
 import DynamicCourseCard from "../../../../students/components/card/DynamicCourseCard";
+import NoData from "../../../../../components/shared/noData/NoData";
 
 const columns = [
   { id: "title", label: "اسم الدّورة" },
@@ -52,34 +53,34 @@ const AllIndex = () => {
         headerComponent={
           <ViewAll
             title="الدّورات المسؤول عنها:"
-            showAllText="عرض الكل"
+            showAllText={data?.courses?.length > 0 ? "عرض الكل" : undefined}
             redirectTo="/teacher/courses/responsible"
           />
         }
       >
-        <Grid container spacing={{ md: 5, xs: 2 }}>
-          {isLoading ? (
-            <p>جاري التحميل...</p>
-          ) : (
-            data?.courses?.slice(0, 3).map(
-              (
-                course,
-                index // Display only first 3 courses
-              ) => (
-                <Grid
-                  item
-                  xs={12} // Full width on extra small screens (mobile)
-                  sm={6} // 2 items per row on small screens (tablets)
-                  md={4} // 3 items per row on medium screens (desktop)
-                  lg={4} // 4 items per row on large screens
-                  key={index}
-                >
-                  <DynamicCourseCard course={course} type="responsible" />
-                </Grid>
-              )
-            )
-          )}
-        </Grid>
+        {isLoading ? (
+          <p>جاري التحميل...</p>
+        ) : data?.courses?.length === 0 ? (
+          <>
+            <NoData text="لا يوجد دورات" />
+          </>
+        ) : (
+          <Grid container spacing={{ md: 5, xs: 2 }}>
+            {data?.courses?.slice(0, 3).map((course, index) => (
+              <Grid
+                item
+                xs={12} // Full width on extra small screens (mobile)
+                sm={6} // 2 items per row on small screens (tablets)
+                md={4} // 3 items per row on medium screens (desktop)
+                lg={4} // 4 items per row on large screens
+                key={index}
+                style={{ marginBottom: "2rem" }}
+              >
+                <DynamicCourseCard course={course} type="responsible" />
+              </Grid>
+            ))}
+          </Grid>
+        )}
 
         <ViewAll title="جدول الدّورات:" />
 

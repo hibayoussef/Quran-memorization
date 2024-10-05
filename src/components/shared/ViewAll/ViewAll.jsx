@@ -1,12 +1,12 @@
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import {
-  viewAllContainer,
-  titleStyle,
-  showAllTextStyle,
-} from "./ViewAll.styles"; // Import styles
 import TypographyComponent from "../typography/Typography";
+import {
+  showAllTextStyle,
+  titleStyle,
+  viewAllContainer,
+} from "./ViewAll.styles"; // Import styles
 
 const ViewAll = ({ title = "العنوان:", showAllText, redirectTo }) => {
   const navigate = useNavigate(); // Initialize navigate

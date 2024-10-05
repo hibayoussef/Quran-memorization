@@ -10,7 +10,7 @@ export const _ResponsibleCoursesApi = {
       courses: [
         {
           id: 1,
-          title: "test",
+          title: "أحاديث",
           image: "",
           description: "test test test test",
           category: {
@@ -88,7 +88,7 @@ export const _ResponsibleCoursesApi = {
         //
         {
           id: 2,
-          title: "test",
+          title: "قصص الأنبياء",
           image: "",
           description: "test test test test",
           category: {
@@ -166,7 +166,7 @@ export const _ResponsibleCoursesApi = {
         //
         {
           id: 1,
-          title: "test",
+          title: "سيرة نبويّة",
           image: "",
           description: "test test test test",
           category: {
@@ -244,7 +244,7 @@ export const _ResponsibleCoursesApi = {
         //
         {
           id: 3,
-          title: "test",
+          title: "وقفات مع القرآن",
           image: "",
           description: "test test test test",
           category: {
