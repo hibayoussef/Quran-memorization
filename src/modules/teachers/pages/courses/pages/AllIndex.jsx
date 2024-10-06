@@ -1,5 +1,5 @@
 import { Delete, Edit, Visibility } from "@mui/icons-material";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import PaginationComponent from "../../../../../components/shared/pagination/pagination";
 import TableComp from "../../../../../components/shared/tableComp/TableComp";
@@ -59,7 +59,7 @@ const AllIndex = () => {
         }
       >
         {isLoading ? (
-          <p>جاري التحميل...</p>
+            <CircularProgress color="text.secondary" />
         ) : data?.courses?.length === 0 ? (
           <>
             <NoData text="لا يوجد دورات" />
